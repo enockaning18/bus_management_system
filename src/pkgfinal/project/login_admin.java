@@ -4,12 +4,20 @@
  */
 package pkgfinal.project;
 
+import com.mysql.jdbc.ResultSet;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author okyere
  */
 public class login_admin extends javax.swing.JFrame {
-
+    PreparedStatement statement;
+    Connection dbconnection;
+    ResultSet result;
     /**
      * Creates new form login_admin
      */
@@ -31,11 +39,11 @@ public class login_admin extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         txt_username = new javax.swing.JTextField();
-        txt_password = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         btn_login = new javax.swing.JButton();
         btn_reset = new javax.swing.JButton();
         btn_back = new javax.swing.JButton();
+        txt_password = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -70,8 +78,6 @@ public class login_admin extends javax.swing.JFrame {
         jLabel2.setText("Username: ");
 
         txt_username.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
-
-        txt_password.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
 
         jLabel3.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
         jLabel3.setText("Password:");
@@ -109,19 +115,19 @@ public class login_admin extends javax.swing.JFrame {
                 .addGap(65, 65, 65)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(34, 34, 34)
-                        .addComponent(txt_username, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addGap(44, 44, 44)
-                        .addComponent(txt_password, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(btn_login, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(55, 55, 55)
                         .addComponent(btn_reset, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(48, 48, 48)
-                        .addComponent(btn_back, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(btn_back, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3))
+                        .addGap(34, 34, 34)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txt_username, javax.swing.GroupLayout.DEFAULT_SIZE, 237, Short.MAX_VALUE)
+                            .addComponent(txt_password)))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -132,9 +138,9 @@ public class login_admin extends javax.swing.JFrame {
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txt_username, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(60, 60, 60)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txt_password, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+                    .addComponent(txt_password))
                 .addGap(57, 57, 57)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btn_reset, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -166,6 +172,7 @@ public class login_admin extends javax.swing.JFrame {
 
     private void btn_resetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_resetActionPerformed
         // TODO add your handling code here:
+        clear_fields();                    
     }//GEN-LAST:event_btn_resetActionPerformed
 
     private void btn_backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_backActionPerformed
@@ -177,10 +184,40 @@ public class login_admin extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_backActionPerformed
 
     private void btn_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_loginActionPerformed
-        admin_dashboard admin_view = new admin_dashboard();
-        admin_view.setLocationRelativeTo(null);
-        admin_view.setVisible(true);
         
+        if(txt_username.getText().equals("")){
+            JOptionPane.showMessageDialog(null, "Username required");
+            
+        }else if(txt_password.getPassword().equals("")){
+            JOptionPane.showMessageDialog(null, "Password required");
+        }else{
+            try{
+                open_connection();
+                String  username = txt_username.getText();
+                String password = String.valueOf(txt_password.getPassword());
+                
+                String query_command = "SELECT `username`, `password` FROM `admin` WHERE `username` = ? AND `password` = ?";
+                statement = dbconnection.prepareStatement(query_command);
+                statement.setString(1, username);
+                statement.setString(2, password);
+               
+                java.sql.ResultSet result = statement.executeQuery();
+                if(result.next()){
+                    JOptionPane.showMessageDialog(null, "Access Granted " + username);
+                    dispose();
+                    dashboard_view();
+                    clear_fields();                    
+                }else{
+                    JOptionPane.showMessageDialog(null, "Sorry " +username+" Access Failed");
+                    clear_fields();                    
+                }
+                    
+            }catch(Exception ex){
+                JOptionPane.showMessageDialog(null, "Error" +ex.getMessage());
+            } finally {
+                close_connection();
+            }
+                }   
     }//GEN-LAST:event_btn_loginActionPerformed
 
     /**
@@ -217,6 +254,40 @@ public class login_admin extends javax.swing.JFrame {
             }
         });
     }
+    
+    // function for opening database connection
+    public void open_connection(){
+        try{
+//            Class.forName("com.mysql.jdbc.Driver");
+            String databaseUrl = "jdbc:mysql://localhost/busmanagementsystem";
+            dbconnection = DriverManager.getConnection(databaseUrl, "root", "");
+        }catch(Exception ex){
+            JOptionPane.showMessageDialog(null, "Error" +ex);
+        }
+        
+    }
+    
+    //function for closing database connection
+    public void close_connection(){
+        try{
+            dbconnection.close();
+        }catch(Exception ex){
+            JOptionPane.showMessageDialog(null, "Error"  + ex);
+        }
+    }
+    
+    // function for clearning fields 
+    public void clear_fields(){
+        txt_username.setText("");
+        txt_password.setText("");
+    }
+    
+    // function for disposing this form after account created successfully
+    public void dashboard_view(){        
+        admin_dashboard admin_view = new admin_dashboard();
+        admin_view.setLocationRelativeTo(null);
+        admin_view.setVisible(true);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_back;
@@ -227,7 +298,7 @@ public class login_admin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField txt_password;
+    private javax.swing.JPasswordField txt_password;
     private javax.swing.JTextField txt_username;
     // End of variables declaration//GEN-END:variables
 }

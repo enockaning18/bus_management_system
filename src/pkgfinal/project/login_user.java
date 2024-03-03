@@ -226,6 +226,7 @@ public class login_user extends javax.swing.JFrame {
                     clear_fields();                    
                 }else{
                     JOptionPane.showMessageDialog(null, "Sorry " +username+" Access Failed");
+                    clear_fields(); 
                 }
                     
             }catch(Exception ex){
