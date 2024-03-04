@@ -203,6 +203,9 @@ public class admin_dashboard extends javax.swing.JFrame {
 
     private void tab_all_bussesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tab_all_bussesActionPerformed
         // TODO add your handling code here:
+        all_bus_details all_bus_view = new all_bus_details();
+        show_tabs.add(all_bus_view);
+        all_bus_view.show();
         
         
         
