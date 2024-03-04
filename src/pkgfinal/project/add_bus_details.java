@@ -107,10 +107,10 @@ public class add_bus_details extends javax.swing.JInternalFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(57, 57, 57)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(97, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel3)
@@ -134,22 +134,22 @@ public class add_bus_details extends javax.swing.JInternalFrame {
                             .addComponent(jLabel9))
                         .addGap(43, 43, 43)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txt_time, javax.swing.GroupLayout.DEFAULT_SIZE, 260, Short.MAX_VALUE)
+                            .addComponent(txt_time)
                             .addComponent(txt_price)
-                            .addComponent(txt_seats)))
-                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING))
-                .addContainerGap(77, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(250, 250, 250)
-                .addComponent(btn_login, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(147, 147, 147)
-                .addComponent(btn_clear, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(txt_seats, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jLabel2)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(193, 193, 193)
+                        .addComponent(btn_login, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(147, 147, 147)
+                        .addComponent(btn_clear, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(202, 202, 202)))
+                .addGap(85, 85, 85))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(27, 27, 27)
+                .addGap(54, 54, 54)
                 .addComponent(jLabel2)
                 .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -175,7 +175,7 @@ public class add_bus_details extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_login, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_clear, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(113, Short.MAX_VALUE))
+                .addContainerGap(86, Short.MAX_VALUE))
         );
 
         pack();
@@ -200,13 +200,16 @@ public class add_bus_details extends javax.swing.JInternalFrame {
         }else{
             try{
                 open_connection();
-                String query_command = "INSERT INTO buses(bus_number, bus_source, bus_destination) VALUES(?, ?, ?)";
+                String query_command = "INSERT INTO buses(bus_number, bus_source, bus_destination, seat, price, time) VALUES(?, ?, ?, ?, ?, ?)";
                 statement = dbconnection.prepareStatement(query_command);
                 
                 statement.setString(1, bus_number);
                 statement.setString(2, bus_source);
                 statement.setString(3, bus_destination);
-                
+                statement.setString(4 ,seats);
+                statement.setString(5, fare);
+                statement.setString(6, time);
+                                                
                 int result = statement.executeUpdate();
                 if(result == 1){
                     JOptionPane.showMessageDialog(null, "New Bus Added");
@@ -256,6 +259,9 @@ public class add_bus_details extends javax.swing.JInternalFrame {
         txt_bus_number.setText("");
         txt_bus_source.setText("");
         txt_bus_destination.setText("");
+        txt_price.setText("");
+        txt_time.setText("");
+        txt_seats.setText("");
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

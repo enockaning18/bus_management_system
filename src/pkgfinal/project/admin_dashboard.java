@@ -41,10 +41,10 @@ public class admin_dashboard extends javax.swing.JFrame {
         show_tabs = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jMenuItem5 = new javax.swing.JMenuItem();
-        jMenuItem6 = new javax.swing.JMenuItem();
+        tab_all_busses = new javax.swing.JMenuItem();
+        tab_add_bus = new javax.swing.JMenuItem();
+        tab_delete_bus = new javax.swing.JMenuItem();
+        tab_edit_bus = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenuItem8 = new javax.swing.JMenuItem();
@@ -83,32 +83,37 @@ public class admin_dashboard extends javax.swing.JFrame {
 
         jMenu1.setText("Manage Bus");
 
-        jMenuItem3.setText("All Buses");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+        tab_all_busses.setText("All Buses");
+        tab_all_busses.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
+                tab_all_bussesActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem3);
+        jMenu1.add(tab_all_busses);
 
-        jMenuItem4.setText("Add Bus ");
-        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+        tab_add_bus.setText("Add Bus ");
+        tab_add_bus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem4ActionPerformed(evt);
+                tab_add_busActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem4);
+        jMenu1.add(tab_add_bus);
 
-        jMenuItem5.setText("Delete Bus ");
-        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+        tab_delete_bus.setText("Delete Bus ");
+        tab_delete_bus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem5ActionPerformed(evt);
+                tab_delete_busActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem5);
+        jMenu1.add(tab_delete_bus);
 
-        jMenuItem6.setText("Edit Bus Details");
-        jMenu1.add(jMenuItem6);
+        tab_edit_bus.setText("Edit Bus Details");
+        tab_edit_bus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tab_edit_busActionPerformed(evt);
+            }
+        });
+        jMenu1.add(tab_edit_bus);
 
         jMenuBar1.add(jMenu1);
 
@@ -196,27 +201,31 @@ public class admin_dashboard extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+    private void tab_all_bussesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tab_all_bussesActionPerformed
         // TODO add your handling code here:
         
         
         
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
+    }//GEN-LAST:event_tab_all_bussesActionPerformed
 
-    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+    private void tab_delete_busActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tab_delete_busActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem5ActionPerformed
+    }//GEN-LAST:event_tab_delete_busActionPerformed
 
     private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem7ActionPerformed
 
-    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+    private void tab_add_busActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tab_add_busActionPerformed
         // TODO add your handling code here:
         add_bus_details addbus_view = new add_bus_details();
         show_tabs.add(addbus_view);
         addbus_view.show();
-    }//GEN-LAST:event_jMenuItem4ActionPerformed
+    }//GEN-LAST:event_tab_add_busActionPerformed
+
+    private void tab_edit_busActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tab_edit_busActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tab_edit_busActionPerformed
 
     /**
      * @param args the command line arguments
@@ -272,13 +281,13 @@ public class admin_dashboard extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem17;
     private javax.swing.JMenuItem jMenuItem18;
     private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JDesktopPane show_tabs;
+    private javax.swing.JMenuItem tab_add_bus;
+    private javax.swing.JMenuItem tab_all_busses;
+    private javax.swing.JMenuItem tab_delete_bus;
+    private javax.swing.JMenuItem tab_edit_bus;
     // End of variables declaration//GEN-END:variables
 }
