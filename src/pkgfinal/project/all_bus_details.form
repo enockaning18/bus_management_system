@@ -56,9 +56,9 @@
                 <Column editable="false" title="Bus Number" type="java.lang.String"/>
                 <Column editable="false" title="Bus Scource " type="java.lang.String"/>
                 <Column editable="false" title="Bus Destination" type="java.lang.String"/>
-                <Column editable="false" title="Bus Seats" type="java.lang.String"/>
                 <Column editable="false" title="Bus Price" type="java.lang.String"/>
                 <Column editable="false" title="Bus Time" type="java.lang.String"/>
+                <Column editable="false" title="Bus Seats" type="java.lang.String"/>
               </Table>
             </Property>
             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">

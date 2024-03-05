@@ -213,6 +213,9 @@ public class admin_dashboard extends javax.swing.JFrame {
 
     private void tab_delete_busActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tab_delete_busActionPerformed
         // TODO add your handling code here:
+        delete_bus delete_view = new delete_bus();
+        show_tabs.add(delete_view);
+        delete_view.show();
     }//GEN-LAST:event_tab_delete_busActionPerformed
 
     private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed

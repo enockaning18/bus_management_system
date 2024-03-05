@@ -111,7 +111,7 @@ public class all_bus_details extends javax.swing.JInternalFrame {
                 {null, null, null, null, null, null}
             },
             new String [] {
-                "Bus Number", "Bus Scource ", "Bus Destination", "Bus Seats", "Bus Price", "Bus Time"
+                "Bus Number", "Bus Scource ", "Bus Destination", "Bus Price", "Bus Time", "Bus Seats"
             }
         ) {
             Class[] types = new Class [] {
