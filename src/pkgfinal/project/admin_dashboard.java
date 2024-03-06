@@ -53,6 +53,7 @@ public class admin_dashboard extends javax.swing.JFrame {
         tab_edit_employee = new javax.swing.JMenuItem();
         tab_delete_employee = new javax.swing.JMenuItem();
         tab_all_employees = new javax.swing.JMenuItem();
+        tab_assign = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         jMenuItem13 = new javax.swing.JMenuItem();
         jMenuItem14 = new javax.swing.JMenuItem();
@@ -165,6 +166,14 @@ public class admin_dashboard extends javax.swing.JFrame {
             }
         });
         jMenu3.add(tab_all_employees);
+
+        tab_assign.setText("Assign Employee");
+        tab_assign.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tab_assignActionPerformed(evt);
+            }
+        });
+        jMenu3.add(tab_assign);
 
         jMenuBar1.add(jMenu3);
 
@@ -285,6 +294,13 @@ public class admin_dashboard extends javax.swing.JFrame {
         all_employee_view.show();
     }//GEN-LAST:event_tab_all_employeesActionPerformed
 
+    private void tab_assignActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tab_assignActionPerformed
+        // TODO add your handling code here:
+        assign_employee assign_employee_view = new assign_employee();
+        show_tabs.add(assign_employee_view);
+        assign_employee_view.show();
+    }//GEN-LAST:event_tab_assignActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -343,6 +359,7 @@ public class admin_dashboard extends javax.swing.JFrame {
     private javax.swing.JMenuItem tab_add_employee;
     private javax.swing.JMenuItem tab_all_busses;
     private javax.swing.JMenuItem tab_all_employees;
+    private javax.swing.JMenuItem tab_assign;
     private javax.swing.JMenuItem tab_delete_bus;
     private javax.swing.JMenuItem tab_delete_employee;
     private javax.swing.JMenuItem tab_edit_bus;
