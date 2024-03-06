@@ -143,12 +143,27 @@ public class admin_dashboard extends javax.swing.JFrame {
         jMenu3.add(tab_add_employee);
 
         tab_edit_employee.setText("Edit Employee Details");
+        tab_edit_employee.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tab_edit_employeeActionPerformed(evt);
+            }
+        });
         jMenu3.add(tab_edit_employee);
 
         tab_delete_employee.setText("Delete Employee");
+        tab_delete_employee.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tab_delete_employeeActionPerformed(evt);
+            }
+        });
         jMenu3.add(tab_delete_employee);
 
         tab_all_employees.setText("All Employees");
+        tab_all_employees.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tab_all_employeesActionPerformed(evt);
+            }
+        });
         jMenu3.add(tab_all_employees);
 
         jMenuBar1.add(jMenu3);
@@ -248,6 +263,27 @@ public class admin_dashboard extends javax.swing.JFrame {
         show_tabs.add(add_employee_view);
         add_employee_view.show();
     }//GEN-LAST:event_tab_add_employeeActionPerformed
+
+    private void tab_edit_employeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tab_edit_employeeActionPerformed
+        // TODO add your handling code here:
+        edit_employee edit_employee_view = new edit_employee();
+        show_tabs.add(edit_employee_view);
+        edit_employee_view.show();
+    }//GEN-LAST:event_tab_edit_employeeActionPerformed
+
+    private void tab_delete_employeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tab_delete_employeeActionPerformed
+        // TODO add your handling code here:
+        delete_employee delete_employee_view = new delete_employee();
+        show_tabs.add(delete_employee_view);
+        delete_employee_view.show();
+    }//GEN-LAST:event_tab_delete_employeeActionPerformed
+
+    private void tab_all_employeesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tab_all_employeesActionPerformed
+        // TODO add your handling code here:
+        all_employees_details all_employee_view = new all_employees_details();
+        show_tabs.add(all_employee_view);
+        all_employee_view.show();
+    }//GEN-LAST:event_tab_all_employeesActionPerformed
 
     /**
      * @param args the command line arguments

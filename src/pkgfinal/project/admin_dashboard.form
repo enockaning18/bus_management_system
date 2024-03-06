@@ -90,16 +90,25 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Edit Employee Details"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tab_edit_employeeActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="tab_delete_employee">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Delete Employee"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tab_delete_employeeActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="tab_all_employees">
               <Properties>
                 <Property name="text" type="java.lang.String" value="All Employees"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tab_all_employeesActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
