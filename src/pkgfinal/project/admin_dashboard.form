@@ -78,22 +78,25 @@
             <Property name="text" type="java.lang.String" value="Employess"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem9">
+            <MenuItem class="javax.swing.JMenuItem" name="tab_add_employee">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Add Employee"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tab_add_employeeActionPerformed"/>
+              </Events>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem10">
+            <MenuItem class="javax.swing.JMenuItem" name="tab_edit_employee">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Edit Employee Details"/>
               </Properties>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem11">
+            <MenuItem class="javax.swing.JMenuItem" name="tab_delete_employee">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Delete Employee"/>
               </Properties>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem12">
+            <MenuItem class="javax.swing.JMenuItem" name="tab_all_employees">
               <Properties>
                 <Property name="text" type="java.lang.String" value="All Employees"/>
               </Properties>

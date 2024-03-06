@@ -49,10 +49,10 @@ public class admin_dashboard extends javax.swing.JFrame {
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenuItem8 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
-        jMenuItem9 = new javax.swing.JMenuItem();
-        jMenuItem10 = new javax.swing.JMenuItem();
-        jMenuItem11 = new javax.swing.JMenuItem();
-        jMenuItem12 = new javax.swing.JMenuItem();
+        tab_add_employee = new javax.swing.JMenuItem();
+        tab_edit_employee = new javax.swing.JMenuItem();
+        tab_delete_employee = new javax.swing.JMenuItem();
+        tab_all_employees = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         jMenuItem13 = new javax.swing.JMenuItem();
         jMenuItem14 = new javax.swing.JMenuItem();
@@ -134,17 +134,22 @@ public class admin_dashboard extends javax.swing.JFrame {
 
         jMenu3.setText("Employess");
 
-        jMenuItem9.setText("Add Employee");
-        jMenu3.add(jMenuItem9);
+        tab_add_employee.setText("Add Employee");
+        tab_add_employee.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tab_add_employeeActionPerformed(evt);
+            }
+        });
+        jMenu3.add(tab_add_employee);
 
-        jMenuItem10.setText("Edit Employee Details");
-        jMenu3.add(jMenuItem10);
+        tab_edit_employee.setText("Edit Employee Details");
+        jMenu3.add(tab_edit_employee);
 
-        jMenuItem11.setText("Delete Employee");
-        jMenu3.add(jMenuItem11);
+        tab_delete_employee.setText("Delete Employee");
+        jMenu3.add(tab_delete_employee);
 
-        jMenuItem12.setText("All Employees");
-        jMenu3.add(jMenuItem12);
+        tab_all_employees.setText("All Employees");
+        jMenu3.add(tab_all_employees);
 
         jMenuBar1.add(jMenu3);
 
@@ -202,7 +207,7 @@ public class admin_dashboard extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void tab_all_bussesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tab_all_bussesActionPerformed
-        // TODO add your handling code here:
+        // TODO add your handling code here:        
         all_bus_details all_bus_view = new all_bus_details();
         show_tabs.add(all_bus_view);
         all_bus_view.show();
@@ -212,7 +217,7 @@ public class admin_dashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_tab_all_bussesActionPerformed
 
     private void tab_delete_busActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tab_delete_busActionPerformed
-        // TODO add your handling code here:
+        // TODO add your handling code here:        
         delete_bus delete_view = new delete_bus();
         show_tabs.add(delete_view);
         delete_view.show();
@@ -224,6 +229,7 @@ public class admin_dashboard extends javax.swing.JFrame {
 
     private void tab_add_busActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tab_add_busActionPerformed
         // TODO add your handling code here:
+ 
         add_bus_details addbus_view = new add_bus_details();
         show_tabs.add(addbus_view);
         addbus_view.show();
@@ -231,7 +237,17 @@ public class admin_dashboard extends javax.swing.JFrame {
 
     private void tab_edit_busActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tab_edit_busActionPerformed
         // TODO add your handling code here:
+        edit_bus delete_view = new edit_bus();
+        show_tabs.add(delete_view);
+        delete_view.show();
     }//GEN-LAST:event_tab_edit_busActionPerformed
+
+    private void tab_add_employeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tab_add_employeeActionPerformed
+        // TODO add your handling code here:
+        add_employee add_employee_view = new add_employee();
+        show_tabs.add(add_employee_view);
+        add_employee_view.show();
+    }//GEN-LAST:event_tab_add_employeeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -277,9 +293,6 @@ public class admin_dashboard extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem10;
-    private javax.swing.JMenuItem jMenuItem11;
-    private javax.swing.JMenuItem jMenuItem12;
     private javax.swing.JMenuItem jMenuItem13;
     private javax.swing.JMenuItem jMenuItem14;
     private javax.swing.JMenuItem jMenuItem15;
@@ -289,11 +302,14 @@ public class admin_dashboard extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
-    private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JDesktopPane show_tabs;
     private javax.swing.JMenuItem tab_add_bus;
+    private javax.swing.JMenuItem tab_add_employee;
     private javax.swing.JMenuItem tab_all_busses;
+    private javax.swing.JMenuItem tab_all_employees;
     private javax.swing.JMenuItem tab_delete_bus;
+    private javax.swing.JMenuItem tab_delete_employee;
     private javax.swing.JMenuItem tab_edit_bus;
+    private javax.swing.JMenuItem tab_edit_employee;
     // End of variables declaration//GEN-END:variables
 }
