@@ -128,7 +128,7 @@ public class delete_employee extends javax.swing.JInternalFrame {
         cmb_age.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Select --", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40" }));
 
         btn_delete.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
-        btn_delete.setText("Delete");
+        btn_delete.setText("Save");
         btn_delete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_deleteActionPerformed(evt);
@@ -144,7 +144,6 @@ public class delete_employee extends javax.swing.JInternalFrame {
         });
 
         btn_search.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
-        btn_search.setText("Search");
         btn_search.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_searchActionPerformed(evt);

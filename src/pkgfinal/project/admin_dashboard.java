@@ -37,6 +37,13 @@ public class admin_dashboard extends javax.swing.JFrame {
 
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
+        jMenuBar2 = new javax.swing.JMenuBar();
+        jMenu6 = new javax.swing.JMenu();
+        jMenu7 = new javax.swing.JMenu();
+        jMenuItem5 = new javax.swing.JMenuItem();
+        jMenuItem6 = new javax.swing.JMenuItem();
         jLabel1 = new javax.swing.JLabel();
         show_tabs = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -45,9 +52,6 @@ public class admin_dashboard extends javax.swing.JFrame {
         tab_add_bus = new javax.swing.JMenuItem();
         tab_delete_bus = new javax.swing.JMenuItem();
         tab_edit_bus = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
-        jMenuItem7 = new javax.swing.JMenuItem();
-        jMenuItem8 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         tab_add_employee = new javax.swing.JMenuItem();
         tab_edit_employee = new javax.swing.JMenuItem();
@@ -66,6 +70,20 @@ public class admin_dashboard extends javax.swing.JFrame {
         jMenuItem1.setText("jMenuItem1");
 
         jMenuItem2.setText("jMenuItem2");
+
+        jMenuItem3.setText("jMenuItem3");
+
+        jMenuItem4.setText("jMenuItem4");
+
+        jMenu6.setText("File");
+        jMenuBar2.add(jMenu6);
+
+        jMenu7.setText("Edit");
+        jMenuBar2.add(jMenu7);
+
+        jMenuItem5.setText("jMenuItem5");
+
+        jMenuItem6.setText("jMenuItem6");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -118,22 +136,7 @@ public class admin_dashboard extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setText("Bus Fare");
-
-        jMenuItem7.setText("Add Bus Fare");
-        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem7ActionPerformed(evt);
-            }
-        });
-        jMenu2.add(jMenuItem7);
-
-        jMenuItem8.setText("Edit Bus Fare");
-        jMenu2.add(jMenuItem8);
-
-        jMenuBar1.add(jMenu2);
-
-        jMenu3.setText("Employess");
+        jMenu3.setText("Employees");
 
         tab_add_employee.setText("Add Employee");
         tab_add_employee.addActionListener(new java.awt.event.ActionListener() {
@@ -187,18 +190,18 @@ public class admin_dashboard extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu4);
 
-        jMenu5.setText("Bus Time");
+        jMenu5.setText("Bookings");
 
-        jMenuItem15.setText("Add Bus Time");
+        jMenuItem15.setText("All Bookings");
         jMenu5.add(jMenuItem15);
 
-        jMenuItem16.setText("Edit Bus Time");
+        jMenuItem16.setText("Add Bookings");
         jMenu5.add(jMenuItem16);
 
-        jMenuItem17.setText("Delete But Time");
+        jMenuItem17.setText("Delete Bookings");
         jMenu5.add(jMenuItem17);
 
-        jMenuItem18.setText("All Bus Time");
+        jMenuItem18.setText("Modify Bookings");
         jMenu5.add(jMenuItem18);
 
         jMenuBar1.add(jMenu5);
@@ -246,10 +249,6 @@ public class admin_dashboard extends javax.swing.JFrame {
         show_tabs.add(delete_view);
         delete_view.show();
     }//GEN-LAST:event_tab_delete_busActionPerformed
-
-    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem7ActionPerformed
 
     private void tab_add_busActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tab_add_busActionPerformed
         // TODO add your handling code here:
@@ -339,11 +338,13 @@ public class admin_dashboard extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
+    private javax.swing.JMenu jMenu6;
+    private javax.swing.JMenu jMenu7;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem13;
     private javax.swing.JMenuItem jMenuItem14;
@@ -352,8 +353,10 @@ public class admin_dashboard extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem17;
     private javax.swing.JMenuItem jMenuItem18;
     private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem7;
-    private javax.swing.JMenuItem jMenuItem8;
+    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JDesktopPane show_tabs;
     private javax.swing.JMenuItem tab_add_bus;
     private javax.swing.JMenuItem tab_add_employee;

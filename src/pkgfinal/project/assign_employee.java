@@ -26,6 +26,7 @@ public class assign_employee extends javax.swing.JInternalFrame {
     public assign_employee() {
         initComponents();
         load_combo();
+        tbload();
     }
     
     public void load_combo(){
@@ -35,7 +36,7 @@ public class assign_employee extends javax.swing.JInternalFrame {
         statement = dbconnection.prepareStatement(query_command);
         java.sql.ResultSet result = statement.executeQuery(query_command);
         while(result.next()){
-            cmb_data.addItem(result.getString("Employee" ));            
+            cmb_employees.addItem(result.getString("Employee" ));            
         }
     }catch(Exception ex){
         JOptionPane.showMessageDialog(null, "Error"  + ex);
@@ -75,43 +76,325 @@ public class assign_employee extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        cmb_data = new javax.swing.JComboBox<>();
+        cmb_employees = new javax.swing.JComboBox<>();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tb_all_buses = new javax.swing.JTable();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        cmb_position = new javax.swing.JComboBox<>();
+        btn_assgin = new javax.swing.JButton();
+        btn_search = new javax.swing.JButton();
+        txt_search = new javax.swing.JTextField();
+        txt_employee_id = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
 
         setTitle("Assign Employee");
 
-        cmb_data.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Select --", " " }));
-        cmb_data.addActionListener(new java.awt.event.ActionListener() {
+        cmb_employees.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Select --", " " }));
+        cmb_employees.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmb_dataActionPerformed(evt);
+                cmb_employeesActionPerformed(evt);
             }
         });
+
+        tb_all_buses.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Emp ID", "First Name", "Last Name", "Phone", "Age", "Sex", "Email", "Position"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tb_all_buses.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                tb_all_busesAncestorAdded(evt);
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
+        tb_all_buses.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tb_all_busesMouseClicked(evt);
+            }
+        });
+        tb_all_buses.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                tb_all_busesPropertyChange(evt);
+            }
+        });
+        jScrollPane1.setViewportView(tb_all_buses);
+
+        jLabel9.setFont(new java.awt.Font("Helvetica Neue", 1, 20)); // NOI18N
+        jLabel9.setText("Employee");
+
+        jLabel10.setFont(new java.awt.Font("Helvetica Neue", 1, 20)); // NOI18N
+        jLabel10.setText("Position");
+
+        cmb_position.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Select --", "Ticketing Staff", "Security Personne", "Maintenance Staffl", "Cleaning Crew", "Bus Driver", "Supervisor " }));
+        cmb_position.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmb_positionActionPerformed(evt);
+            }
+        });
+
+        btn_assgin.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        btn_assgin.setText("Assign");
+        btn_assgin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_assginActionPerformed(evt);
+            }
+        });
+
+        btn_search.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        btn_search.setText("search");
+        btn_search.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_searchActionPerformed(evt);
+            }
+        });
+
+        txt_search.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        txt_search.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_searchKeyTyped(evt);
+            }
+        });
+
+        txt_employee_id.setEditable(false);
+        txt_employee_id.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+
+        jLabel11.setFont(new java.awt.Font("Helvetica Neue", 1, 20)); // NOI18N
+        jLabel11.setText("ID");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(399, 399, 399)
-                .addComponent(cmb_data, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(500, Short.MAX_VALUE))
+                .addGap(85, 85, 85)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btn_assgin, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel9)
+                            .addComponent(jLabel10)
+                            .addComponent(jLabel11))
+                        .addGap(26, 26, 26)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(cmb_employees, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(cmb_position, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txt_employee_id, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 331, Short.MAX_VALUE)
+                .addComponent(btn_search)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txt_search, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(22, 22, 22))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(16, 16, 16)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 966, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(18, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(119, 119, 119)
-                .addComponent(cmb_data, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(372, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt_employee_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(4, 4, 4)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cmb_employees, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10)
+                    .addComponent(cmb_position, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_assgin, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_search)
+                    .addComponent(txt_search, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(323, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addContainerGap(194, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap()))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void cmb_dataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmb_dataActionPerformed
+    private void cmb_employeesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmb_employeesActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_cmb_dataActionPerformed
+    }//GEN-LAST:event_cmb_employeesActionPerformed
 
+    private void tb_all_busesAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_tb_all_busesAncestorAdded
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tb_all_busesAncestorAdded
+
+    private void tb_all_busesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tb_all_busesMouseClicked
+        // TODO add your handling code here:
+        int selectedRow = tb_all_buses.getSelectedRow();
+        if (selectedRow != -1) {
+            DefaultTableModel model = (DefaultTableModel) tb_all_buses.getModel();
+            txt_employee_id.setText(model.getValueAt(selectedRow, 0).toString());
+            cmb_employees.setSelectedItem(model.getValueAt(selectedRow, 1).toString());
+           
+    }//GEN-LAST:event_tb_all_busesMouseClicked
+    }
+    private void tb_all_busesPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_tb_all_busesPropertyChange
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tb_all_busesPropertyChange
+
+    private void cmb_positionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmb_positionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmb_positionActionPerformed
+
+    private void btn_assginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_assginActionPerformed
+        // TODO add your handling code here:
+        String employee_id = txt_employee_id.getText();
+        String employee = cmb_employees.getSelectedItem().toString();
+        String position = cmb_position.getSelectedItem().toString();    
+        try{
+            open_connection();
+            String query_command = "UPDATE employees SET position = ? WHERE employee_id = ?";
+            statement = dbconnection.prepareStatement(query_command);           
+            statement.setString(1, position);
+            statement.setString(2, employee_id);
+            
+            int result = statement.executeUpdate();
+                if(result == 1){
+                    JOptionPane.showMessageDialog(null, "Employee Position Asign Sucessfull");
+                    clear_fields();
+                    load_combo();
+                    tbload();
+                }else{
+                    JOptionPane.showMessageDialog(null, "Unable To Asign Employee Position");
+                    clear_fields();
+                }
+            
+        }catch(Exception ex){
+            JOptionPane.showMessageDialog(null, "Error" +ex);
+        }finally{
+            close_connection();
+        }
+    }//GEN-LAST:event_btn_assginActionPerformed
+
+    private void btn_searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_searchActionPerformed
+        // TODO add your handling code here:
+        search_data();
+    }//GEN-LAST:event_btn_searchActionPerformed
+
+    private void txt_searchKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_searchKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_searchKeyTyped
+
+    
+    public void search_data(){
+        String search = txt_search.getText();  
+    try{
+        open_connection();
+        
+        DefaultTableModel table_data = (DefaultTableModel) tb_all_buses.getModel();        
+        table_data.setRowCount(0);
+        String query_command = "SELECT * FROM employees WHERE employee_id LIKE '%" +search+ "%' OR firstname LIKE '%" +search+ "%' OR lastname LIKE '%" +search+ "%' OR position LIKE '%" +search+ "%' OR sex LIKE '%" +search+ "%' OR phone LIKE '%" +search+ "%' OR email LIKE '%" +search+ "%'   ";
+                
+        statement = dbconnection.prepareStatement(query_command);               
+        java.sql.ResultSet result = statement.executeQuery(query_command);
+        
+        while(result.next()){
+            Vector v = new Vector();
+            v.add(result.getString(1));
+            v.add(result.getString(2));
+            v.add(result.getString(3));
+            v.add(result.getString(4));
+            v.add(result.getString(5));
+            v.add(result.getString(6));
+            v.add(result.getString(7));
+            v.add(result.getString(8));
+            
+            table_data.addRow(v);
+    }
+    }catch(Exception ex){
+        JOptionPane.showMessageDialog(null, "Error"  + ex);
+    }finally{
+        close_connection();
+    }
+    }
+    // function for clearning fields 
+    public void clear_fields(){      
+        cmb_employees.setSelectedIndex(-1);
+        cmb_position.setSelectedIndex(-1);
+        
+    }
+    
+    public void tbload(){
+    
+    try{
+        open_connection();
+        
+        DefaultTableModel table_data = (DefaultTableModel) tb_all_buses.getModel();        
+        table_data.setRowCount(0);
+        String query_command = "SELECT employee_id, firstname, lastname, phone, age, sex, email, position FROM `employees` ";        
+        statement = dbconnection.prepareStatement(query_command);
+        
+        java.sql.ResultSet result = statement.executeQuery(query_command);
+        
+        while(result.next()){
+            Vector v = new Vector();
+            v.add(result.getString(1));
+            v.add(result.getString(2));
+            v.add(result.getString(3));
+            v.add(result.getString(4));
+            v.add(result.getString(5));
+            v.add(result.getString(6));
+            v.add(result.getString(7));
+            v.add(result.getString(8));
+            
+            table_data.addRow(v);
+    }
+        
+    }catch(Exception ex){
+    JOptionPane.showMessageDialog(null, "Error"  + ex);
+    }finally{
+        close_connection();
+    }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> cmb_data;
+    private javax.swing.JButton btn_assgin;
+    private javax.swing.JButton btn_search;
+    private javax.swing.JComboBox<String> cmb_employees;
+    private javax.swing.JComboBox<String> cmb_position;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable tb_all_buses;
+    private javax.swing.JTextField txt_employee_id;
+    private javax.swing.JTextField txt_search;
     // End of variables declaration//GEN-END:variables
 }

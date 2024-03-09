@@ -41,7 +41,7 @@ public class all_employees_details extends javax.swing.JInternalFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tb_all_buses = new javax.swing.JTable();
         btn_search = new javax.swing.JButton();
-        txt_email = new javax.swing.JTextField();
+        txt_search = new javax.swing.JTextField();
 
         setTitle("All Employees");
 
@@ -102,7 +102,7 @@ public class all_employees_details extends javax.swing.JInternalFrame {
             }
         });
 
-        txt_email.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        txt_search.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -112,7 +112,7 @@ public class all_employees_details extends javax.swing.JInternalFrame {
                 .addContainerGap(699, Short.MAX_VALUE)
                 .addComponent(btn_search)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txt_email, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txt_search, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(15, 15, 15))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
@@ -126,7 +126,7 @@ public class all_employees_details extends javax.swing.JInternalFrame {
                 .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_search)
-                    .addComponent(txt_email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txt_search, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(458, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
@@ -153,7 +153,7 @@ public class all_employees_details extends javax.swing.JInternalFrame {
 
     private void btn_searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_searchActionPerformed
         // TODO add your handling code here:
-
+        search_data();
     }//GEN-LAST:event_btn_searchActionPerformed
 
     // function for opening database connection
@@ -212,11 +212,43 @@ public class all_employees_details extends javax.swing.JInternalFrame {
         close_connection();
     }
     }
+    
+    public void search_data(){
+        String search = txt_search.getText();  
+    try{
+        open_connection();
+        
+        DefaultTableModel table_data = (DefaultTableModel) tb_all_buses.getModel();        
+        table_data.setRowCount(0);
+        String query_command = "SELECT * FROM employees WHERE employee_id LIKE '%" +search+ "%' OR firstname LIKE '%" +search+ "%' OR lastname LIKE '%" +search+ "%' OR position LIKE '%" +search+ "%' OR sex LIKE '%" +search+ "%' OR phone LIKE '%" +search+ "%' OR email LIKE '%" +search+ "%'   ";
+                
+        statement = dbconnection.prepareStatement(query_command);               
+        java.sql.ResultSet result = statement.executeQuery(query_command);
+        
+        while(result.next()){
+            Vector v = new Vector();
+            v.add(result.getString(1));
+            v.add(result.getString(2));
+            v.add(result.getString(3));
+            v.add(result.getString(4));
+            v.add(result.getString(5));
+            v.add(result.getString(6));
+            v.add(result.getString(7));
+            v.add(result.getString(8));
+            
+            table_data.addRow(v);
+    }
+    }catch(Exception ex){
+        JOptionPane.showMessageDialog(null, "Error"  + ex);
+    }finally{
+        close_connection();
+    }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_search;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tb_all_buses;
-    private javax.swing.JTextField txt_email;
+    private javax.swing.JTextField txt_search;
     // End of variables declaration//GEN-END:variables
 }
