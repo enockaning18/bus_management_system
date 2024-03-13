@@ -15,18 +15,12 @@ public class user_dashboard extends javax.swing.JFrame {
     /**
      * Creates new form user_dashboard
      */
-    String luser;
+    
     public user_dashboard() {
      initComponents();
     }
     
-    public user_dashboard(String login_user){
-        
-        this.luser = login_user;
-        String get_value = llb_username.getText();
-        llb_username.setText(get_value + " : " + login_user);
-    }
-    
+   
     
     
 
@@ -39,32 +33,366 @@ public class user_dashboard extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        llb_username = new javax.swing.JLabel();
+        jMenu1 = new javax.swing.JMenu();
+        jRadioButtonMenuItem1 = new javax.swing.JRadioButtonMenuItem();
+        jMenu2 = new javax.swing.JMenu();
+        jPanel1 = new javax.swing.JPanel();
+        btn_book_ticket = new javax.swing.JButton();
+        btn_add_passenger = new javax.swing.JButton();
+        btn_tickets = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        btn_close = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jPanel11 = new javax.swing.JPanel();
+        jPanel12 = new javax.swing.JPanel();
+        jLabel3jhv8 = new javax.swing.JLabel();
+        llb_booked_ticket = new javax.swing.JLabel();
+        jPanel13 = new javax.swing.JPanel();
+        jPanel14 = new javax.swing.JPanel();
+        jLabel3jhv9 = new javax.swing.JLabel();
+        llb_booked_ticket1 = new javax.swing.JLabel();
+        jPanel15 = new javax.swing.JPanel();
+        jPanel16 = new javax.swing.JPanel();
+        jLabel3jhv10 = new javax.swing.JLabel();
+        llb_booked_ticket2 = new javax.swing.JLabel();
+        jPanel17 = new javax.swing.JPanel();
+        jPanel18 = new javax.swing.JPanel();
+        jLabel3jhv11 = new javax.swing.JLabel();
+        llb_booked_ticket3 = new javax.swing.JLabel();
+
+        jMenu1.setText("jMenu1");
+
+        jRadioButtonMenuItem1.setSelected(true);
+        jRadioButtonMenuItem1.setText("jRadioButtonMenuItem1");
+
+        jMenu2.setText("jMenu2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(1368, 678));
+        setMinimumSize(new java.awt.Dimension(1368, 678));
+        setPreferredSize(new java.awt.Dimension(1368, 678));
+        getContentPane().setLayout(null);
 
-        llb_username.setText("Welcome");
+        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(122, Short.MAX_VALUE)
-                .addComponent(llb_username, javax.swing.GroupLayout.PREFERRED_SIZE, 607, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35))
+        btn_book_ticket.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
+        btn_book_ticket.setText("Booked Ticket");
+        btn_book_ticket.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_book_ticketActionPerformed(evt);
+            }
+        });
+
+        btn_add_passenger.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
+        btn_add_passenger.setText("Add Passenger");
+        btn_add_passenger.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_add_passengerActionPerformed(evt);
+            }
+        });
+
+        btn_tickets.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
+        btn_tickets.setText("Tickets");
+        btn_tickets.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_ticketsActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(btn_book_ticket, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btn_add_passenger, javax.swing.GroupLayout.DEFAULT_SIZE, 266, Short.MAX_VALUE)
+            .addComponent(btn_tickets, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(66, 66, 66)
-                .addComponent(llb_username)
-                .addContainerGap(293, Short.MAX_VALUE))
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btn_add_passenger, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(61, 61, 61)
+                .addComponent(btn_book_ticket, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(61, 61, 61)
+                .addComponent(btn_tickets, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(131, 131, 131))
         );
+
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(0, 0, 266, 680);
+
+        jPanel2.setBackground(new java.awt.Color(153, 153, 153));
+
+        jLabel2.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel2.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
+        jLabel2.setText("User Dashboard");
+
+        btn_close.setText("sign out");
+        btn_close.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_closeActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("Welcome:");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap(463, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(19, 19, 19))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(451, 451, 451))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(btn_close, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(44, 44, 44))))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btn_close, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(4, 4, 4)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        getContentPane().add(jPanel2);
+        jPanel2.setBounds(266, 0, 1102, 113);
+
+        jPanel11.setBackground(new java.awt.Color(102, 102, 255));
+
+        jLabel3jhv8.setFont(new java.awt.Font("Helvetica Neue", 1, 20)); // NOI18N
+        jLabel3jhv8.setText("Booked Tickets");
+
+        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
+        jPanel12.setLayout(jPanel12Layout);
+        jPanel12Layout.setHorizontalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel12Layout.createSequentialGroup()
+                .addGap(56, 56, 56)
+                .addComponent(jLabel3jhv8)
+                .addContainerGap(56, Short.MAX_VALUE))
+        );
+        jPanel12Layout.setVerticalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel12Layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(jLabel3jhv8)
+                .addContainerGap(16, Short.MAX_VALUE))
+        );
+
+        llb_booked_ticket.setFont(new java.awt.Font("Helvetica Neue", 1, 80)); // NOI18N
+        llb_booked_ticket.setText("0");
+
+        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
+        jPanel11.setLayout(jPanel11Layout);
+        jPanel11Layout.setHorizontalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addGap(105, 105, 105)
+                .addComponent(llb_booked_ticket)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel11Layout.setVerticalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(41, 41, 41)
+                .addComponent(llb_booked_ticket, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 36, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(jPanel11);
+        jPanel11.setBounds(950, 162, 258, 196);
+
+        jPanel13.setBackground(new java.awt.Color(102, 102, 255));
+
+        jLabel3jhv9.setFont(new java.awt.Font("Helvetica Neue", 1, 20)); // NOI18N
+        jLabel3jhv9.setText("Passengers");
+
+        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
+        jPanel14.setLayout(jPanel14Layout);
+        jPanel14Layout.setHorizontalGroup(
+            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel14Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel3jhv9, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(56, 56, 56))
+        );
+        jPanel14Layout.setVerticalGroup(
+            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel14Layout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(jLabel3jhv9)
+                .addContainerGap(15, Short.MAX_VALUE))
+        );
+
+        llb_booked_ticket1.setFont(new java.awt.Font("Helvetica Neue", 1, 80)); // NOI18N
+        llb_booked_ticket1.setText("0");
+
+        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
+        jPanel13.setLayout(jPanel13Layout);
+        jPanel13Layout.setHorizontalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel13Layout.createSequentialGroup()
+                .addGap(105, 105, 105)
+                .addComponent(llb_booked_ticket1)
+                .addContainerGap(109, Short.MAX_VALUE))
+        );
+        jPanel13Layout.setVerticalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel13Layout.createSequentialGroup()
+                .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(41, 41, 41)
+                .addComponent(llb_booked_ticket1, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 36, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(jPanel13);
+        jPanel13.setBounds(426, 162, 258, 196);
+
+        jPanel15.setBackground(new java.awt.Color(102, 102, 255));
+
+        jLabel3jhv10.setFont(new java.awt.Font("Helvetica Neue", 1, 20)); // NOI18N
+        jLabel3jhv10.setText("Available Buses");
+
+        javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
+        jPanel16.setLayout(jPanel16Layout);
+        jPanel16Layout.setHorizontalGroup(
+            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel16Layout.createSequentialGroup()
+                .addGap(56, 56, 56)
+                .addComponent(jLabel3jhv10)
+                .addContainerGap(53, Short.MAX_VALUE))
+        );
+        jPanel16Layout.setVerticalGroup(
+            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel16Layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(jLabel3jhv10)
+                .addContainerGap(16, Short.MAX_VALUE))
+        );
+
+        llb_booked_ticket2.setFont(new java.awt.Font("Helvetica Neue", 1, 80)); // NOI18N
+        llb_booked_ticket2.setText("0");
+
+        javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
+        jPanel15.setLayout(jPanel15Layout);
+        jPanel15Layout.setHorizontalGroup(
+            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel15Layout.createSequentialGroup()
+                .addGap(105, 105, 105)
+                .addComponent(llb_booked_ticket2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel15Layout.setVerticalGroup(
+            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel15Layout.createSequentialGroup()
+                .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(41, 41, 41)
+                .addComponent(llb_booked_ticket2, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 36, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(jPanel15);
+        jPanel15.setBounds(426, 409, 258, 196);
+
+        jPanel17.setBackground(new java.awt.Color(102, 102, 255));
+
+        jLabel3jhv11.setFont(new java.awt.Font("Helvetica Neue", 1, 20)); // NOI18N
+        jLabel3jhv11.setText("Available Buses");
+
+        javax.swing.GroupLayout jPanel18Layout = new javax.swing.GroupLayout(jPanel18);
+        jPanel18.setLayout(jPanel18Layout);
+        jPanel18Layout.setHorizontalGroup(
+            jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel18Layout.createSequentialGroup()
+                .addContainerGap(56, Short.MAX_VALUE)
+                .addComponent(jLabel3jhv11)
+                .addGap(53, 53, 53))
+        );
+        jPanel18Layout.setVerticalGroup(
+            jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel18Layout.createSequentialGroup()
+                .addContainerGap(16, Short.MAX_VALUE)
+                .addComponent(jLabel3jhv11)
+                .addGap(14, 14, 14))
+        );
+
+        llb_booked_ticket3.setFont(new java.awt.Font("Helvetica Neue", 1, 80)); // NOI18N
+        llb_booked_ticket3.setText("0");
+
+        javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
+        jPanel17.setLayout(jPanel17Layout);
+        jPanel17Layout.setHorizontalGroup(
+            jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel17Layout.createSequentialGroup()
+                .addGap(105, 105, 105)
+                .addComponent(llb_booked_ticket3)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel17Layout.setVerticalGroup(
+            jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel17Layout.createSequentialGroup()
+                .addComponent(jPanel18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(41, 41, 41)
+                .addComponent(llb_booked_ticket3, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 36, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(jPanel17);
+        jPanel17.setBounds(950, 409, 258, 196);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btn_closeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_closeActionPerformed
+        // TODO add your handling code here:
+        signout();
+        
+    }//GEN-LAST:event_btn_closeActionPerformed
+
+    private void btn_book_ticketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_book_ticketActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_book_ticketActionPerformed
+
+    private void btn_add_passengerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_add_passengerActionPerformed
+        // TODO add your handling code here:
+        passenger_view();
+    }//GEN-LAST:event_btn_add_passengerActionPerformed
+
+    private void btn_ticketsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ticketsActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_ticketsActionPerformed
+
+    public void passenger_view(){
+        dispose();
+        add_passenger passenger_view = new add_passenger();
+        passenger_view.setLocationRelativeTo(null);
+        passenger_view.setVisible(true);
+    }
+    
+    public void signout(){
+        dispose();
+        login_user user_view = new login_user();
+        user_view.setLocationRelativeTo(null);
+        user_view.setVisible(true);
+    }
     /**
      * @param args the command line arguments
      */
@@ -101,6 +429,32 @@ public class user_dashboard extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel llb_username;
+    private javax.swing.JButton btn_add_passenger;
+    private javax.swing.JButton btn_book_ticket;
+    private javax.swing.JButton btn_close;
+    private javax.swing.JButton btn_tickets;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3jhv10;
+    private javax.swing.JLabel jLabel3jhv11;
+    private javax.swing.JLabel jLabel3jhv8;
+    private javax.swing.JLabel jLabel3jhv9;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel13;
+    private javax.swing.JPanel jPanel14;
+    private javax.swing.JPanel jPanel15;
+    private javax.swing.JPanel jPanel16;
+    private javax.swing.JPanel jPanel17;
+    private javax.swing.JPanel jPanel18;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
+    private javax.swing.JLabel llb_booked_ticket;
+    private javax.swing.JLabel llb_booked_ticket1;
+    private javax.swing.JLabel llb_booked_ticket2;
+    private javax.swing.JLabel llb_booked_ticket3;
     // End of variables declaration//GEN-END:variables
 }

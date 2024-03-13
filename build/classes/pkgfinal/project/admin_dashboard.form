@@ -539,7 +539,7 @@
                   <Component id="jPanel12" alignment="0" max="32767" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="105" max="-2" attributes="0"/>
-                      <Component id="jLabel3jhv9" min="-2" max="-2" attributes="0"/>
+                      <Component id="llb_booked_ticket" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -549,7 +549,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="jPanel12" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
-                      <Component id="jLabel3jhv9" min="-2" pref="64" max="-2" attributes="0"/>
+                      <Component id="llb_booked_ticket" min="-2" pref="64" max="-2" attributes="0"/>
                       <EmptySpace min="0" pref="36" max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -589,7 +589,7 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JLabel" name="jLabel3jhv9">
+            <Component class="javax.swing.JLabel" name="llb_booked_ticket">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Helvetica Neue" size="80" style="1"/>

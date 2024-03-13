@@ -398,9 +398,8 @@ public class assign_employee extends javax.swing.JInternalFrame {
         table_data.setRowCount(0);
         String query_command = "SELECT employee_id, firstname, lastname, phone, age, sex, email, position FROM `employees` ";        
         statement = dbconnection.prepareStatement(query_command);
-        
         java.sql.ResultSet result = statement.executeQuery(query_command);
-        
+      
         while(result.next()){
             Vector v = new Vector();
             v.add(result.getString(1));

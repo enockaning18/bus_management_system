@@ -4,12 +4,23 @@
  */
 package pkgfinal.project;
 
+import com.mysql.jdbc.ResultSet;
+import java.sql.Statement;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.util.Vector;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author okyere
  */
 public class admin_dashboard extends javax.swing.JFrame {
-
+    PreparedStatement statement;
+    ResultSet result;
+    Connection dbconnection;
     /**
      * Creates new form admin_dashboard
      */
@@ -17,6 +28,7 @@ public class admin_dashboard extends javax.swing.JFrame {
     String admin_user;
     public admin_dashboard() {
         initComponents();
+        booked_lable();
     }
     
     public admin_dashboard(String auser){
@@ -62,7 +74,7 @@ public class admin_dashboard extends javax.swing.JFrame {
         jPanel11 = new javax.swing.JPanel();
         jPanel12 = new javax.swing.JPanel();
         jLabel3jhv8 = new javax.swing.JLabel();
-        jLabel3jhv9 = new javax.swing.JLabel();
+        llb_booked_ticket = new javax.swing.JLabel();
         jPanel13 = new javax.swing.JPanel();
         jPanel14 = new javax.swing.JPanel();
         jLabel3jhv10 = new javax.swing.JLabel();
@@ -274,8 +286,8 @@ public class admin_dashboard extends javax.swing.JFrame {
                 .addContainerGap(16, Short.MAX_VALUE))
         );
 
-        jLabel3jhv9.setFont(new java.awt.Font("Helvetica Neue", 1, 80)); // NOI18N
-        jLabel3jhv9.setText("0");
+        llb_booked_ticket.setFont(new java.awt.Font("Helvetica Neue", 1, 80)); // NOI18N
+        llb_booked_ticket.setText("0");
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
@@ -284,7 +296,7 @@ public class admin_dashboard extends javax.swing.JFrame {
             .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel11Layout.createSequentialGroup()
                 .addGap(105, 105, 105)
-                .addComponent(jLabel3jhv9)
+                .addComponent(llb_booked_ticket)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel11Layout.setVerticalGroup(
@@ -292,7 +304,7 @@ public class admin_dashboard extends javax.swing.JFrame {
             .addGroup(jPanel11Layout.createSequentialGroup()
                 .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(41, 41, 41)
-                .addComponent(jLabel3jhv9, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(llb_booked_ticket, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 36, Short.MAX_VALUE))
         );
 
@@ -652,6 +664,25 @@ public class admin_dashboard extends javax.swing.JFrame {
         admin_view.setLocationRelativeTo(null);
         admin_view.setVisible(true);
     }
+    
+    public void booked_lable(){
+        try{
+            open_connection();
+            String query_command = "SELECT COUNT(employee_id) FROM employees";
+            statement = dbconnection.prepareStatement(query_command);               
+            java.sql.ResultSet result = statement.executeQuery(query_command);
+                        
+          if (result.next()) {
+                // Retrieve data from the result set
+                String data = result.getString("COUNT(employee_id)");
+
+                // Set the retrieved data to the label
+                llb_booked_ticket.setText(data);
+            }
+        }catch(Exception ex){
+            JOptionPane.showMessageDialog(null, "Error" +ex);
+        }
+    }
     /**
      * @param args the command line arguments
      */
@@ -687,6 +718,27 @@ public class admin_dashboard extends javax.swing.JFrame {
         });
     }
 
+    // function for opening database connection
+    public void open_connection(){
+        try{
+//            Class.forName("com.mysql.jdbc.Driver");
+            String databaseUrl = "jdbc:mysql://localhost/busmanagementsystem";
+            dbconnection = DriverManager.getConnection(databaseUrl, "root", "");
+        }catch(Exception ex){
+            JOptionPane.showMessageDialog(null, "Error" +ex);
+        }
+        
+    }
+    
+    
+    //function for closing database connection
+    public void close_connection(){
+        try{
+            dbconnection.close();
+        }catch(Exception ex){
+            JOptionPane.showMessageDialog(null, "Error"  + ex);
+        }
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_close;
     private javax.swing.JLabel jLabel1;
@@ -701,9 +753,7 @@ public class admin_dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3jhv4;
     private javax.swing.JLabel jLabel3jhv5;
     private javax.swing.JLabel jLabel3jhv6;
-    private javax.swing.JLabel jLabel3jhv7;
     private javax.swing.JLabel jLabel3jhv8;
-    private javax.swing.JLabel jLabel3jhv9;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
@@ -725,7 +775,6 @@ public class admin_dashboard extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;
@@ -737,7 +786,7 @@ public class admin_dashboard extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
-    private javax.swing.JPanel jPanel9;
+    private javax.swing.JLabel llb_booked_ticket;
     private javax.swing.JDesktopPane show_tabs;
     private javax.swing.JMenuItem tab_add_bus;
     private javax.swing.JMenuItem tab_add_employee;
