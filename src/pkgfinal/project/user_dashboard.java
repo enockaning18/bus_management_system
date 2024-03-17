@@ -369,6 +369,7 @@ public class user_dashboard extends javax.swing.JFrame {
 
     private void btn_book_ticketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_book_ticketActionPerformed
         // TODO add your handling code here:
+        book_view();
     }//GEN-LAST:event_btn_book_ticketActionPerformed
 
     private void btn_add_passengerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_add_passengerActionPerformed
@@ -385,6 +386,13 @@ public class user_dashboard extends javax.swing.JFrame {
         add_passenger passenger_view = new add_passenger();
         passenger_view.setLocationRelativeTo(null);
         passenger_view.setVisible(true);
+    }
+    
+    public void book_view(){
+        dispose();
+        book_ticket book_view = new book_ticket();
+        book_view.setLocationRelativeTo(null);
+        book_view.setVisible(true);
     }
     
     public void signout(){
