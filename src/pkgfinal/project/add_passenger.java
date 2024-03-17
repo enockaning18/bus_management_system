@@ -8,6 +8,7 @@ import java.sql.Statement;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.util.HashMap;
 import java.util.Vector;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -27,6 +28,7 @@ public class add_passenger extends javax.swing.JFrame {
         initComponents();
         tbload();
         load_passenger_id();
+        bus_number_result();
     }
 
     /**
@@ -72,21 +74,30 @@ public class add_passenger extends javax.swing.JFrame {
         jLabel3jhv10 = new javax.swing.JLabel();
         jLabel3jhv11 = new javax.swing.JLabel();
         jLabel3jhv12 = new javax.swing.JLabel();
-        cmb_destination = new javax.swing.JComboBox<>();
-        cmb_source = new javax.swing.JComboBox<>();
         jLabel3jhv13 = new javax.swing.JLabel();
         jLabel3jhv14 = new javax.swing.JLabel();
         cmb_category = new javax.swing.JComboBox<>();
         cmb_payment = new javax.swing.JComboBox<>();
-        jLabel3jhv15 = new javax.swing.JLabel();
+        llb_price = new javax.swing.JLabel();
         cmb_bus_number = new javax.swing.JComboBox<>();
         cmb_passenger_id = new javax.swing.JComboBox<>();
         txt_passenger_name = new javax.swing.JTextField();
+        llb_refresh_combo = new javax.swing.JLabel();
+        jLabel3jhv16 = new javax.swing.JLabel();
+        txt_bus_source = new javax.swing.JTextField();
+        txt_bus_destination = new javax.swing.JTextField();
+        btn_delete2 = new javax.swing.JButton();
+        jLabel3jhv17 = new javax.swing.JLabel();
+        btn_search1 = new javax.swing.JButton();
+        txt_search1 = new javax.swing.JTextField();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tb_all_buses1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximizedBounds(new java.awt.Rectangle(0, 0, 1368, 678));
         setMaximumSize(new java.awt.Dimension(2368, 1000));
         setPreferredSize(new java.awt.Dimension(1368, 678));
+        getContentPane().setLayout(null);
 
         jPanel2.setBackground(new java.awt.Color(153, 153, 153));
 
@@ -135,6 +146,9 @@ public class add_passenger extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        getContentPane().add(jPanel2);
+        jPanel2.setBounds(238, 0, 1495, 113);
+
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
 
         jButton1.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
@@ -181,40 +195,61 @@ public class add_passenger extends javax.swing.JFrame {
                 .addGap(131, 131, 131))
         );
 
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(0, 0, 238, 717);
+
         jLabelkk.setFont(new java.awt.Font("PT Serif Caption", 1, 24)); // NOI18N
-        jLabelkk.setText("Add Employee");
+        jLabelkk.setText("Add Passenger");
+        getContentPane().add(jLabelkk);
+        jLabelkk.setBounds(275, 119, 190, 32);
 
         jLabel3jhv1.setFont(new java.awt.Font("Helvetica Neue", 1, 20)); // NOI18N
         jLabel3jhv1.setText("Phone No.");
         jLabel3jhv1.setPreferredSize(new java.awt.Dimension(64, 40));
+        getContentPane().add(jLabel3jhv1);
+        jLabel3jhv1.setBounds(275, 332, 121, 40);
 
         txt_phone.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         txt_phone.setMinimumSize(new java.awt.Dimension(64, 40));
         txt_phone.setPreferredSize(new java.awt.Dimension(64, 40));
+        getContentPane().add(txt_phone);
+        txt_phone.setBounds(414, 334, 228, 40);
 
         jLabel3jhv2.setFont(new java.awt.Font("Helvetica Neue", 1, 20)); // NOI18N
         jLabel3jhv2.setText("Age");
         jLabel3jhv2.setPreferredSize(new java.awt.Dimension(64, 40));
+        getContentPane().add(jLabel3jhv2);
+        jLabel3jhv2.setBounds(682, 273, 91, 40);
 
         jLabel3jhv3.setFont(new java.awt.Font("Helvetica Neue", 1, 20)); // NOI18N
         jLabel3jhv3.setText("Last Name");
         jLabel3jhv3.setPreferredSize(new java.awt.Dimension(64, 40));
+        getContentPane().add(jLabel3jhv3);
+        jLabel3jhv3.setBounds(275, 270, 121, 40);
 
         jLabel3jhv4.setFont(new java.awt.Font("Helvetica Neue", 1, 20)); // NOI18N
         jLabel3jhv4.setText("Address");
         jLabel3jhv4.setPreferredSize(new java.awt.Dimension(64, 40));
+        getContentPane().add(jLabel3jhv4);
+        jLabel3jhv4.setBounds(682, 338, 91, 29);
 
         jLabel3jhv5.setFont(new java.awt.Font("Helvetica Neue", 1, 20)); // NOI18N
         jLabel3jhv5.setText("Sex");
         jLabel3jhv5.setPreferredSize(new java.awt.Dimension(64, 40));
+        getContentPane().add(jLabel3jhv5);
+        jLabel3jhv5.setBounds(682, 214, 91, 32);
 
         txt_age.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         txt_age.setMinimumSize(new java.awt.Dimension(64, 40));
         txt_age.setPreferredSize(new java.awt.Dimension(64, 40));
+        getContentPane().add(txt_age);
+        txt_age.setBounds(791, 275, 229, 40);
 
         txt_lastname.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         txt_lastname.setMinimumSize(new java.awt.Dimension(64, 40));
         txt_lastname.setPreferredSize(new java.awt.Dimension(64, 40));
+        getContentPane().add(txt_lastname);
+        txt_lastname.setBounds(414, 272, 228, 40);
 
         cmb_sex.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Select --", "Male", "Female" }));
         cmb_sex.setPreferredSize(new java.awt.Dimension(64, 40));
@@ -223,6 +258,8 @@ public class add_passenger extends javax.swing.JFrame {
                 cmb_sexActionPerformed(evt);
             }
         });
+        getContentPane().add(cmb_sex);
+        cmb_sex.setBounds(785, 213, 235, 40);
 
         tb_all_buses.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -273,6 +310,9 @@ public class add_passenger extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tb_all_buses);
 
+        getContentPane().add(jScrollPane1);
+        jScrollPane1.setBounds(1215, 207, 518, 200);
+
         btn_add.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         btn_add.setText("save");
         btn_add.addActionListener(new java.awt.event.ActionListener() {
@@ -280,6 +320,8 @@ public class add_passenger extends javax.swing.JFrame {
                 btn_addActionPerformed(evt);
             }
         });
+        getContentPane().add(btn_add);
+        btn_add.setBounds(1060, 210, 125, 41);
 
         btn_update.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         btn_update.setText("edit");
@@ -288,6 +330,8 @@ public class add_passenger extends javax.swing.JFrame {
                 btn_updateActionPerformed(evt);
             }
         });
+        getContentPane().add(btn_update);
+        btn_update.setBounds(1060, 271, 125, 41);
 
         btn_delete.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         btn_delete.setText("delete");
@@ -296,6 +340,8 @@ public class add_passenger extends javax.swing.JFrame {
                 btn_deleteActionPerformed(evt);
             }
         });
+        getContentPane().add(btn_delete);
+        btn_delete.setBounds(1060, 333, 125, 41);
 
         btn_search.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         btn_search.setText("search");
@@ -304,6 +350,8 @@ public class add_passenger extends javax.swing.JFrame {
                 btn_searchActionPerformed(evt);
             }
         });
+        getContentPane().add(btn_search);
+        btn_search.setBounds(1450, 170, 88, 29);
 
         txt_search.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         txt_search.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -311,22 +359,32 @@ public class add_passenger extends javax.swing.JFrame {
                 txt_searchKeyTyped(evt);
             }
         });
+        getContentPane().add(txt_search);
+        txt_search.setBounds(1540, 170, 190, 29);
 
         jLabel3jhv6.setFont(new java.awt.Font("Helvetica Neue", 1, 20)); // NOI18N
         jLabel3jhv6.setText("First Name");
         jLabel3jhv6.setPreferredSize(new java.awt.Dimension(64, 40));
+        getContentPane().add(jLabel3jhv6);
+        jLabel3jhv6.setBounds(275, 207, 121, 40);
 
         txt_firstname.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         txt_firstname.setMinimumSize(new java.awt.Dimension(64, 40));
         txt_firstname.setPreferredSize(new java.awt.Dimension(64, 40));
+        getContentPane().add(txt_firstname);
+        txt_firstname.setBounds(414, 209, 228, 40);
 
         txt_address.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         txt_address.setMinimumSize(new java.awt.Dimension(64, 40));
         txt_address.setPreferredSize(new java.awt.Dimension(64, 40));
+        getContentPane().add(txt_address);
+        txt_address.setBounds(791, 334, 229, 40);
 
         txt_passenger_id.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         txt_passenger_id.setMinimumSize(new java.awt.Dimension(64, 40));
         txt_passenger_id.setPreferredSize(new java.awt.Dimension(64, 40));
+        getContentPane().add(txt_passenger_id);
+        txt_passenger_id.setBounds(414, 164, 39, 31);
 
         jPanel3.setBackground(new java.awt.Color(0, 0, 0));
         jPanel3.setPreferredSize(new java.awt.Dimension(965, 5));
@@ -342,44 +400,43 @@ public class add_passenger extends javax.swing.JFrame {
             .addGap(0, 5, Short.MAX_VALUE)
         );
 
+        getContentPane().add(jPanel3);
+        jPanel3.setBounds(244, 400, 965, 5);
+
         jLabelkk1.setFont(new java.awt.Font("PT Serif Caption", 1, 24)); // NOI18N
         jLabelkk1.setText("Book Ticket ");
+        getContentPane().add(jLabelkk1);
+        jLabelkk1.setBounds(282, 423, 151, 32);
 
         jLabel3jhv10.setFont(new java.awt.Font("Helvetica Neue", 1, 20)); // NOI18N
         jLabel3jhv10.setText("Destination");
         jLabel3jhv10.setPreferredSize(new java.awt.Dimension(64, 40));
+        getContentPane().add(jLabel3jhv10);
+        jLabel3jhv10.setBounds(282, 669, 121, 40);
 
         jLabel3jhv11.setFont(new java.awt.Font("Helvetica Neue", 1, 20)); // NOI18N
         jLabel3jhv11.setText("Source");
         jLabel3jhv11.setPreferredSize(new java.awt.Dimension(64, 40));
+        getContentPane().add(jLabel3jhv11);
+        jLabel3jhv11.setBounds(282, 607, 121, 40);
 
         jLabel3jhv12.setFont(new java.awt.Font("Helvetica Neue", 1, 20)); // NOI18N
         jLabel3jhv12.setText("Passenger");
         jLabel3jhv12.setPreferredSize(new java.awt.Dimension(64, 40));
-
-        cmb_destination.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Select --" }));
-        cmb_destination.setPreferredSize(new java.awt.Dimension(64, 40));
-        cmb_destination.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmb_destinationActionPerformed(evt);
-            }
-        });
-
-        cmb_source.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Select --", " " }));
-        cmb_source.setPreferredSize(new java.awt.Dimension(64, 40));
-        cmb_source.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmb_sourceActionPerformed(evt);
-            }
-        });
+        getContentPane().add(jLabel3jhv12);
+        jLabel3jhv12.setBounds(830, 470, 121, 40);
 
         jLabel3jhv13.setFont(new java.awt.Font("Helvetica Neue", 1, 20)); // NOI18N
         jLabel3jhv13.setText("Bus Number");
         jLabel3jhv13.setPreferredSize(new java.awt.Dimension(64, 40));
+        getContentPane().add(jLabel3jhv13);
+        jLabel3jhv13.setBounds(280, 540, 146, 40);
 
         jLabel3jhv14.setFont(new java.awt.Font("Helvetica Neue", 1, 20)); // NOI18N
         jLabel3jhv14.setText("Seat Category ");
         jLabel3jhv14.setPreferredSize(new java.awt.Dimension(64, 40));
+        getContentPane().add(jLabel3jhv14);
+        jLabel3jhv14.setBounds(823, 536, 146, 40);
 
         cmb_category.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Select --" }));
         cmb_category.setPreferredSize(new java.awt.Dimension(64, 40));
@@ -388,6 +445,8 @@ public class add_passenger extends javax.swing.JFrame {
                 cmb_categoryActionPerformed(evt);
             }
         });
+        getContentPane().add(cmb_category);
+        cmb_category.setBounds(980, 539, 228, 40);
 
         cmb_payment.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Select --" }));
         cmb_payment.setPreferredSize(new java.awt.Dimension(64, 40));
@@ -396,10 +455,14 @@ public class add_passenger extends javax.swing.JFrame {
                 cmb_paymentActionPerformed(evt);
             }
         });
+        getContentPane().add(cmb_payment);
+        cmb_payment.setBounds(980, 601, 228, 40);
 
-        jLabel3jhv15.setFont(new java.awt.Font("Helvetica Neue", 1, 20)); // NOI18N
-        jLabel3jhv15.setText("Payment ");
-        jLabel3jhv15.setPreferredSize(new java.awt.Dimension(64, 40));
+        llb_price.setFont(new java.awt.Font("Helvetica Neue", 1, 20)); // NOI18N
+        llb_price.setText("Price :");
+        llb_price.setPreferredSize(new java.awt.Dimension(64, 40));
+        getContentPane().add(llb_price);
+        llb_price.setBounds(820, 670, 121, 40);
 
         cmb_bus_number.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Select --" }));
         cmb_bus_number.setPreferredSize(new java.awt.Dimension(64, 40));
@@ -408,194 +471,148 @@ public class add_passenger extends javax.swing.JFrame {
                 cmb_bus_numberActionPerformed(evt);
             }
         });
+        getContentPane().add(cmb_bus_number);
+        cmb_bus_number.setBounds(440, 540, 228, 40);
 
         cmb_passenger_id.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Select --" }));
         cmb_passenger_id.setPreferredSize(new java.awt.Dimension(64, 40));
+        cmb_passenger_id.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cmb_passenger_idMouseClicked(evt);
+            }
+        });
         cmb_passenger_id.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmb_passenger_idActionPerformed(evt);
             }
         });
+        getContentPane().add(cmb_passenger_id);
+        cmb_passenger_id.setBounds(475, 474, 192, 40);
 
         txt_passenger_name.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         txt_passenger_name.setEnabled(false);
         txt_passenger_name.setMinimumSize(new java.awt.Dimension(64, 40));
         txt_passenger_name.setPreferredSize(new java.awt.Dimension(64, 40));
+        getContentPane().add(txt_passenger_name);
+        txt_passenger_name.setBounds(980, 470, 228, 40);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(37, 37, 37)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jLabel3jhv3, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(18, 18, 18)
-                                                .addComponent(txt_lastname, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jLabel3jhv1, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(18, 18, 18)
-                                                .addComponent(txt_phone, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jLabel3jhv6, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(18, 18, 18)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(txt_passenger_id, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(txt_firstname, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                        .addGap(40, 40, 40)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jLabel3jhv5, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(cmb_sex, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                                    .addComponent(jLabel3jhv4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                    .addComponent(jLabel3jhv2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addGap(18, 18, 18)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(txt_age, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(txt_address, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                        .addGap(40, 40, 40)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(btn_add, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(btn_update, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(btn_delete, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addComponent(jLabelkk)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(44, 44, 44)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(jLabel3jhv12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jLabel3jhv11, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)
-                                            .addComponent(jLabel3jhv10, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE))
-                                        .addGap(36, 36, 36)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(cmb_destination, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(cmb_source, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(cmb_passenger_id, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(txt_passenger_name, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(156, 156, 156)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jLabel3jhv13, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(cmb_bus_number, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                    .addGroup(layout.createSequentialGroup()
-                                                        .addComponent(jLabel3jhv15, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addGap(36, 36, 36))
-                                                    .addGroup(layout.createSequentialGroup()
-                                                        .addComponent(jLabel3jhv14, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addGap(11, 11, 11)))
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(cmb_payment, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(cmb_category, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                                    .addComponent(jLabelkk1))))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btn_search)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txt_search, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap())
-                            .addGroup(layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 518, Short.MAX_VALUE))))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelkk)
-                    .addComponent(txt_search, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_search, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txt_passenger_id, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel3jhv6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txt_firstname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(125, 125, 125))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel3jhv3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txt_lastname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(20, 20, 20)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel3jhv1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txt_phone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel3jhv5, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(cmb_sex, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(20, 20, 20)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel3jhv2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txt_age, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(19, 19, 19)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel3jhv4, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txt_address, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btn_add, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(20, 20, 20)
-                                .addComponent(btn_update, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(21, 21, 21)
-                                .addComponent(btn_delete, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(26, 26, 26)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabelkk1)
-                        .addGap(18, 18, 18)
-                        .addComponent(cmb_passenger_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel3jhv12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel3jhv13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(cmb_bus_number, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txt_passenger_name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(124, 124, 124))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel3jhv11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(cmb_source, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel3jhv14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(cmb_category, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(19, 19, 19)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel3jhv10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(cmb_destination, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(cmb_payment, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel3jhv15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addContainerGap())
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(84, 84, 84)
-                        .addComponent(jScrollPane1))))
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        llb_refresh_combo.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
+        llb_refresh_combo.setText("🔁");
+        llb_refresh_combo.setPreferredSize(new java.awt.Dimension(64, 40));
+        llb_refresh_combo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                llb_refresh_comboMouseClicked(evt);
+            }
+        });
+        getContentPane().add(llb_refresh_combo);
+        llb_refresh_combo.setBounds(439, 473, 30, 40);
+
+        jLabel3jhv16.setFont(new java.awt.Font("Helvetica Neue", 1, 20)); // NOI18N
+        jLabel3jhv16.setText("ID's");
+        jLabel3jhv16.setPreferredSize(new java.awt.Dimension(64, 40));
+        getContentPane().add(jLabel3jhv16);
+        jLabel3jhv16.setBounds(282, 474, 121, 40);
+
+        txt_bus_source.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        txt_bus_source.setEnabled(false);
+        txt_bus_source.setMinimumSize(new java.awt.Dimension(64, 40));
+        txt_bus_source.setPreferredSize(new java.awt.Dimension(64, 40));
+        getContentPane().add(txt_bus_source);
+        txt_bus_source.setBounds(439, 609, 228, 40);
+
+        txt_bus_destination.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        txt_bus_destination.setEnabled(false);
+        txt_bus_destination.setMinimumSize(new java.awt.Dimension(64, 40));
+        txt_bus_destination.setPreferredSize(new java.awt.Dimension(64, 40));
+        getContentPane().add(txt_bus_destination);
+        txt_bus_destination.setBounds(439, 671, 228, 40);
+
+        btn_delete2.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        btn_delete2.setText("Buy ");
+        btn_delete2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_delete2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn_delete2);
+        btn_delete2.setBounds(990, 660, 170, 49);
+
+        jLabel3jhv17.setFont(new java.awt.Font("Helvetica Neue", 1, 20)); // NOI18N
+        jLabel3jhv17.setText("Payment ");
+        jLabel3jhv17.setPreferredSize(new java.awt.Dimension(64, 40));
+        getContentPane().add(jLabel3jhv17);
+        jLabel3jhv17.setBounds(823, 598, 121, 40);
+
+        btn_search1.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        btn_search1.setText("search");
+        btn_search1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_search1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn_search1);
+        btn_search1.setBounds(1450, 430, 88, 29);
+
+        txt_search1.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        txt_search1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_search1KeyTyped(evt);
+            }
+        });
+        getContentPane().add(txt_search1);
+        txt_search1.setBounds(1540, 430, 190, 29);
+
+        tb_all_buses1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Pass ID", "First Name", "Last Name", "Phone", "Sex", "Age", "Address"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tb_all_buses1.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                tb_all_buses1AncestorAdded(evt);
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
+        tb_all_buses1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tb_all_buses1MouseClicked(evt);
+            }
+        });
+        tb_all_buses1.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                tb_all_buses1PropertyChange(evt);
+            }
+        });
+        jScrollPane2.setViewportView(tb_all_buses1);
+
+        getContentPane().add(jScrollPane2);
+        jScrollPane2.setBounds(1220, 470, 518, 240);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -694,6 +711,8 @@ public class add_passenger extends javax.swing.JFrame {
                 if(result == 1){
                     JOptionPane.showMessageDialog(null, "New Passenger Added");
                     clear_fields();
+                    tbload();
+                    
                 }else{
                     JOptionPane.showMessageDialog(null, "Unable to Add Passenger");
                     clear_fields();
@@ -880,21 +899,25 @@ public class add_passenger extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_searchKeyTyped
 
-    private void cmb_destinationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmb_destinationActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cmb_destinationActionPerformed
-
-//        get information into combo box 
+//        get passenger_id information into combo box 
     public void load_passenger_id(){
         try{
             open_connection();
             String Passenger = cmb_passenger_id.getSelectedItem().toString(); 
-            String query_command = "SELECT passenger_id from passenger";
+            String query_command = "SELECT passenger_id, firstname from passenger";
             statement = dbconnection.prepareStatement(query_command);               
             java.sql.ResultSet result = statement.executeQuery(query_command);
-        
+            
+            // get information into a hashmap 
+            HashMap<String, String> passengerMap = new HashMap<>();
+            
         while(result.next()){
-//            cmb_passenger.addItem(result.getString("passenger_id"));
+            String passengerId = result.getString("passenger_id");
+            String passengerName = result.getString("firstname");
+            passengerMap.put(passengerId, passengerName);
+            
+            cmb_passenger_id.addItem(passengerId);
+
         }   
             
         }catch(Exception ex){
@@ -903,10 +926,34 @@ public class add_passenger extends javax.swing.JFrame {
             close_connection();
         }
     }
-    private void cmb_sourceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmb_sourceActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cmb_sourceActionPerformed
+    
+    //        get passenger_id information into combo box 
+    public void load_source_destination(){
+        try{
+            open_connection();
+            String Passenger = cmb_passenger_id.getSelectedItem().toString(); 
+            String query_command = "SELECT bus_source, bus_destination from buses";
+            statement = dbconnection.prepareStatement(query_command);               
+            java.sql.ResultSet result = statement.executeQuery(query_command);
+            
+            // get information into a hashmap 
+            HashMap<String, String> passengerMap = new HashMap<>();
+            
+        while(result.next()){
+            String passengerId = result.getString("passenger_id");
+            String passengerName = result.getString("firstname");
+            passengerMap.put(passengerId, passengerName);
+            
+            cmb_passenger_id.addItem(passengerId);
 
+        }   
+            
+        }catch(Exception ex){
+            JOptionPane.showConfirmDialog(null, "Error" +ex);
+        }finally{
+            close_connection();
+        }
+    }
     private void cmb_categoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmb_categoryActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cmb_categoryActionPerformed
@@ -917,12 +964,69 @@ public class add_passenger extends javax.swing.JFrame {
 
     private void cmb_bus_numberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmb_bus_numberActionPerformed
         // TODO add your handling code here:
+        //get information related the user id selected into the text field
+        try {
+        open_connection();
+            String bus_number = cmb_bus_number.getSelectedItem().toString(); 
+        String query_command = "SELECT bus_source, bus_destination, price FROM buses WHERE  bus_number= ?";
+        statement = dbconnection.prepareStatement(query_command); 
+        statement.setString(1, bus_number);      
+        java.sql.ResultSet result = statement.executeQuery();
+        
+        HashMap<String, String> bus_data = new HashMap<>();        
+        
+        if (result.next()) {
+            String bus_source_result = result.getString("bus_source");
+            String bus_destination_result = result.getString("bus_destination");
+            String bus_price_result = result.getString("price");
+            
+            bus_data.put(bus_source_result, bus_destination_result );
+            bus_data.put(bus_price_result, "null");
+            txt_bus_source.setText(bus_source_result);
+            txt_bus_destination.setText(bus_destination_result);
+            llb_price.setText("Price :" + bus_price_result);
+              
+        } else {
+            // Handle case where no results are found for the given user ID
+            txt_bus_source.setText("No destination found");
+            txt_bus_destination.setText("No destination found");
+        }
+    } catch (Exception ex) {
+        JOptionPane.showMessageDialog(null, "Error: " + ex.getMessage());
+    } finally {
+        close_connection();
+    }   
     }//GEN-LAST:event_cmb_bus_numberActionPerformed
+
+    public void bus_number_result(){
+         try{
+            open_connection();
+            String Passenger = cmb_passenger_id.getSelectedItem().toString(); 
+            String query_command = "SELECT bus_number from buses";
+            statement = dbconnection.prepareStatement(query_command);               
+            java.sql.ResultSet result = statement.executeQuery(query_command);
+            
+            // get information into a hashmap 
+            HashMap<String, String> passengerMap = new HashMap<>();
+            
+        while(result.next()){            
+            String bus_number_data = result.getString("bus_number");
+            passengerMap.put(bus_number_data, "null");
+            
+            cmb_bus_number.addItem(bus_number_data);
+
+        }   
+            
+        }catch(Exception ex){
+            JOptionPane.showConfirmDialog(null, "Error" +ex);
+        }finally{
+            close_connection();
+        }
+    }                    
 
     private void cmb_passenger_idActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmb_passenger_idActionPerformed
         // TODO add your handling code here:
-        
-        //        get information related the user id selected into the text field
+        //get information related the user id selected into the text field
         try {
         open_connection();
         String Passenger = cmb_passenger_id.getSelectedItem().toString(); 
@@ -942,8 +1046,45 @@ public class add_passenger extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null, "Error: " + ex.getMessage());
     } finally {
         close_connection();
-    }  
+    }          
     }//GEN-LAST:event_cmb_passenger_idActionPerformed
+
+    private void cmb_passenger_idMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cmb_passenger_idMouseClicked
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_cmb_passenger_idMouseClicked
+
+    private void llb_refresh_comboMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_llb_refresh_comboMouseClicked
+        // TODO add your handling code here:
+        dispose();
+        add_passenger passenger_view = new add_passenger();
+        passenger_view.setLocationRelativeTo(null);
+        passenger_view.setVisible(true);
+    }//GEN-LAST:event_llb_refresh_comboMouseClicked
+
+    private void btn_delete2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_delete2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_delete2ActionPerformed
+
+    private void btn_search1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_search1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_search1ActionPerformed
+
+    private void txt_search1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_search1KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_search1KeyTyped
+
+    private void tb_all_buses1AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_tb_all_buses1AncestorAdded
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tb_all_buses1AncestorAdded
+
+    private void tb_all_buses1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tb_all_buses1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tb_all_buses1MouseClicked
+
+    private void tb_all_buses1PropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_tb_all_buses1PropertyChange
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tb_all_buses1PropertyChange
 
     /**
      * @param args the command line arguments
@@ -984,15 +1125,15 @@ public class add_passenger extends javax.swing.JFrame {
     private javax.swing.JButton btn_add;
     private javax.swing.JButton btn_close;
     private javax.swing.JButton btn_delete;
+    private javax.swing.JButton btn_delete2;
     private javax.swing.JButton btn_search;
+    private javax.swing.JButton btn_search1;
     private javax.swing.JButton btn_update;
     private javax.swing.JComboBox<String> cmb_bus_number;
     private javax.swing.JComboBox<String> cmb_category;
-    private javax.swing.JComboBox<String> cmb_destination;
     private javax.swing.JComboBox<String> cmb_passenger_id;
     private javax.swing.JComboBox<String> cmb_payment;
     private javax.swing.JComboBox<String> cmb_sex;
-    private javax.swing.JComboBox<String> cmb_source;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -1004,7 +1145,8 @@ public class add_passenger extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3jhv12;
     private javax.swing.JLabel jLabel3jhv13;
     private javax.swing.JLabel jLabel3jhv14;
-    private javax.swing.JLabel jLabel3jhv15;
+    private javax.swing.JLabel jLabel3jhv16;
+    private javax.swing.JLabel jLabel3jhv17;
     private javax.swing.JLabel jLabel3jhv2;
     private javax.swing.JLabel jLabel3jhv3;
     private javax.swing.JLabel jLabel3jhv4;
@@ -1016,14 +1158,21 @@ public class add_passenger extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JLabel llb_price;
+    private javax.swing.JLabel llb_refresh_combo;
     private javax.swing.JTable tb_all_buses;
+    private javax.swing.JTable tb_all_buses1;
     private javax.swing.JTextField txt_address;
     private javax.swing.JTextField txt_age;
+    private javax.swing.JTextField txt_bus_destination;
+    private javax.swing.JTextField txt_bus_source;
     private javax.swing.JTextField txt_firstname;
     private javax.swing.JTextField txt_lastname;
     private javax.swing.JTextField txt_passenger_id;
     private javax.swing.JTextField txt_passenger_name;
     private javax.swing.JTextField txt_phone;
     private javax.swing.JTextField txt_search;
+    private javax.swing.JTextField txt_search1;
     // End of variables declaration//GEN-END:variables
 }

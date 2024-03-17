@@ -29,21 +29,21 @@ public class assign_employee extends javax.swing.JInternalFrame {
         tbload();
     }
     
-//    public void load_combo(){
-//    try{
-//        open_connection();
-//        String query_command = "SELECT CONCAT(employee_id, ' ',firstname) AS Employee FROM employees";
-//        statement = dbconnection.prepareStatement(query_command);
-//        java.sql.ResultSet result = statement.executeQuery(query_command);
-//        while(result.next()){
-//            cmb_employees.addItem(result.getString("Employee" ));            
-//        }
-//    }catch(Exception ex){
-//        JOptionPane.showMessageDialog(null, "Error"  + ex);
-//    }finally{
-//        close_connection();
-//    }
-//}
+    public void load_combo(){
+    try{
+        open_connection();
+        String query_command = "SELECT CONCAT(employee_id, ' ',firstname) AS Employee FROM employees";
+        statement = dbconnection.prepareStatement(query_command);
+        java.sql.ResultSet result = statement.executeQuery(query_command);
+        while(result.next()){
+            cmb_position.addItem(result.getString("Employee" ));            
+        }
+    }catch(Exception ex){
+        JOptionPane.showMessageDialog(null, "Error"  + ex);
+    }finally{
+        close_connection();
+    }
+}
 
     /**
      * This method is called from within the constructor to initialize the form.
