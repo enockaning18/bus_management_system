@@ -12,6 +12,7 @@ import java.util.HashMap;
 import java.util.Vector;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import java.util.UUID;
 
 /**
  *
@@ -81,17 +82,18 @@ public class add_passenger extends javax.swing.JFrame {
         llb_price = new javax.swing.JLabel();
         cmb_bus_number = new javax.swing.JComboBox<>();
         cmb_passenger_id = new javax.swing.JComboBox<>();
-        txt_passenger_name = new javax.swing.JTextField();
+        txt_bus_id = new javax.swing.JTextField();
         llb_refresh_combo = new javax.swing.JLabel();
         jLabel3jhv16 = new javax.swing.JLabel();
         txt_bus_source = new javax.swing.JTextField();
         txt_bus_destination = new javax.swing.JTextField();
-        btn_delete2 = new javax.swing.JButton();
+        buy_ticket = new javax.swing.JButton();
         jLabel3jhv17 = new javax.swing.JLabel();
         btn_search1 = new javax.swing.JButton();
         txt_search1 = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
         tb_all_buses1 = new javax.swing.JTable();
+        txt_passenger_name1 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximizedBounds(new java.awt.Rectangle(0, 0, 1368, 678));
@@ -147,7 +149,7 @@ public class add_passenger extends javax.swing.JFrame {
         );
 
         getContentPane().add(jPanel2);
-        jPanel2.setBounds(238, 0, 1495, 113);
+        jPanel2.setBounds(238, 0, 1497, 113);
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -196,7 +198,7 @@ public class add_passenger extends javax.swing.JFrame {
         );
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(0, 0, 238, 717);
+        jPanel1.setBounds(0, 0, 238, 709);
 
         jLabelkk.setFont(new java.awt.Font("PT Serif Caption", 1, 24)); // NOI18N
         jLabelkk.setText("Add Passenger");
@@ -369,6 +371,7 @@ public class add_passenger extends javax.swing.JFrame {
         jLabel3jhv6.setBounds(275, 207, 121, 40);
 
         txt_firstname.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        txt_firstname.setText("andy");
         txt_firstname.setMinimumSize(new java.awt.Dimension(64, 40));
         txt_firstname.setPreferredSize(new java.awt.Dimension(64, 40));
         getContentPane().add(txt_firstname);
@@ -412,31 +415,31 @@ public class add_passenger extends javax.swing.JFrame {
         jLabel3jhv10.setText("Destination");
         jLabel3jhv10.setPreferredSize(new java.awt.Dimension(64, 40));
         getContentPane().add(jLabel3jhv10);
-        jLabel3jhv10.setBounds(282, 669, 121, 40);
+        jLabel3jhv10.setBounds(280, 667, 121, 40);
 
         jLabel3jhv11.setFont(new java.awt.Font("Helvetica Neue", 1, 20)); // NOI18N
         jLabel3jhv11.setText("Source");
         jLabel3jhv11.setPreferredSize(new java.awt.Dimension(64, 40));
         getContentPane().add(jLabel3jhv11);
-        jLabel3jhv11.setBounds(282, 607, 121, 40);
+        jLabel3jhv11.setBounds(280, 605, 121, 40);
 
         jLabel3jhv12.setFont(new java.awt.Font("Helvetica Neue", 1, 20)); // NOI18N
         jLabel3jhv12.setText("Passenger");
         jLabel3jhv12.setPreferredSize(new java.awt.Dimension(64, 40));
         getContentPane().add(jLabel3jhv12);
-        jLabel3jhv12.setBounds(830, 470, 121, 40);
+        jLabel3jhv12.setBounds(820, 468, 121, 40);
 
         jLabel3jhv13.setFont(new java.awt.Font("Helvetica Neue", 1, 20)); // NOI18N
         jLabel3jhv13.setText("Bus Number");
         jLabel3jhv13.setPreferredSize(new java.awt.Dimension(64, 40));
         getContentPane().add(jLabel3jhv13);
-        jLabel3jhv13.setBounds(280, 540, 146, 40);
+        jLabel3jhv13.setBounds(280, 538, 146, 40);
 
         jLabel3jhv14.setFont(new java.awt.Font("Helvetica Neue", 1, 20)); // NOI18N
         jLabel3jhv14.setText("Seat Category ");
         jLabel3jhv14.setPreferredSize(new java.awt.Dimension(64, 40));
         getContentPane().add(jLabel3jhv14);
-        jLabel3jhv14.setBounds(823, 536, 146, 40);
+        jLabel3jhv14.setBounds(820, 534, 146, 40);
 
         cmb_category.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Select --" }));
         cmb_category.setPreferredSize(new java.awt.Dimension(64, 40));
@@ -446,7 +449,7 @@ public class add_passenger extends javax.swing.JFrame {
             }
         });
         getContentPane().add(cmb_category);
-        cmb_category.setBounds(980, 539, 228, 40);
+        cmb_category.setBounds(977, 539, 228, 40);
 
         cmb_payment.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Select --" }));
         cmb_payment.setPreferredSize(new java.awt.Dimension(64, 40));
@@ -456,13 +459,13 @@ public class add_passenger extends javax.swing.JFrame {
             }
         });
         getContentPane().add(cmb_payment);
-        cmb_payment.setBounds(980, 601, 228, 40);
+        cmb_payment.setBounds(977, 601, 228, 40);
 
         llb_price.setFont(new java.awt.Font("Helvetica Neue", 1, 20)); // NOI18N
         llb_price.setText("Price :");
         llb_price.setPreferredSize(new java.awt.Dimension(64, 40));
         getContentPane().add(llb_price);
-        llb_price.setBounds(820, 670, 121, 40);
+        llb_price.setBounds(820, 668, 121, 40);
 
         cmb_bus_number.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Select --" }));
         cmb_bus_number.setPreferredSize(new java.awt.Dimension(64, 40));
@@ -472,7 +475,7 @@ public class add_passenger extends javax.swing.JFrame {
             }
         });
         getContentPane().add(cmb_bus_number);
-        cmb_bus_number.setBounds(440, 540, 228, 40);
+        cmb_bus_number.setBounds(440, 538, 228, 40);
 
         cmb_passenger_id.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Select --" }));
         cmb_passenger_id.setPreferredSize(new java.awt.Dimension(64, 40));
@@ -487,14 +490,14 @@ public class add_passenger extends javax.swing.JFrame {
             }
         });
         getContentPane().add(cmb_passenger_id);
-        cmb_passenger_id.setBounds(475, 474, 192, 40);
+        cmb_passenger_id.setBounds(475, 472, 192, 40);
 
-        txt_passenger_name.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
-        txt_passenger_name.setEnabled(false);
-        txt_passenger_name.setMinimumSize(new java.awt.Dimension(64, 40));
-        txt_passenger_name.setPreferredSize(new java.awt.Dimension(64, 40));
-        getContentPane().add(txt_passenger_name);
-        txt_passenger_name.setBounds(980, 470, 228, 40);
+        txt_bus_id.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        txt_bus_id.setEnabled(false);
+        txt_bus_id.setMinimumSize(new java.awt.Dimension(64, 40));
+        txt_bus_id.setPreferredSize(new java.awt.Dimension(64, 40));
+        getContentPane().add(txt_bus_id);
+        txt_bus_id.setBounds(980, 430, 30, 40);
 
         llb_refresh_combo.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
         llb_refresh_combo.setText("🔁");
@@ -505,43 +508,43 @@ public class add_passenger extends javax.swing.JFrame {
             }
         });
         getContentPane().add(llb_refresh_combo);
-        llb_refresh_combo.setBounds(439, 473, 30, 40);
+        llb_refresh_combo.setBounds(439, 471, 30, 40);
 
         jLabel3jhv16.setFont(new java.awt.Font("Helvetica Neue", 1, 20)); // NOI18N
         jLabel3jhv16.setText("ID's");
         jLabel3jhv16.setPreferredSize(new java.awt.Dimension(64, 40));
         getContentPane().add(jLabel3jhv16);
-        jLabel3jhv16.setBounds(282, 474, 121, 40);
+        jLabel3jhv16.setBounds(280, 472, 121, 40);
 
         txt_bus_source.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         txt_bus_source.setEnabled(false);
         txt_bus_source.setMinimumSize(new java.awt.Dimension(64, 40));
         txt_bus_source.setPreferredSize(new java.awt.Dimension(64, 40));
         getContentPane().add(txt_bus_source);
-        txt_bus_source.setBounds(439, 609, 228, 40);
+        txt_bus_source.setBounds(439, 607, 228, 40);
 
         txt_bus_destination.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         txt_bus_destination.setEnabled(false);
         txt_bus_destination.setMinimumSize(new java.awt.Dimension(64, 40));
         txt_bus_destination.setPreferredSize(new java.awt.Dimension(64, 40));
         getContentPane().add(txt_bus_destination);
-        txt_bus_destination.setBounds(439, 671, 228, 40);
+        txt_bus_destination.setBounds(439, 669, 228, 40);
 
-        btn_delete2.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
-        btn_delete2.setText("Buy ");
-        btn_delete2.addActionListener(new java.awt.event.ActionListener() {
+        buy_ticket.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        buy_ticket.setText("Buy ");
+        buy_ticket.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_delete2ActionPerformed(evt);
+                buy_ticketActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_delete2);
-        btn_delete2.setBounds(990, 660, 170, 49);
+        getContentPane().add(buy_ticket);
+        buy_ticket.setBounds(977, 659, 170, 49);
 
         jLabel3jhv17.setFont(new java.awt.Font("Helvetica Neue", 1, 20)); // NOI18N
         jLabel3jhv17.setText("Payment ");
         jLabel3jhv17.setPreferredSize(new java.awt.Dimension(64, 40));
         getContentPane().add(jLabel3jhv17);
-        jLabel3jhv17.setBounds(823, 598, 121, 40);
+        jLabel3jhv17.setBounds(820, 596, 121, 40);
 
         btn_search1.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         btn_search1.setText("search");
@@ -612,7 +615,14 @@ public class add_passenger extends javax.swing.JFrame {
         jScrollPane2.setViewportView(tb_all_buses1);
 
         getContentPane().add(jScrollPane2);
-        jScrollPane2.setBounds(1220, 470, 518, 240);
+        jScrollPane2.setBounds(1217, 468, 518, 240);
+
+        txt_passenger_name1.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        txt_passenger_name1.setEnabled(false);
+        txt_passenger_name1.setMinimumSize(new java.awt.Dimension(64, 40));
+        txt_passenger_name1.setPreferredSize(new java.awt.Dimension(64, 40));
+        getContentPane().add(txt_passenger_name1);
+        txt_passenger_name1.setBounds(977, 470, 228, 40);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -968,7 +978,7 @@ public class add_passenger extends javax.swing.JFrame {
         try {
         open_connection();
             String bus_number = cmb_bus_number.getSelectedItem().toString(); 
-        String query_command = "SELECT bus_source, bus_destination, price FROM buses WHERE  bus_number= ?";
+        String query_command = "SELECT bus_source, bus_destination, price, bus_id FROM buses WHERE  bus_number= ?";
         statement = dbconnection.prepareStatement(query_command); 
         statement.setString(1, bus_number);      
         java.sql.ResultSet result = statement.executeQuery();
@@ -979,12 +989,14 @@ public class add_passenger extends javax.swing.JFrame {
             String bus_source_result = result.getString("bus_source");
             String bus_destination_result = result.getString("bus_destination");
             String bus_price_result = result.getString("price");
+            String bus_id_result = result.getString("bus_id");
             
             bus_data.put(bus_source_result, bus_destination_result );
-            bus_data.put(bus_price_result, "null");
+            bus_data.put(bus_price_result, bus_id_result);
             txt_bus_source.setText(bus_source_result);
             txt_bus_destination.setText(bus_destination_result);
             llb_price.setText("Price :" + bus_price_result);
+            txt_bus_id.setText(bus_id_result);
               
         } else {
             // Handle case where no results are found for the given user ID
@@ -1036,11 +1048,11 @@ public class add_passenger extends javax.swing.JFrame {
         java.sql.ResultSet result = statement.executeQuery();
         
         if (result.next()) {
-            txt_passenger_name.setText(result.getString("Name"));
+            txt_bus_id.setText(result.getString("Name"));
               
         } else {
             // Handle case where no results are found for the given user ID
-            txt_passenger_name.setText("No passenger found");
+            txt_bus_id.setText("No passenger found");
         }
     } catch (Exception ex) {
         JOptionPane.showMessageDialog(null, "Error: " + ex.getMessage());
@@ -1062,9 +1074,83 @@ public class add_passenger extends javax.swing.JFrame {
         passenger_view.setVisible(true);
     }//GEN-LAST:event_llb_refresh_comboMouseClicked
 
-    private void btn_delete2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_delete2ActionPerformed
+    // Method to generate a new ticket number
+    public static String generate_ticket_number() {
+        // Generate a unique identifier
+        int ticketCounter = 0;
+        String uniqueID = UUID.randomUUID().toString().substring(0, 8); // Using first 8 characters of UUID
+
+        // Get current timestamp
+        long timestamp = System.currentTimeMillis();
+
+        // Increment ticket counter
+        ticketCounter++;
+
+        // Combine identifier, timestamp, and ticket counter to form ticket number
+        String ticketNumber = uniqueID + "-" + timestamp + "-" + ticketCounter;
+
+        return ticketNumber;
+    }
+    
+    private void buy_ticketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buy_ticketActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btn_delete2ActionPerformed
+        try{            
+        open_connection();
+        String passenger_id = cmb_passenger_id.getSelectedItem().toString();
+        String bus_number = cmb_bus_number.getSelectedItem().toString();
+        String source = txt_bus_source.getText();
+        String destination = txt_bus_destination.getText();
+        String seat_category = txt_age.getText();
+        String payment = txt_address.getText();
+        String bus_id = txt_bus_id.getText();
+        String ticket_number = generate_ticket_number();
+        
+        if(passenger_id.equals("")){
+            JOptionPane.showMessageDialog(null, "Field can't be empty");
+        }else if(bus_number.equals("")){
+            JOptionPane.showMessageDialog(null, "Field can't be empty");
+        }else if(source.equals("")){
+            JOptionPane.showMessageDialog(null, "Field can't be empty");
+        }else if(destination.equals("")){
+            JOptionPane.showMessageDialog(null, "Field can't be empty");
+        }else{
+            try{                               
+                
+                String query_command = "INSERT INTO ticket(ticket_number, seat_category, source, destination, bus_id, passenger_id, payment_method) VALUES(?, ?, ?, ?, ?, ?, ?)";
+                statement = dbconnection.prepareStatement(query_command);
+                
+                statement.setString(1, ticket_number);
+                statement.setString(2, seat_category);
+                statement.setString(3, source);
+                statement.setString(4 ,destination);                
+                statement.setString(5,bus_id);
+                statement.setString(6, passenger_id);
+                statement.setString(7, payment);
+                                                
+                int result = statement.executeUpdate();
+                if(result == 1){
+                    JOptionPane.showMessageDialog(null, "Ticket Booked");
+                    clear_fields();
+                    tbload();
+                    
+                }else{
+                    JOptionPane.showMessageDialog(null, "Unable to Book Ticket ");
+                    clear_fields();
+                }
+                
+            }catch(Exception ex){
+                JOptionPane.showMessageDialog(null, "Error" + ex );
+            }finally{
+                close_connection();
+            }
+        }
+            
+        }catch(Exception ex){
+            JOptionPane.showMessageDialog(null, "Error: " + ex.getMessage());
+        }finally{
+            close_connection();
+        }
+    }//GEN-LAST:event_buy_ticketActionPerformed
 
     private void btn_search1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_search1ActionPerformed
         // TODO add your handling code here:
@@ -1125,10 +1211,10 @@ public class add_passenger extends javax.swing.JFrame {
     private javax.swing.JButton btn_add;
     private javax.swing.JButton btn_close;
     private javax.swing.JButton btn_delete;
-    private javax.swing.JButton btn_delete2;
     private javax.swing.JButton btn_search;
     private javax.swing.JButton btn_search1;
     private javax.swing.JButton btn_update;
+    private javax.swing.JButton buy_ticket;
     private javax.swing.JComboBox<String> cmb_bus_number;
     private javax.swing.JComboBox<String> cmb_category;
     private javax.swing.JComboBox<String> cmb_passenger_id;
@@ -1166,11 +1252,12 @@ public class add_passenger extends javax.swing.JFrame {
     private javax.swing.JTextField txt_address;
     private javax.swing.JTextField txt_age;
     private javax.swing.JTextField txt_bus_destination;
+    private javax.swing.JTextField txt_bus_id;
     private javax.swing.JTextField txt_bus_source;
     private javax.swing.JTextField txt_firstname;
     private javax.swing.JTextField txt_lastname;
     private javax.swing.JTextField txt_passenger_id;
-    private javax.swing.JTextField txt_passenger_name;
+    private javax.swing.JTextField txt_passenger_name1;
     private javax.swing.JTextField txt_phone;
     private javax.swing.JTextField txt_search;
     private javax.swing.JTextField txt_search1;
