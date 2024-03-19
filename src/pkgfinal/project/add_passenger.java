@@ -8,11 +8,14 @@ import java.sql.Statement;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Vector;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import java.util.UUID;
+
 
 /**
  *
@@ -93,12 +96,10 @@ public class add_passenger extends javax.swing.JFrame {
         txt_search1 = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
         tb_all_buses1 = new javax.swing.JTable();
-        txt_passenger_name1 = new javax.swing.JTextField();
+        txt_passenger_name = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximizedBounds(new java.awt.Rectangle(0, 0, 1368, 678));
-        setMaximumSize(new java.awt.Dimension(2368, 1000));
-        setPreferredSize(new java.awt.Dimension(1368, 678));
         getContentPane().setLayout(null);
 
         jPanel2.setBackground(new java.awt.Color(153, 153, 153));
@@ -134,7 +135,7 @@ public class add_passenger extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(btn_close, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(395, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -441,7 +442,7 @@ public class add_passenger extends javax.swing.JFrame {
         getContentPane().add(jLabel3jhv14);
         jLabel3jhv14.setBounds(820, 534, 146, 40);
 
-        cmb_category.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Select --" }));
+        cmb_category.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Select --", "Ac Seat ", "General Seat" }));
         cmb_category.setPreferredSize(new java.awt.Dimension(64, 40));
         cmb_category.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -451,7 +452,7 @@ public class add_passenger extends javax.swing.JFrame {
         getContentPane().add(cmb_category);
         cmb_category.setBounds(977, 539, 228, 40);
 
-        cmb_payment.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Select --" }));
+        cmb_payment.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Select --", "Cash", "Momo", "Credit Card" }));
         cmb_payment.setPreferredSize(new java.awt.Dimension(64, 40));
         cmb_payment.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -617,12 +618,12 @@ public class add_passenger extends javax.swing.JFrame {
         getContentPane().add(jScrollPane2);
         jScrollPane2.setBounds(1217, 468, 518, 240);
 
-        txt_passenger_name1.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
-        txt_passenger_name1.setEnabled(false);
-        txt_passenger_name1.setMinimumSize(new java.awt.Dimension(64, 40));
-        txt_passenger_name1.setPreferredSize(new java.awt.Dimension(64, 40));
-        getContentPane().add(txt_passenger_name1);
-        txt_passenger_name1.setBounds(977, 470, 228, 40);
+        txt_passenger_name.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        txt_passenger_name.setEnabled(false);
+        txt_passenger_name.setMinimumSize(new java.awt.Dimension(64, 40));
+        txt_passenger_name.setPreferredSize(new java.awt.Dimension(64, 40));
+        getContentPane().add(txt_passenger_name);
+        txt_passenger_name.setBounds(977, 470, 228, 40);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -928,8 +929,7 @@ public class add_passenger extends javax.swing.JFrame {
             
             cmb_passenger_id.addItem(passengerId);
 
-        }   
-            
+        }      
         }catch(Exception ex){
             JOptionPane.showConfirmDialog(null, "Error" +ex);
         }finally{
@@ -1048,11 +1048,11 @@ public class add_passenger extends javax.swing.JFrame {
         java.sql.ResultSet result = statement.executeQuery();
         
         if (result.next()) {
-            txt_bus_id.setText(result.getString("Name"));
+            txt_passenger_name.setText(result.getString("Name"));
               
         } else {
             // Handle case where no results are found for the given user ID
-            txt_bus_id.setText("No passenger found");
+            txt_passenger_name.setText("No passenger found");
         }
     } catch (Exception ex) {
         JOptionPane.showMessageDialog(null, "Error: " + ex.getMessage());
@@ -1077,17 +1077,14 @@ public class add_passenger extends javax.swing.JFrame {
     // Method to generate a new ticket number
     public static String generate_ticket_number() {
         // Generate a unique identifier
-        int ticketCounter = 0;
-        String uniqueID = UUID.randomUUID().toString().substring(0, 8); // Using first 8 characters of UUID
-
-        // Get current timestamp
-        long timestamp = System.currentTimeMillis();
+        int ticketCounter = 100;
+        String uniqueID = UUID.randomUUID().toString().substring(0, 7).toUpperCase(); // Using first 8 characters of UUID
 
         // Increment ticket counter
         ticketCounter++;
 
         // Combine identifier, timestamp, and ticket counter to form ticket number
-        String ticketNumber = uniqueID + "-" + timestamp + "-" + ticketCounter;
+        String ticketNumber = uniqueID + "-" + ticketCounter;
 
         return ticketNumber;
     }
@@ -1096,14 +1093,18 @@ public class add_passenger extends javax.swing.JFrame {
         // TODO add your handling code here:
         try{            
         open_connection();
+        
+        java.sql.Timestamp currentDate = new java.sql.Timestamp(System.currentTimeMillis());
+        
         String passenger_id = cmb_passenger_id.getSelectedItem().toString();
-        String bus_number = cmb_bus_number.getSelectedItem().toString();
+        String bus_number = cmb_bus_number.getSelectedItem().toString();                
         String source = txt_bus_source.getText();
         String destination = txt_bus_destination.getText();
-        String seat_category = txt_age.getText();
-        String payment = txt_address.getText();
+        String seat_category = cmb_category.getSelectedItem().toString();        
+        String payment = cmb_payment.getSelectedItem().toString();        
         String bus_id = txt_bus_id.getText();
         String ticket_number = generate_ticket_number();
+        
         
         if(passenger_id.equals("")){
             JOptionPane.showMessageDialog(null, "Field can't be empty");
@@ -1116,7 +1117,7 @@ public class add_passenger extends javax.swing.JFrame {
         }else{
             try{                               
                 
-                String query_command = "INSERT INTO ticket(ticket_number, seat_category, source, destination, bus_id, passenger_id, payment_method) VALUES(?, ?, ?, ?, ?, ?, ?)";
+                String query_command = "INSERT INTO ticket(ticket_number, seat_category, source, destination, bus_id, passenger_id, payment_method, date_booked) VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
                 statement = dbconnection.prepareStatement(query_command);
                 
                 statement.setString(1, ticket_number);
@@ -1126,9 +1127,10 @@ public class add_passenger extends javax.swing.JFrame {
                 statement.setString(5,bus_id);
                 statement.setString(6, passenger_id);
                 statement.setString(7, payment);
+                statement.setTimestamp(8, currentDate);
                                                 
                 int result = statement.executeUpdate();
-                if(result == 1){
+                if(result == 1){                    
                     JOptionPane.showMessageDialog(null, "Ticket Booked");
                     clear_fields();
                     tbload();
@@ -1257,7 +1259,7 @@ public class add_passenger extends javax.swing.JFrame {
     private javax.swing.JTextField txt_firstname;
     private javax.swing.JTextField txt_lastname;
     private javax.swing.JTextField txt_passenger_id;
-    private javax.swing.JTextField txt_passenger_name1;
+    private javax.swing.JTextField txt_passenger_name;
     private javax.swing.JTextField txt_phone;
     private javax.swing.JTextField txt_search;
     private javax.swing.JTextField txt_search1;
