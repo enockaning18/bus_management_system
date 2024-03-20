@@ -59,8 +59,10 @@ PreparedStatement statement;
 
         setTitle("Edit Bus Details ");
 
+        btn_clear.setBackground(new java.awt.Color(51, 51, 255));
         btn_clear.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
-        btn_clear.setText("Clear");
+        btn_clear.setForeground(new java.awt.Color(255, 255, 255));
+        btn_clear.setText("clear");
         btn_clear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_clearActionPerformed(evt);
@@ -116,16 +118,20 @@ PreparedStatement statement;
         });
         jScrollPane1.setViewportView(tb_all_buses);
 
+        btn_search.setBackground(new java.awt.Color(204, 204, 204));
         btn_search.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
-        btn_search.setText("Search");
+        btn_search.setForeground(new java.awt.Color(255, 255, 255));
+        btn_search.setText("search");
         btn_search.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_searchActionPerformed(evt);
             }
         });
 
+        btn_update.setBackground(new java.awt.Color(255, 51, 51));
         btn_update.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
-        btn_update.setText("Edit");
+        btn_update.setForeground(new java.awt.Color(255, 255, 255));
+        btn_update.setText("edit");
         btn_update.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_updateActionPerformed(evt);

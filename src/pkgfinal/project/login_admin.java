@@ -50,8 +50,8 @@ public class login_admin extends javax.swing.JFrame {
         jPanel1.setPreferredSize(new java.awt.Dimension(468, 582));
         jPanel1.setSize(new java.awt.Dimension(100, 100));
 
-        jPanel2.setBackground(new java.awt.Color(102, 102, 102));
-        jPanel2.setForeground(new java.awt.Color(102, 102, 102));
+        jPanel2.setBackground(new java.awt.Color(23, 30, 77));
+        jPanel2.setForeground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -82,7 +82,9 @@ public class login_admin extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
         jLabel3.setText("Password:");
 
+        btn_login.setBackground(new java.awt.Color(255, 51, 51));
         btn_login.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        btn_login.setForeground(new java.awt.Color(255, 255, 255));
         btn_login.setText("Login");
         btn_login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -90,7 +92,9 @@ public class login_admin extends javax.swing.JFrame {
             }
         });
 
+        btn_reset.setBackground(new java.awt.Color(51, 51, 255));
         btn_reset.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        btn_reset.setForeground(new java.awt.Color(255, 255, 255));
         btn_reset.setText("Reset");
         btn_reset.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -98,7 +102,9 @@ public class login_admin extends javax.swing.JFrame {
             }
         });
 
+        btn_back.setBackground(new java.awt.Color(204, 204, 204));
         btn_back.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        btn_back.setForeground(new java.awt.Color(255, 255, 255));
         btn_back.setText("Back");
         btn_back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

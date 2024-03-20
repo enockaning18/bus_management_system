@@ -77,7 +77,9 @@ public class add_bus_details extends javax.swing.JInternalFrame {
 
         txt_bus_destination.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
 
+        btn_login.setBackground(new java.awt.Color(255, 51, 51));
         btn_login.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        btn_login.setForeground(new java.awt.Color(255, 255, 255));
         btn_login.setText("save");
         btn_login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -85,7 +87,9 @@ public class add_bus_details extends javax.swing.JInternalFrame {
             }
         });
 
+        btn_clear.setBackground(new java.awt.Color(51, 51, 255));
         btn_clear.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        btn_clear.setForeground(new java.awt.Color(255, 255, 255));
         btn_clear.setText("clear");
         btn_clear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

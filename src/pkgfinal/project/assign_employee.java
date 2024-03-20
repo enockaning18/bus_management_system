@@ -154,7 +154,9 @@ public class assign_employee extends javax.swing.JInternalFrame {
             }
         });
 
+        btn_assgin.setBackground(new java.awt.Color(255, 51, 51));
         btn_assgin.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        btn_assgin.setForeground(new java.awt.Color(255, 255, 255));
         btn_assgin.setText("Assign");
         btn_assgin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -162,7 +164,9 @@ public class assign_employee extends javax.swing.JInternalFrame {
             }
         });
 
+        btn_search.setBackground(new java.awt.Color(23, 30, 77));
         btn_search.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        btn_search.setForeground(new java.awt.Color(255, 255, 255));
         btn_search.setText("search");
         btn_search.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
