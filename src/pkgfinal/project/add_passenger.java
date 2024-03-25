@@ -30,9 +30,10 @@ public class add_passenger extends javax.swing.JFrame {
      */
     public add_passenger() {
         initComponents();
-        tbload();
+        passenger_table();
         load_passenger_id();
         bus_number_result();
+        ticket_table();
     }
 
     /**
@@ -64,7 +65,7 @@ public class add_passenger extends javax.swing.JFrame {
         btn_update = new javax.swing.JButton();
         btn_delete = new javax.swing.JButton();
         btn_search = new javax.swing.JButton();
-        txt_search = new javax.swing.JTextField();
+        txt_search_passenger = new javax.swing.JTextField();
         jLabel3jhv6 = new javax.swing.JLabel();
         txt_firstname = new javax.swing.JTextField();
         txt_address = new javax.swing.JTextField();
@@ -88,10 +89,10 @@ public class add_passenger extends javax.swing.JFrame {
         txt_bus_destination = new javax.swing.JTextField();
         buy_ticket = new javax.swing.JButton();
         jLabel3jhv17 = new javax.swing.JLabel();
-        btn_search1 = new javax.swing.JButton();
-        txt_search1 = new javax.swing.JTextField();
+        btn_search_ticket = new javax.swing.JButton();
+        txt_search_ticket = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
-        tb_all_buses1 = new javax.swing.JTable();
+        tb_tickets = new javax.swing.JTable();
         txt_passenger_name = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
@@ -103,8 +104,6 @@ public class add_passenger extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximizedBounds(new java.awt.Rectangle(0, 0, 1776, 842));
-        setMaximumSize(new java.awt.Dimension(1776, 842));
-        setPreferredSize(new java.awt.Dimension(1776, 842));
 
         jPanel2.setBackground(new java.awt.Color(23, 30, 77));
 
@@ -284,10 +283,10 @@ public class add_passenger extends javax.swing.JFrame {
             }
         });
 
-        txt_search.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
-        txt_search.addKeyListener(new java.awt.event.KeyAdapter() {
+        txt_search_passenger.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        txt_search_passenger.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                txt_searchKeyTyped(evt);
+                txt_search_passengerKeyTyped(evt);
             }
         });
 
@@ -432,46 +431,46 @@ public class add_passenger extends javax.swing.JFrame {
         jLabel3jhv17.setText("Payment ");
         jLabel3jhv17.setPreferredSize(new java.awt.Dimension(64, 40));
 
-        btn_search1.setBackground(new java.awt.Color(23, 30, 77));
-        btn_search1.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
-        btn_search1.setForeground(new java.awt.Color(255, 255, 255));
-        btn_search1.setText("search");
-        btn_search1.addActionListener(new java.awt.event.ActionListener() {
+        btn_search_ticket.setBackground(new java.awt.Color(23, 30, 77));
+        btn_search_ticket.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        btn_search_ticket.setForeground(new java.awt.Color(255, 255, 255));
+        btn_search_ticket.setText("search");
+        btn_search_ticket.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_search1ActionPerformed(evt);
+                btn_search_ticketActionPerformed(evt);
             }
         });
 
-        txt_search1.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
-        txt_search1.addActionListener(new java.awt.event.ActionListener() {
+        txt_search_ticket.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        txt_search_ticket.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_search1ActionPerformed(evt);
+                txt_search_ticketActionPerformed(evt);
             }
         });
-        txt_search1.addKeyListener(new java.awt.event.KeyAdapter() {
+        txt_search_ticket.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                txt_search1KeyTyped(evt);
+                txt_search_ticketKeyTyped(evt);
             }
         });
 
-        tb_all_buses1.setModel(new javax.swing.table.DefaultTableModel(
+        tb_tickets.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Pass ID", "First Name", "Last Name", "Phone", "Sex", "Age", "Address"
+                "Names", "Ticket ", "Bus", "Source ", "Destination", "Payment", "Category", "Date"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -482,26 +481,26 @@ public class add_passenger extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        tb_all_buses1.addAncestorListener(new javax.swing.event.AncestorListener() {
+        tb_tickets.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
-                tb_all_buses1AncestorAdded(evt);
+                tb_ticketsAncestorAdded(evt);
             }
             public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
             }
         });
-        tb_all_buses1.addMouseListener(new java.awt.event.MouseAdapter() {
+        tb_tickets.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tb_all_buses1MouseClicked(evt);
+                tb_ticketsMouseClicked(evt);
             }
         });
-        tb_all_buses1.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+        tb_tickets.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
             public void propertyChange(java.beans.PropertyChangeEvent evt) {
-                tb_all_buses1PropertyChange(evt);
+                tb_ticketsPropertyChange(evt);
             }
         });
-        jScrollPane2.setViewportView(tb_all_buses1);
+        jScrollPane2.setViewportView(tb_tickets);
 
         txt_passenger_name.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         txt_passenger_name.setEnabled(false);
@@ -663,74 +662,79 @@ public class add_passenger extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(244, 244, 244)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(36, 36, 36)
-                        .addComponent(jLabelkk, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(280, 280, 280)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(2, 2, 2)
-                                        .addComponent(jLabelkk1))
-                                    .addComponent(jLabel3jhv16, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(6, 6, 6)
-                                .addComponent(llb_refresh_combo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(6, 6, 6)
-                                .addComponent(cmb_passenger_id, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(153, 153, 153)
-                                .addComponent(jLabel3jhv12, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(36, 36, 36)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(3, 3, 3)
-                                        .addComponent(txt_bus_id, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(txt_passenger_name, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel3jhv13, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(14, 14, 14)
-                                .addComponent(cmb_bus_number, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(152, 152, 152)
-                                .addComponent(jLabel3jhv14, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(11, 11, 11)
-                                .addComponent(cmb_category, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel3jhv11, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(38, 38, 38)
-                                .addComponent(txt_bus_source, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(153, 153, 153)
-                                .addComponent(jLabel3jhv17, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(36, 36, 36)
-                                .addComponent(cmb_payment, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel3jhv10, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(38, 38, 38)
-                                .addComponent(txt_bus_destination, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(153, 153, 153)
-                                .addComponent(llb_price, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(7, 7, 7)
-                                .addComponent(buy_ticket, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                 .addGroup(layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(btn_search1)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(txt_search1, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap())
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(36, 36, 36)
+                            .addComponent(jLabelkk, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(280, 280, 280)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addGap(2, 2, 2)
+                                            .addComponent(jLabelkk1))
+                                        .addComponent(jLabel3jhv16, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGap(6, 6, 6)
+                                    .addComponent(llb_refresh_combo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(6, 6, 6)
+                                    .addComponent(cmb_passenger_id, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel3jhv13, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(14, 14, 14)
+                                    .addComponent(cmb_bus_number, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel3jhv11, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(38, 38, 38)
+                                    .addComponent(txt_bus_source, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel3jhv10, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(38, 38, 38)
+                                    .addComponent(txt_bus_destination, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGap(44, 44, 44)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel3jhv14, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel3jhv12, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addGap(11, 11, 11)
+                                            .addComponent(txt_passenger_name, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                            .addComponent(cmb_category, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel3jhv17, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(36, 36, 36)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(cmb_payment, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addGap(234, 234, 234)
+                                            .addComponent(txt_bus_id, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                    .addComponent(llb_price, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(buy_ticket, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(40, 40, 40)))))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 650, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(btn_search_ticket)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(txt_search_ticket, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(414, 414, 414)
                         .addComponent(txt_passenger_id, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btn_search)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txt_search, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txt_search_passenger, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(1215, 1215, 1215)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE))))
@@ -793,74 +797,60 @@ public class add_passenger extends javax.swing.JFrame {
                 .addGap(50, 50, 50)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabelkk1)
-                                .addGap(17, 17, 17)
-                                .addComponent(jLabel3jhv16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(48, 48, 48)
-                                .addComponent(llb_refresh_combo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(49, 49, 49)
-                                .addComponent(cmb_passenger_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(45, 45, 45)
-                                .addComponent(jLabel3jhv12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(7, 7, 7)
-                                .addComponent(txt_bus_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, 0)
-                                .addComponent(txt_passenger_name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(22, 22, 22)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(4, 4, 4)
-                                .addComponent(jLabel3jhv13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(4, 4, 4)
-                                .addComponent(cmb_bus_number, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel3jhv14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(5, 5, 5)
-                                .addComponent(cmb_category, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(17, 17, 17)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(9, 9, 9)
-                                .addComponent(jLabel3jhv11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(11, 11, 11)
-                                .addComponent(txt_bus_source, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel3jhv17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(5, 5, 5)
-                                .addComponent(cmb_payment, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(12, 12, 12)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(8, 8, 8)
-                                .addComponent(jLabel3jhv10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(txt_bus_destination, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(9, 9, 9)
-                                .addComponent(llb_price, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(buy_ticket, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(12, 12, 12)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txt_search1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btn_search1))
+                            .addComponent(txt_search_ticket, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btn_search_ticket))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 58, Short.MAX_VALUE))
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(12, 12, 12)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(buy_ticket, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(llb_price, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabelkk1)
+                                    .addGap(17, 17, 17)
+                                    .addComponent(jLabel3jhv16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGap(48, 48, 48)
+                                    .addComponent(llb_refresh_combo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGap(46, 46, 46)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(cmb_passenger_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel3jhv12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(txt_passenger_name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGap(7, 7, 7)
+                                    .addComponent(txt_bus_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGap(30, 30, 30)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel3jhv13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(cmb_bus_number, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel3jhv14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cmb_category, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGap(30, 30, 30)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(txt_bus_source, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel3jhv17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel3jhv11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(cmb_payment, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(28, 28, 28)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(txt_bus_destination, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel3jhv10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(8, 8, 8))))
+                .addGap(0, 18, Short.MAX_VALUE))
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addGap(172, 172, 172)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txt_search, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_search_passenger, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_search))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -945,7 +935,7 @@ public class add_passenger extends javax.swing.JFrame {
                 if(result == 1){
                     JOptionPane.showMessageDialog(null, "New Passenger Added");
                     clear_fields();
-                    tbload();
+                    passenger_table();
                     
                 }else{
                     JOptionPane.showMessageDialog(null, "Unable to Add Passenger");
@@ -999,14 +989,14 @@ public class add_passenger extends javax.swing.JFrame {
     }
      
     // method to load data into table form database
-    public void tbload(){
+    public void passenger_table(){
     
     try{
         open_connection();
         
         DefaultTableModel table_data = (DefaultTableModel) tb_all_buses.getModel();        
         table_data.setRowCount(0);
-        String query_command = "SELECT passenger_id, firstname, lastname, phone, passenger_age, passenger_sex , passenger_address FROM passenger ";        
+        String query_command = "SELECT passenger_id, firstname, lastname, phone, passenger_sex, passenger_age, passenger_address FROM passenger ";        
         statement = dbconnection.prepareStatement(query_command);
         java.sql.ResultSet result = statement.executeQuery(query_command);
       
@@ -1018,7 +1008,7 @@ public class add_passenger extends javax.swing.JFrame {
             v.add(result.getString(4));
             v.add(result.getString(5));
             v.add(result.getString(6));
-            v.add(result.getString(7));            
+            v.add(result.getString(7));                        
             
             table_data.addRow(v);
     }
@@ -1030,14 +1020,15 @@ public class add_passenger extends javax.swing.JFrame {
     }
     }
     
-    public void search_data(){
-        String search = txt_search.getText();  
+     //method to load data into table form database
+    public void ticket_table(){
+        String search = txt_search_ticket.getText();  
     try{
         open_connection();
         
-        DefaultTableModel table_data = (DefaultTableModel) tb_all_buses.getModel();        
+        DefaultTableModel table_data = (DefaultTableModel) tb_tickets.getModel();        
         table_data.setRowCount(0);
-        String query_command = "SELECT * FROM passenger WHERE passenger_id LIKE '%" +search+ "%' OR firstname LIKE '%" +search+ "%' OR lastname LIKE '%" +search+ "%' OR passenger_age LIKE '%" +search+ "%' OR passenger_sex LIKE '%" +search+ "%' OR phone LIKE '%" +search+ "%' OR passenger_address LIKE '%" +search+ "%'   ";
+        String query_command = "SELECT CONCAT(passenger.firstname, ' ', passenger.lastname) AS Name, ticket_number, bus_number, source, destination, payment_method, seat_category, date_booked FROM ticket JOIN buses ON ticket.bus_id = buses.bus_id JOIN passenger ON ticket.passenger_id = passenger.passenger_id" ;      
                 
         statement = dbconnection.prepareStatement(query_command);               
         java.sql.ResultSet result = statement.executeQuery(query_command);
@@ -1054,6 +1045,74 @@ public class add_passenger extends javax.swing.JFrame {
             v.add(result.getString(8));
             
             table_data.addRow(v);
+    }
+    }catch(Exception ex){
+        JOptionPane.showMessageDialog(null, "Error"  + ex);
+    }finally{
+        close_connection();
+    }
+    }
+    
+    public void search_ticket_data(){
+        String search = txt_search_ticket.getText();  
+    try{
+        open_connection();
+        
+        DefaultTableModel table_data = (DefaultTableModel) tb_tickets.getModel();        
+        table_data.setRowCount(0);
+        String query_command = "SELECT CONCAT(passenger.firstname, ' ', passenger.lastname) AS Name, ticket_number, bus_number, source, destination, payment_method, seat_category, date_booked FROM ticket JOIN buses ON ticket.bus_id = buses.bus_id JOIN passenger ON ticket.passenger_id = passenger.passenger_id" ;      
+                
+        statement = dbconnection.prepareStatement(query_command);               
+        java.sql.ResultSet result = statement.executeQuery(query_command);
+        
+        while(result.next()){
+            Vector v = new Vector();
+            v.add(result.getString(1));
+            v.add(result.getString(2));
+            v.add(result.getString(3));
+            v.add(result.getString(4));
+            v.add(result.getString(5));
+            v.add(result.getString(6));
+            v.add(result.getString(7));
+            v.add(result.getString(8));
+            
+            table_data.addRow(v);
+    }
+    }catch(Exception ex){
+        JOptionPane.showMessageDialog(null, "Error"  + ex);
+    }finally{
+        close_connection();
+    }
+    }
+    
+    public void search_passenger_data(){
+        String search = txt_search_passenger.getText();  
+    try{
+        open_connection();
+         if(txt_search_passenger.equals("")){
+            JOptionPane.showMessageDialog(null, "Search Field can't be empty");
+//            search_ticket_data();
+        }else{
+        DefaultTableModel table_data = (DefaultTableModel) tb_all_buses.getModel();        
+        table_data.setRowCount(0);
+        String query_command = "SELECT * FROM passenger WHERE passenger_id LIKE '%" +search+ "%' OR firstname LIKE '%" +search+ "%' OR lastname LIKE '%" +search+ "%' OR phone LIKE '%" +search+ "%' OR passenger_age LIKE '%" +search+ "%' OR passenger_sex LIKE '%" +search+ "%'  OR passenger_address LIKE '%" +search+ "%'   ";
+                
+        statement = dbconnection.prepareStatement(query_command);               
+        java.sql.ResultSet result = statement.executeQuery(query_command);
+        
+        while(result.next()){
+            Vector v = new Vector();
+            v.add(result.getString(1));
+            v.add(result.getString(2));
+            v.add(result.getString(3));
+            v.add(result.getString(4));
+            v.add(result.getString(5));
+            v.add(result.getString(6));
+            v.add(result.getString(7));            
+            
+            table_data.addRow(v);     
+        }
+        
     }
     }catch(Exception ex){
         JOptionPane.showMessageDialog(null, "Error" + ex );
@@ -1087,11 +1146,11 @@ public class add_passenger extends javax.swing.JFrame {
             if(result == 1){
                 JOptionPane.showMessageDialog(null, "Passenger Details Edit Successful");
                 clear_fields();
-                tbload();
+                passenger_table();
             }else{
                 JOptionPane.showMessageDialog(null, "Unable to Edit Passenger Details");
                 clear_fields();
-                tbload();
+                passenger_table();
             }
         }catch(Exception ex){
             JOptionPane.showConfirmDialog(null, "Error" +ex);
@@ -1112,11 +1171,11 @@ public class add_passenger extends javax.swing.JFrame {
             if(result == 1){
                 JOptionPane.showMessageDialog(null, "Passenger Deleted");
                 clear_fields();
-                tbload();
+                passenger_table();
             }else{
                     JOptionPane.showMessageDialog(null, "Unable to delete Passenger");
                     clear_fields();
-                    tbload();
+                    passenger_table();
                 }            
         }catch(Exception ex){
             JOptionPane.showConfirmDialog(null, "Error" +ex);
@@ -1126,12 +1185,12 @@ public class add_passenger extends javax.swing.JFrame {
 
     private void btn_searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_searchActionPerformed
         // TODO add your handling code here:
-        search_data();
+        search_passenger_data();
     }//GEN-LAST:event_btn_searchActionPerformed
 
-    private void txt_searchKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_searchKeyTyped
+    private void txt_search_passengerKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_search_passengerKeyTyped
         // TODO add your handling code here:
-    }//GEN-LAST:event_txt_searchKeyTyped
+    }//GEN-LAST:event_txt_search_passengerKeyTyped
 
 //        get passenger_id information into combo box 
     public void load_passenger_id(){
@@ -1356,7 +1415,8 @@ public class add_passenger extends javax.swing.JFrame {
                 if(result == 1){                    
                     JOptionPane.showMessageDialog(null, "Ticket Booked");
                     clear_fields();
-                    tbload();
+                    passenger_table();
+                    
                     
                 }else{
                     JOptionPane.showMessageDialog(null, "Unable to Book Ticket ");
@@ -1377,25 +1437,27 @@ public class add_passenger extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_buy_ticketActionPerformed
 
-    private void btn_search1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_search1ActionPerformed
+    
+    private void btn_search_ticketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_search_ticketActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btn_search1ActionPerformed
+//        search_ticket_data();
+    }//GEN-LAST:event_btn_search_ticketActionPerformed
 
-    private void txt_search1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_search1KeyTyped
+    private void txt_search_ticketKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_search_ticketKeyTyped
         // TODO add your handling code here:
-    }//GEN-LAST:event_txt_search1KeyTyped
+    }//GEN-LAST:event_txt_search_ticketKeyTyped
 
-    private void tb_all_buses1AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_tb_all_buses1AncestorAdded
+    private void tb_ticketsAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_tb_ticketsAncestorAdded
         // TODO add your handling code here:
-    }//GEN-LAST:event_tb_all_buses1AncestorAdded
+    }//GEN-LAST:event_tb_ticketsAncestorAdded
 
-    private void tb_all_buses1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tb_all_buses1MouseClicked
+    private void tb_ticketsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tb_ticketsMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_tb_all_buses1MouseClicked
+    }//GEN-LAST:event_tb_ticketsMouseClicked
 
-    private void tb_all_buses1PropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_tb_all_buses1PropertyChange
+    private void tb_ticketsPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_tb_ticketsPropertyChange
         // TODO add your handling code here:
-    }//GEN-LAST:event_tb_all_buses1PropertyChange
+    }//GEN-LAST:event_tb_ticketsPropertyChange
 
     private void bus_ticketMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bus_ticketMouseClicked
         // TODO add your handling code here:
@@ -1421,9 +1483,9 @@ public class add_passenger extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_firstnameActionPerformed
 
-    private void txt_search1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_search1ActionPerformed
+    private void txt_search_ticketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_search_ticketActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txt_search1ActionPerformed
+    }//GEN-LAST:event_txt_search_ticketActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1465,7 +1527,7 @@ public class add_passenger extends javax.swing.JFrame {
     private javax.swing.JButton btn_close;
     private javax.swing.JButton btn_delete;
     private javax.swing.JButton btn_search;
-    private javax.swing.JButton btn_search1;
+    private javax.swing.JButton btn_search_ticket;
     private javax.swing.JButton btn_update;
     private javax.swing.JLabel bus_ticket;
     private javax.swing.JButton buy_ticket;
@@ -1504,7 +1566,7 @@ public class add_passenger extends javax.swing.JFrame {
     private javax.swing.JLabel llb_price;
     private javax.swing.JLabel llb_refresh_combo;
     private javax.swing.JTable tb_all_buses;
-    private javax.swing.JTable tb_all_buses1;
+    private javax.swing.JTable tb_tickets;
     private javax.swing.JTextField txt_address;
     private javax.swing.JTextField txt_age;
     private javax.swing.JTextField txt_bus_destination;
@@ -1515,7 +1577,7 @@ public class add_passenger extends javax.swing.JFrame {
     private javax.swing.JTextField txt_passenger_id;
     private javax.swing.JTextField txt_passenger_name;
     private javax.swing.JTextField txt_phone;
-    private javax.swing.JTextField txt_search;
-    private javax.swing.JTextField txt_search1;
+    private javax.swing.JTextField txt_search_passenger;
+    private javax.swing.JTextField txt_search_ticket;
     // End of variables declaration//GEN-END:variables
 }

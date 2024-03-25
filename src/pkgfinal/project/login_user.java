@@ -62,7 +62,7 @@ public class login_user extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(205, Short.MAX_VALUE)
+                .addContainerGap(241, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(203, 203, 203))
         );
@@ -114,7 +114,7 @@ public class login_user extends javax.swing.JFrame {
             }
         });
 
-        btn_back.setBackground(new java.awt.Color(204, 204, 204));
+        btn_back.setBackground(new java.awt.Color(51, 51, 51));
         btn_back.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         btn_back.setForeground(new java.awt.Color(255, 255, 255));
         btn_back.setText("Back");
@@ -146,7 +146,8 @@ public class login_user extends javax.swing.JFrame {
                         .addComponent(btn_reset, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(48, 48, 48)
                         .addComponent(btn_back, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(btn_create_acccount, javax.swing.GroupLayout.PREFERRED_SIZE, 403, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(btn_create_acccount, javax.swing.GroupLayout.PREFERRED_SIZE, 403, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

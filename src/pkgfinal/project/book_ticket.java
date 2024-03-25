@@ -511,57 +511,57 @@ public class book_ticket extends javax.swing.JFrame {
 
     private void btn_book_ticketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_book_ticketActionPerformed
         // TODO add your handling code here:
-        try{
-            open_connection();
-            String firstname = cmb_departure.getSelectedValue();
-            String lastname = txt_lastname.getText();
-            String phone = txt_phone.getText();
-            String sex = cmb_sex.getSelectedItem().toString();
-            String age = txt_age.getText();
-            String address = txt_address.getText();
-        
-        if(firstname.equals("")){
-            JOptionPane.showMessageDialog(null, "Field can't be empty");
-        }else if(lastname.equals("")){
-            JOptionPane.showMessageDialog(null, "Field can't be empty");
-        }else if(phone.equals("")){
-            JOptionPane.showMessageDialog(null, "Field can't be empty");
-        }else if(address.equals("")){
-            JOptionPane.showMessageDialog(null, "Field can't be empty");
-        }else{
-            try{
-                open_connection();
-                String query_command = "INSERT INTO passenger(firstname, lastname, passenger_sex, passenger_age, phone, passenger_address) VALUES(?, ?, ?, ?, ?, ?)";
-                statement = dbconnection.prepareStatement(query_command);
-                
-                statement.setString(1, firstname);
-                statement.setString(2, lastname);
-                statement.setString(3, sex);
-                statement.setString(4 ,age);
-                statement.setString(5, phone);
-                statement.setString(6, address);
-                                                
-                int result = statement.executeUpdate();
-                if(result == 1){
-                    JOptionPane.showMessageDialog(null, "New Passenger Added");
-                    clear_fields();
-                }else{
-                    JOptionPane.showMessageDialog(null, "Unable to Add Passenger");
-                    clear_fields();
-                }
-                
-            }catch(Exception ex){
-                JOptionPane.showMessageDialog(null, "Error" + ex );
-            }finally{
-                close_connection();
-            }
-        }
-            
-        }catch(Exception ex){
-            JOptionPane.showMessageDialog(null, "Error" + ex );
-        }finally{
-            close_connection();
-        }                                
+//        try{
+//            open_connection();
+//            String firstname = cmb_departure.getSelectedValue();
+//            String lastname = txt_lastname.getText();
+//            String phone = txt_phone.getText();
+//            String sex = cmb_sex.getSelectedItem().toString();
+//            String age = txt_age.getText();
+//            String address = txt_address.getText();
+//        
+//        if(firstname.equals("")){
+//            JOptionPane.showMessageDialog(null, "Field can't be empty");
+//        }else if(lastname.equals("")){
+//            JOptionPane.showMessageDialog(null, "Field can't be empty");
+//        }else if(phone.equals("")){
+//            JOptionPane.showMessageDialog(null, "Field can't be empty");
+//        }else if(address.equals("")){
+//            JOptionPane.showMessageDialog(null, "Field can't be empty");
+//        }else{
+//            try{
+//                open_connection();
+//                String query_command = "INSERT INTO passenger(firstname, lastname, passenger_sex, passenger_age, phone, passenger_address) VALUES(?, ?, ?, ?, ?, ?)";
+//                statement = dbconnection.prepareStatement(query_command);
+//                
+//                statement.setString(1, firstname);
+//                statement.setString(2, lastname);
+//                statement.setString(3, sex);
+//                statement.setString(4 ,age);
+//                statement.setString(5, phone);
+//                statement.setString(6, address);
+//                                                
+//                int result = statement.executeUpdate();
+//                if(result == 1){
+//                    JOptionPane.showMessageDialog(null, "New Passenger Added");
+//                    clear_fields();
+//                }else{
+//                    JOptionPane.showMessageDialog(null, "Unable to Add Passenger");
+//                    clear_fields();
+//                }
+//                
+//            }catch(Exception ex){
+//                JOptionPane.showMessageDialog(null, "Error" + ex );
+//            }finally{
+//                close_connection();
+//            }
+//        }
+//            
+//        }catch(Exception ex){
+//            JOptionPane.showMessageDialog(null, "Error" + ex );
+//        }finally{
+//            close_connection();
+//        }                                
     }//GEN-LAST:event_btn_book_ticketActionPerformed
 
     private void cmb_bus_idActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmb_bus_idActionPerformed
