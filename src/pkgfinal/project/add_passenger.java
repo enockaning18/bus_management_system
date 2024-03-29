@@ -243,7 +243,7 @@ public class add_passenger extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tb_all_buses);
 
-        btn_add.setBackground(new java.awt.Color(204, 204, 204));
+        btn_add.setBackground(new java.awt.Color(0, 255, 153));
         btn_add.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         btn_add.setForeground(new java.awt.Color(255, 255, 255));
         btn_add.setText("save");
@@ -862,7 +862,7 @@ public class add_passenger extends javax.swing.JFrame {
 
      public void book_view(){
         dispose();
-        book_ticket book_view = new book_ticket();
+        confirm_booking book_view = new confirm_booking();
         book_view.setLocationRelativeTo(null);
         book_view.setVisible(true);
     }
@@ -935,7 +935,10 @@ public class add_passenger extends javax.swing.JFrame {
                 if(result == 1){
                     JOptionPane.showMessageDialog(null, "New Passenger Added");
                     clear_fields();
-                    passenger_table();
+                    passenger_table();                    
+                    load_passenger_id();
+                    bus_number_result();
+                    ticket_table();
                     
                 }else{
                     JOptionPane.showMessageDialog(null, "Unable to Add Passenger");
@@ -1147,6 +1150,9 @@ public class add_passenger extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Passenger Details Edit Successful");
                 clear_fields();
                 passenger_table();
+                load_passenger_id();
+                bus_number_result();
+                ticket_table();
             }else{
                 JOptionPane.showMessageDialog(null, "Unable to Edit Passenger Details");
                 clear_fields();
@@ -1176,6 +1182,9 @@ public class add_passenger extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(null, "Unable to delete Passenger");
                     clear_fields();
                     passenger_table();
+                    load_passenger_id();
+                    bus_number_result();
+                    ticket_table();
                 }            
         }catch(Exception ex){
             JOptionPane.showConfirmDialog(null, "Error" +ex);
@@ -1416,6 +1425,9 @@ public class add_passenger extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(null, "Ticket Booked");
                     clear_fields();
                     passenger_table();
+                    load_passenger_id();
+                    bus_number_result();
+                    ticket_table();
                     
                     
                 }else{

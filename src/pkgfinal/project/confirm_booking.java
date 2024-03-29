@@ -30,10 +30,10 @@ public class confirm_booking extends javax.swing.JFrame {
      */
     public confirm_booking() {
         initComponents();
-        passenger_table();
-        load_passenger_id();
-        bus_number_result();
+        confirm_tickets();
+
         ticket_table();
+        passenger_info();
     }
 
     /**
@@ -45,55 +45,28 @@ public class confirm_booking extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPasswordField1 = new javax.swing.JPasswordField();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         btn_close = new javax.swing.JButton();
-        jLabelkk = new javax.swing.JLabel();
         jLabel3jhv1 = new javax.swing.JLabel();
-        txt_phone = new javax.swing.JTextField();
+        txt_destination = new javax.swing.JTextField();
         jLabel3jhv2 = new javax.swing.JLabel();
         jLabel3jhv3 = new javax.swing.JLabel();
         jLabel3jhv4 = new javax.swing.JLabel();
         jLabel3jhv5 = new javax.swing.JLabel();
-        txt_age = new javax.swing.JTextField();
-        txt_lastname = new javax.swing.JTextField();
-        cmb_sex = new javax.swing.JComboBox<>();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tb_all_buses = new javax.swing.JTable();
-        btn_add = new javax.swing.JButton();
-        btn_update = new javax.swing.JButton();
-        btn_delete = new javax.swing.JButton();
+        txt_bus_number = new javax.swing.JTextField();
+        txt_passenger_name = new javax.swing.JTextField();
+        btn_confirm = new javax.swing.JButton();
         btn_search = new javax.swing.JButton();
         txt_search_passenger = new javax.swing.JTextField();
         jLabel3jhv6 = new javax.swing.JLabel();
-        txt_firstname = new javax.swing.JTextField();
-        txt_address = new javax.swing.JTextField();
+        txt_source = new javax.swing.JTextField();
         txt_passenger_id = new javax.swing.JTextField();
-        jPanel3 = new javax.swing.JPanel();
-        jLabelkk1 = new javax.swing.JLabel();
-        jLabel3jhv10 = new javax.swing.JLabel();
-        jLabel3jhv11 = new javax.swing.JLabel();
-        jLabel3jhv12 = new javax.swing.JLabel();
-        jLabel3jhv13 = new javax.swing.JLabel();
-        jLabel3jhv14 = new javax.swing.JLabel();
-        cmb_category = new javax.swing.JComboBox<>();
-        cmb_payment = new javax.swing.JComboBox<>();
-        llb_price = new javax.swing.JLabel();
-        cmb_bus_number = new javax.swing.JComboBox<>();
-        cmb_passenger_id = new javax.swing.JComboBox<>();
         txt_bus_id = new javax.swing.JTextField();
-        llb_refresh_combo = new javax.swing.JLabel();
-        jLabel3jhv16 = new javax.swing.JLabel();
-        txt_bus_source = new javax.swing.JTextField();
-        txt_bus_destination = new javax.swing.JTextField();
-        buy_ticket = new javax.swing.JButton();
-        jLabel3jhv17 = new javax.swing.JLabel();
-        btn_search_ticket = new javax.swing.JButton();
-        txt_search_ticket = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
-        tb_tickets = new javax.swing.JTable();
-        txt_passenger_name = new javax.swing.JTextField();
+        tb_confirm_ticket = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         bus_ticket = new javax.swing.JLabel();
@@ -101,6 +74,11 @@ public class confirm_booking extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
+        cmb_ticket_number = new javax.swing.JComboBox<>();
+        txt_category = new javax.swing.JTextField();
+        jLabelkk1 = new javax.swing.JLabel();
+
+        jPasswordField1.setText("jPasswordField1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximizedBounds(new java.awt.Rectangle(0, 0, 1776, 842));
@@ -129,147 +107,67 @@ public class confirm_booking extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(361, 361, 361)
+                .addComponent(jLabel2)
+                .addGap(0, 481, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_close, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(16, 16, 16))
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(660, 660, 660)
-                .addComponent(jLabel2)
-                .addContainerGap(712, Short.MAX_VALUE))
+                    .addComponent(btn_close, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addComponent(btn_close, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(9, 9, 9)
+                .addGap(17, 17, 17)
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
+                .addGap(14, 14, 14)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(0, 6, Short.MAX_VALUE))
         );
 
-        jLabelkk.setFont(new java.awt.Font("PT Serif Caption", 1, 24)); // NOI18N
-        jLabelkk.setText("Add Passenger");
-
         jLabel3jhv1.setFont(new java.awt.Font("Helvetica Neue", 1, 20)); // NOI18N
-        jLabel3jhv1.setText("Phone No.");
+        jLabel3jhv1.setText("Destination");
         jLabel3jhv1.setPreferredSize(new java.awt.Dimension(64, 40));
 
-        txt_phone.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
-        txt_phone.setMinimumSize(new java.awt.Dimension(64, 40));
-        txt_phone.setPreferredSize(new java.awt.Dimension(64, 40));
+        txt_destination.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        txt_destination.setMinimumSize(new java.awt.Dimension(64, 40));
+        txt_destination.setPreferredSize(new java.awt.Dimension(64, 40));
 
         jLabel3jhv2.setFont(new java.awt.Font("Helvetica Neue", 1, 20)); // NOI18N
-        jLabel3jhv2.setText("Age");
+        jLabel3jhv2.setText("Category");
         jLabel3jhv2.setPreferredSize(new java.awt.Dimension(64, 40));
 
         jLabel3jhv3.setFont(new java.awt.Font("Helvetica Neue", 1, 20)); // NOI18N
-        jLabel3jhv3.setText("Last Name");
+        jLabel3jhv3.setText("Name");
         jLabel3jhv3.setPreferredSize(new java.awt.Dimension(64, 40));
 
         jLabel3jhv4.setFont(new java.awt.Font("Helvetica Neue", 1, 20)); // NOI18N
-        jLabel3jhv4.setText("Address");
+        jLabel3jhv4.setText("Source");
         jLabel3jhv4.setPreferredSize(new java.awt.Dimension(64, 40));
 
         jLabel3jhv5.setFont(new java.awt.Font("Helvetica Neue", 1, 20)); // NOI18N
-        jLabel3jhv5.setText("Sex");
+        jLabel3jhv5.setText("Bus");
         jLabel3jhv5.setPreferredSize(new java.awt.Dimension(64, 40));
 
-        txt_age.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
-        txt_age.setMinimumSize(new java.awt.Dimension(64, 40));
-        txt_age.setPreferredSize(new java.awt.Dimension(64, 40));
+        txt_bus_number.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        txt_bus_number.setMinimumSize(new java.awt.Dimension(64, 40));
+        txt_bus_number.setPreferredSize(new java.awt.Dimension(64, 40));
 
-        txt_lastname.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
-        txt_lastname.setMinimumSize(new java.awt.Dimension(64, 40));
-        txt_lastname.setPreferredSize(new java.awt.Dimension(64, 40));
+        txt_passenger_name.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        txt_passenger_name.setMinimumSize(new java.awt.Dimension(64, 40));
+        txt_passenger_name.setPreferredSize(new java.awt.Dimension(64, 40));
 
-        cmb_sex.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Select --", "Male", "Female" }));
-        cmb_sex.setPreferredSize(new java.awt.Dimension(64, 40));
-        cmb_sex.addActionListener(new java.awt.event.ActionListener() {
+        btn_confirm.setBackground(new java.awt.Color(255, 51, 51));
+        btn_confirm.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        btn_confirm.setForeground(new java.awt.Color(255, 255, 255));
+        btn_confirm.setText("Confrim");
+        btn_confirm.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmb_sexActionPerformed(evt);
-            }
-        });
-
-        tb_all_buses.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
-            },
-            new String [] {
-                "Pass ID", "First Name", "Last Name", "Phone", "Sex", "Age", "Address"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        tb_all_buses.addAncestorListener(new javax.swing.event.AncestorListener() {
-            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
-                tb_all_busesAncestorAdded(evt);
-            }
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
-            }
-            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
-            }
-        });
-        tb_all_buses.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tb_all_busesMouseClicked(evt);
-            }
-        });
-        tb_all_buses.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
-            public void propertyChange(java.beans.PropertyChangeEvent evt) {
-                tb_all_busesPropertyChange(evt);
-            }
-        });
-        jScrollPane1.setViewportView(tb_all_buses);
-
-        btn_add.setBackground(new java.awt.Color(204, 204, 204));
-        btn_add.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
-        btn_add.setForeground(new java.awt.Color(255, 255, 255));
-        btn_add.setText("save");
-        btn_add.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_addActionPerformed(evt);
-            }
-        });
-
-        btn_update.setBackground(new java.awt.Color(51, 51, 255));
-        btn_update.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
-        btn_update.setForeground(new java.awt.Color(255, 255, 255));
-        btn_update.setText("edit");
-        btn_update.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_updateActionPerformed(evt);
-            }
-        });
-
-        btn_delete.setBackground(new java.awt.Color(255, 51, 51));
-        btn_delete.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
-        btn_delete.setForeground(new java.awt.Color(255, 255, 255));
-        btn_delete.setText("delete");
-        btn_delete.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_deleteActionPerformed(evt);
+                btn_confirmActionPerformed(evt);
             }
         });
 
@@ -291,169 +189,23 @@ public class confirm_booking extends javax.swing.JFrame {
         });
 
         jLabel3jhv6.setFont(new java.awt.Font("Helvetica Neue", 1, 20)); // NOI18N
-        jLabel3jhv6.setText("First Name");
+        jLabel3jhv6.setText("Ticket");
         jLabel3jhv6.setPreferredSize(new java.awt.Dimension(64, 40));
 
-        txt_firstname.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
-        txt_firstname.setMinimumSize(new java.awt.Dimension(64, 40));
-        txt_firstname.setPreferredSize(new java.awt.Dimension(64, 40));
-        txt_firstname.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_firstnameActionPerformed(evt);
-            }
-        });
-
-        txt_address.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
-        txt_address.setMinimumSize(new java.awt.Dimension(64, 40));
-        txt_address.setPreferredSize(new java.awt.Dimension(64, 40));
+        txt_source.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        txt_source.setMinimumSize(new java.awt.Dimension(64, 40));
+        txt_source.setPreferredSize(new java.awt.Dimension(64, 40));
 
         txt_passenger_id.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         txt_passenger_id.setMinimumSize(new java.awt.Dimension(64, 40));
         txt_passenger_id.setPreferredSize(new java.awt.Dimension(64, 40));
-
-        jPanel3.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel3.setPreferredSize(new java.awt.Dimension(965, 5));
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 965, Short.MAX_VALUE)
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 5, Short.MAX_VALUE)
-        );
-
-        jLabelkk1.setFont(new java.awt.Font("PT Serif Caption", 1, 24)); // NOI18N
-        jLabelkk1.setText("Book Ticket ");
-
-        jLabel3jhv10.setFont(new java.awt.Font("Helvetica Neue", 1, 20)); // NOI18N
-        jLabel3jhv10.setText("Destination");
-        jLabel3jhv10.setPreferredSize(new java.awt.Dimension(64, 40));
-
-        jLabel3jhv11.setFont(new java.awt.Font("Helvetica Neue", 1, 20)); // NOI18N
-        jLabel3jhv11.setText("Source");
-        jLabel3jhv11.setPreferredSize(new java.awt.Dimension(64, 40));
-
-        jLabel3jhv12.setFont(new java.awt.Font("Helvetica Neue", 1, 20)); // NOI18N
-        jLabel3jhv12.setText("Passenger");
-        jLabel3jhv12.setPreferredSize(new java.awt.Dimension(64, 40));
-
-        jLabel3jhv13.setFont(new java.awt.Font("Helvetica Neue", 1, 20)); // NOI18N
-        jLabel3jhv13.setText("Bus Number");
-        jLabel3jhv13.setPreferredSize(new java.awt.Dimension(64, 40));
-
-        jLabel3jhv14.setFont(new java.awt.Font("Helvetica Neue", 1, 20)); // NOI18N
-        jLabel3jhv14.setText("Seat Category ");
-        jLabel3jhv14.setPreferredSize(new java.awt.Dimension(64, 40));
-
-        cmb_category.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Select --", "Ac Seat ", "General Seat" }));
-        cmb_category.setPreferredSize(new java.awt.Dimension(64, 40));
-        cmb_category.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmb_categoryActionPerformed(evt);
-            }
-        });
-
-        cmb_payment.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Select --", "Cash", "Momo", "Credit Card" }));
-        cmb_payment.setPreferredSize(new java.awt.Dimension(64, 40));
-        cmb_payment.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmb_paymentActionPerformed(evt);
-            }
-        });
-
-        llb_price.setFont(new java.awt.Font("Helvetica Neue", 1, 20)); // NOI18N
-        llb_price.setText("Price :");
-        llb_price.setPreferredSize(new java.awt.Dimension(64, 40));
-
-        cmb_bus_number.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Select --" }));
-        cmb_bus_number.setPreferredSize(new java.awt.Dimension(64, 40));
-        cmb_bus_number.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmb_bus_numberActionPerformed(evt);
-            }
-        });
-
-        cmb_passenger_id.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Select --" }));
-        cmb_passenger_id.setPreferredSize(new java.awt.Dimension(64, 40));
-        cmb_passenger_id.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                cmb_passenger_idMouseClicked(evt);
-            }
-        });
-        cmb_passenger_id.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmb_passenger_idActionPerformed(evt);
-            }
-        });
 
         txt_bus_id.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         txt_bus_id.setEnabled(false);
         txt_bus_id.setMinimumSize(new java.awt.Dimension(64, 40));
         txt_bus_id.setPreferredSize(new java.awt.Dimension(64, 40));
 
-        llb_refresh_combo.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
-        llb_refresh_combo.setText("🔁");
-        llb_refresh_combo.setPreferredSize(new java.awt.Dimension(64, 40));
-        llb_refresh_combo.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                llb_refresh_comboMouseClicked(evt);
-            }
-        });
-
-        jLabel3jhv16.setFont(new java.awt.Font("Helvetica Neue", 1, 20)); // NOI18N
-        jLabel3jhv16.setText("ID's");
-        jLabel3jhv16.setPreferredSize(new java.awt.Dimension(64, 40));
-
-        txt_bus_source.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
-        txt_bus_source.setEnabled(false);
-        txt_bus_source.setMinimumSize(new java.awt.Dimension(64, 40));
-        txt_bus_source.setPreferredSize(new java.awt.Dimension(64, 40));
-
-        txt_bus_destination.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
-        txt_bus_destination.setEnabled(false);
-        txt_bus_destination.setMinimumSize(new java.awt.Dimension(64, 40));
-        txt_bus_destination.setPreferredSize(new java.awt.Dimension(64, 40));
-
-        buy_ticket.setBackground(new java.awt.Color(46, 0, 44));
-        buy_ticket.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
-        buy_ticket.setForeground(new java.awt.Color(255, 255, 255));
-        buy_ticket.setText("Buy ");
-        buy_ticket.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buy_ticketActionPerformed(evt);
-            }
-        });
-
-        jLabel3jhv17.setFont(new java.awt.Font("Helvetica Neue", 1, 20)); // NOI18N
-        jLabel3jhv17.setText("Payment ");
-        jLabel3jhv17.setPreferredSize(new java.awt.Dimension(64, 40));
-
-        btn_search_ticket.setBackground(new java.awt.Color(23, 30, 77));
-        btn_search_ticket.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
-        btn_search_ticket.setForeground(new java.awt.Color(255, 255, 255));
-        btn_search_ticket.setText("search");
-        btn_search_ticket.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_search_ticketActionPerformed(evt);
-            }
-        });
-
-        txt_search_ticket.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
-        txt_search_ticket.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_search_ticketActionPerformed(evt);
-            }
-        });
-        txt_search_ticket.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txt_search_ticketKeyTyped(evt);
-            }
-        });
-
-        tb_tickets.setModel(new javax.swing.table.DefaultTableModel(
+        tb_confirm_ticket.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null},
@@ -481,31 +233,26 @@ public class confirm_booking extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        tb_tickets.addAncestorListener(new javax.swing.event.AncestorListener() {
+        tb_confirm_ticket.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
-                tb_ticketsAncestorAdded(evt);
+                tb_confirm_ticketAncestorAdded(evt);
             }
             public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
             }
         });
-        tb_tickets.addMouseListener(new java.awt.event.MouseAdapter() {
+        tb_confirm_ticket.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tb_ticketsMouseClicked(evt);
+                tb_confirm_ticketMouseClicked(evt);
             }
         });
-        tb_tickets.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+        tb_confirm_ticket.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
             public void propertyChange(java.beans.PropertyChangeEvent evt) {
-                tb_ticketsPropertyChange(evt);
+                tb_confirm_ticketPropertyChange(evt);
             }
         });
-        jScrollPane2.setViewportView(tb_tickets);
-
-        txt_passenger_name.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
-        txt_passenger_name.setEnabled(false);
-        txt_passenger_name.setMinimumSize(new java.awt.Dimension(64, 40));
-        txt_passenger_name.setPreferredSize(new java.awt.Dimension(64, 40));
+        jScrollPane2.setViewportView(tb_confirm_ticket);
 
         jPanel1.setBackground(new java.awt.Color(0, 91, 204));
 
@@ -619,242 +366,149 @@ public class confirm_booking extends javax.swing.JFrame {
                 .addGap(240, 240, 240))
         );
 
+        cmb_ticket_number.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Select --" }));
+        cmb_ticket_number.setPreferredSize(new java.awt.Dimension(64, 40));
+        cmb_ticket_number.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cmb_ticket_numberMouseClicked(evt);
+            }
+        });
+        cmb_ticket_number.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmb_ticket_numberActionPerformed(evt);
+            }
+        });
+
+        txt_category.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        txt_category.setMinimumSize(new java.awt.Dimension(64, 40));
+        txt_category.setPreferredSize(new java.awt.Dimension(64, 40));
+
+        jLabelkk1.setFont(new java.awt.Font("PT Serif Caption", 1, 24)); // NOI18N
+        jLabelkk1.setText("Confirm Ticket");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(238, 238, 238)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(275, 275, 275)
-                .addComponent(jLabel3jhv6, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(txt_firstname, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
-                .addComponent(jLabel3jhv5, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(cmb_sex, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
-                .addComponent(btn_add, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(275, 275, 275)
-                .addComponent(jLabel3jhv3, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(txt_lastname, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
-                .addComponent(jLabel3jhv2, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(txt_age, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
-                .addComponent(btn_update, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(275, 275, 275)
-                .addComponent(jLabel3jhv1, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(txt_phone, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
-                .addComponent(jLabel3jhv4, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(txt_address, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
-                .addComponent(btn_delete, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(244, 244, 244)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(36, 36, 36)
-                            .addComponent(jLabelkk, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(280, 280, 280)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(36, 36, 36)
+                                .addComponent(jLabelkk1, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(175, 175, 175)
+                                .addComponent(txt_passenger_id, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(36, 36, 36)
+                                .addComponent(jLabel3jhv6, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(286, 286, 286)
+                                .addComponent(jLabel3jhv5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(45, 45, 45)
+                                .addComponent(txt_bus_number, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(36, 36, 36)
+                                .addComponent(jLabel3jhv3, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(txt_passenger_name, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(40, 40, 40)
+                                .addComponent(jLabel3jhv2, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(txt_category, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(31, 31, 31)
+                                .addComponent(btn_confirm, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(36, 36, 36)
+                                .addComponent(jLabel3jhv1, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(txt_destination, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(40, 40, 40)
+                                .addComponent(jLabel3jhv4, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(txt_source, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(30, 30, 30)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(btn_search)
+                                        .addGap(12, 12, 12)
+                                        .addComponent(txt_search_passenger, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 950, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGroup(layout.createSequentialGroup()
-                                            .addGap(2, 2, 2)
-                                            .addComponent(jLabelkk1))
-                                        .addComponent(jLabel3jhv16, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGap(6, 6, 6)
-                                    .addComponent(llb_refresh_combo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(6, 6, 6)
-                                    .addComponent(cmb_passenger_id, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabel3jhv13, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(14, 14, 14)
-                                    .addComponent(cmb_bus_number, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabel3jhv11, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(38, 38, 38)
-                                    .addComponent(txt_bus_source, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabel3jhv10, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(38, 38, 38)
-                                    .addComponent(txt_bus_destination, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGap(44, 44, 44)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel3jhv14, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel3jhv12, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addGap(11, 11, 11)
-                                            .addComponent(txt_passenger_name, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                            .addComponent(cmb_category, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabel3jhv17, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(36, 36, 36)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(cmb_payment, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addGap(234, 234, 234)
-                                            .addComponent(txt_bus_id, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                    .addComponent(llb_price, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(buy_ticket, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(40, 40, 40)))))
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 650, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(btn_search_ticket)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txt_search_ticket, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                            .addGap(853, 853, 853)
+                                            .addComponent(txt_bus_id, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(414, 414, 414)
-                        .addComponent(txt_passenger_id, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btn_search)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txt_search_passenger, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(1215, 1215, 1215)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(cmb_ticket_number, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(50, 50, 50))
+            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addComponent(jLabelkk)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txt_passenger_id, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3jhv6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(2, 2, 2)
-                        .addComponent(txt_firstname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(7, 7, 7)
-                        .addComponent(jLabel3jhv5, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(cmb_sex, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(3, 3, 3)
-                        .addComponent(btn_add, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(17, 17, 17)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3jhv3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(2, 2, 2)
-                        .addComponent(txt_lastname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(3, 3, 3)
-                        .addComponent(jLabel3jhv2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(5, 5, 5)
-                        .addComponent(txt_age, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(1, 1, 1)
-                        .addComponent(btn_update, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(17, 17, 17)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3jhv1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(2, 2, 2)
-                        .addComponent(txt_phone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(jLabel3jhv4, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(2, 2, 2)
-                        .addComponent(txt_address, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(1, 1, 1)
-                        .addComponent(btn_delete, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(60, 60, 60)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(50, 50, 50)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txt_search_ticket, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btn_search_ticket))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(12, 12, 12)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(buy_ticket, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(llb_price, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabelkk1)
-                                    .addGap(17, 17, 17)
-                                    .addComponent(jLabel3jhv16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(48, 48, 48)
-                                    .addComponent(llb_refresh_combo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(46, 46, 46)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(cmb_passenger_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel3jhv12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(txt_passenger_name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(7, 7, 7)
-                                    .addComponent(txt_bus_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGap(30, 30, 30)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel3jhv13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(cmb_bus_number, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel3jhv14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(cmb_category, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGap(30, 30, 30)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(txt_bus_source, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel3jhv17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel3jhv11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(cmb_payment, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGap(28, 28, 28)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(txt_bus_destination, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel3jhv10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGap(8, 8, 8))))
-                .addGap(0, 18, Short.MAX_VALUE))
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addGap(172, 172, 172)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txt_search_passenger, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_search))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(234, 234, 234)
+                        .addComponent(cmb_ticket_number, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(150, 150, 150)
+                                .addComponent(jLabelkk1)
+                                .addGap(6, 6, 6)
+                                .addComponent(txt_passenger_id, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(12, 12, 12)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel3jhv6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(7, 7, 7)
+                                        .addComponent(jLabel3jhv5, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(4, 4, 4)
+                                        .addComponent(txt_bus_number, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(19, 19, 19)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel3jhv3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(2, 2, 2)
+                                        .addComponent(txt_passenger_name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(3, 3, 3)
+                                        .addComponent(jLabel3jhv2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(10, 10, 10)
+                                        .addComponent(txt_category, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(1, 1, 1)
+                                        .addComponent(btn_confirm, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(5, 5, 5)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel3jhv1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(2, 2, 2)
+                                        .addComponent(txt_destination, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(6, 6, 6)
+                                        .addComponent(jLabel3jhv4, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(2, 2, 2)
+                                        .addComponent(txt_source, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btn_search)
+                            .addComponent(txt_search_passenger, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(40, 40, 40)
+                                .addComponent(txt_bus_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(0, 30, Short.MAX_VALUE))
         );
 
         pack();
@@ -862,95 +516,17 @@ public class confirm_booking extends javax.swing.JFrame {
 
      public void book_view(){
         dispose();
-        book_ticket book_view = new book_ticket();
+        confirm_booking book_view = new confirm_booking();
         book_view.setLocationRelativeTo(null);
         book_view.setVisible(true);
     }
      
     public void passenger_view(){
         dispose();
-        confirm_booking passenger_view = new confirm_booking();
+        add_passenger passenger_view = new add_passenger();
         passenger_view.setLocationRelativeTo(null);
         passenger_view.setVisible(true);
-    }
-    private void cmb_sexActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmb_sexActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cmb_sexActionPerformed
-
-    private void tb_all_busesAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_tb_all_busesAncestorAdded
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tb_all_busesAncestorAdded
-
-    private void tb_all_busesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tb_all_busesMouseClicked
-//         TODO add your handling code here:
-        int selectedRow = tb_all_buses.getSelectedRow();
-        if (selectedRow != -1) {
-            DefaultTableModel model = (DefaultTableModel) tb_all_buses.getModel();           
-            txt_passenger_id.setText(model.getValueAt(selectedRow, 0).toString());            
-            txt_firstname.setText(model.getValueAt(selectedRow, 1).toString());            
-            txt_lastname.setText(model.getValueAt(selectedRow, 2).toString());
-            txt_phone.setText(model.getValueAt(selectedRow, 3).toString());
-            cmb_sex.setSelectedItem(model.getValueAt(selectedRow, 5).toString());
-            txt_age.setText(model.getValueAt(selectedRow, 4).toString());
-            txt_address.setText(model.getValueAt(selectedRow, 6).toString());
-
-    }//GEN-LAST:event_tb_all_busesMouseClicked
-    }
-    private void tb_all_busesPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_tb_all_busesPropertyChange
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tb_all_busesPropertyChange
-
-    private void btn_addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_addActionPerformed
-        // TODO add your handling code here:
-        
-        String firstname = txt_firstname.getText();
-        String lastname = txt_lastname.getText();
-        String phone = txt_phone.getText();
-        String sex = cmb_sex.getSelectedItem().toString();
-        String age = txt_age.getText();
-        String address = txt_address.getText();
-        
-        if(firstname.equals("")){
-            JOptionPane.showMessageDialog(null, "Field can't be empty");
-        }else if(lastname.equals("")){
-            JOptionPane.showMessageDialog(null, "Field can't be empty");
-        }else if(phone.equals("")){
-            JOptionPane.showMessageDialog(null, "Field can't be empty");
-        }else if(address.equals("")){
-            JOptionPane.showMessageDialog(null, "Field can't be empty");
-        }else{
-            try{
-                open_connection();
-                String query_command = "INSERT INTO passenger(firstname, lastname, passenger_sex, passenger_age, phone, passenger_address) VALUES(?, ?, ?, ?, ?, ?)";
-                statement = dbconnection.prepareStatement(query_command);
-                
-                statement.setString(1, firstname);
-                statement.setString(2, lastname);
-                statement.setString(3, sex);
-                statement.setString(4 ,age);
-                statement.setString(5, phone);
-                statement.setString(6, address);
-                                                
-                int result = statement.executeUpdate();
-                if(result == 1){
-                    JOptionPane.showMessageDialog(null, "New Passenger Added");
-                    clear_fields();
-                    passenger_table();
-                    
-                }else{
-                    JOptionPane.showMessageDialog(null, "Unable to Add Passenger");
-                    clear_fields();
-                }
-                
-            }catch(Exception ex){
-                JOptionPane.showMessageDialog(null, "Error" + ex );
-            }finally{
-                close_connection();
-            }
-        }
-
-    }//GEN-LAST:event_btn_addActionPerformed
-
+    }    
     public void signout(){
         dispose();
         login_user user_view = new login_user();
@@ -978,25 +554,17 @@ public class confirm_booking extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Error"  + ex);
         }
     }
-    
-    public void clear_fields(){
-        txt_firstname.setText("");
-        txt_lastname.setText("");
-        txt_phone.setText("");
-        txt_address.setText("");
-        txt_age.setText("");
-        cmb_sex.setSelectedItem(-1);
-    }
+
      
     // method to load data into table form database
-    public void passenger_table(){
+    public void confirm_tickets(){
     
     try{
         open_connection();
         
-        DefaultTableModel table_data = (DefaultTableModel) tb_all_buses.getModel();        
+        DefaultTableModel table_data = (DefaultTableModel) tb_confirm_ticket.getModel();        
         table_data.setRowCount(0);
-        String query_command = "SELECT passenger_id, firstname, lastname, phone, passenger_sex, passenger_age, passenger_address FROM passenger ";        
+        String query_command = "SELECT CONCAT(passenger.firstname, ' ', passenger.lastname) AS Name, confirm.ticket_number, bus_number, source, destination, seat_category, confirm.booking_status FROM ticket JOIN buses ON ticket.bus_id = buses.bus_id JOIN passenger ON ticket.passenger_id = passenger.passenger_id JOIN confirm ON ticket.ticket_number = confirm.ticket_number WHERE booking_status = 'Confirmed'";        
         statement = dbconnection.prepareStatement(query_command);
         java.sql.ResultSet result = statement.executeQuery(query_command);
       
@@ -1020,70 +588,6 @@ public class confirm_booking extends javax.swing.JFrame {
     }
     }
     
-     //method to load data into table form database
-    public void ticket_table(){
-        String search = txt_search_ticket.getText();  
-    try{
-        open_connection();
-        
-        DefaultTableModel table_data = (DefaultTableModel) tb_tickets.getModel();        
-        table_data.setRowCount(0);
-        String query_command = "SELECT CONCAT(passenger.firstname, ' ', passenger.lastname) AS Name, ticket_number, bus_number, source, destination, payment_method, seat_category, date_booked FROM ticket JOIN buses ON ticket.bus_id = buses.bus_id JOIN passenger ON ticket.passenger_id = passenger.passenger_id" ;      
-                
-        statement = dbconnection.prepareStatement(query_command);               
-        java.sql.ResultSet result = statement.executeQuery(query_command);
-        
-        while(result.next()){
-            Vector v = new Vector();
-            v.add(result.getString(1));
-            v.add(result.getString(2));
-            v.add(result.getString(3));
-            v.add(result.getString(4));
-            v.add(result.getString(5));
-            v.add(result.getString(6));
-            v.add(result.getString(7));
-            v.add(result.getString(8));
-            
-            table_data.addRow(v);
-    }
-    }catch(Exception ex){
-        JOptionPane.showMessageDialog(null, "Error"  + ex);
-    }finally{
-        close_connection();
-    }
-    }
-    
-    public void search_ticket_data(){
-        String search = txt_search_ticket.getText();  
-    try{
-        open_connection();
-        
-        DefaultTableModel table_data = (DefaultTableModel) tb_tickets.getModel();        
-        table_data.setRowCount(0);
-        String query_command = "SELECT CONCAT(passenger.firstname, ' ', passenger.lastname) AS Name, ticket_number, bus_number, source, destination, payment_method, seat_category, date_booked FROM ticket JOIN buses ON ticket.bus_id = buses.bus_id JOIN passenger ON ticket.passenger_id = passenger.passenger_id" ;      
-                
-        statement = dbconnection.prepareStatement(query_command);               
-        java.sql.ResultSet result = statement.executeQuery(query_command);
-        
-        while(result.next()){
-            Vector v = new Vector();
-            v.add(result.getString(1));
-            v.add(result.getString(2));
-            v.add(result.getString(3));
-            v.add(result.getString(4));
-            v.add(result.getString(5));
-            v.add(result.getString(6));
-            v.add(result.getString(7));
-            v.add(result.getString(8));
-            
-            table_data.addRow(v);
-    }
-    }catch(Exception ex){
-        JOptionPane.showMessageDialog(null, "Error"  + ex);
-    }finally{
-        close_connection();
-    }
-    }
     
     public void search_passenger_data(){
         String search = txt_search_passenger.getText();  
@@ -1093,7 +597,7 @@ public class confirm_booking extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Search Field can't be empty");
 //            search_ticket_data();
         }else{
-        DefaultTableModel table_data = (DefaultTableModel) tb_all_buses.getModel();        
+        DefaultTableModel table_data = (DefaultTableModel) tb_confirm_ticket.getModel();        
         table_data.setRowCount(0);
         String query_command = "SELECT * FROM passenger WHERE passenger_id LIKE '%" +search+ "%' OR firstname LIKE '%" +search+ "%' OR lastname LIKE '%" +search+ "%' OR phone LIKE '%" +search+ "%' OR passenger_age LIKE '%" +search+ "%' OR passenger_sex LIKE '%" +search+ "%'  OR passenger_address LIKE '%" +search+ "%'   ";
                 
@@ -1120,68 +624,39 @@ public class confirm_booking extends javax.swing.JFrame {
         close_connection();
     }
     }
+
     
-    private void btn_updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_updateActionPerformed
+    private void btn_confirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_confirmActionPerformed
         // TODO add your handling code here:
-        String passenger_id = txt_passenger_id.getText();
-        String firstname = txt_firstname.getText();
-        String lastname = txt_lastname.getText();
-        String phone = txt_phone.getText();
-        String sex = cmb_sex.getSelectedItem().toString();
-        String age = txt_age.getText();
-        String address = txt_address.getText();
-
-        try{
-            open_connection();
-            String query_command = "UPDATE passenger SET firstname = ? , lastname = ? , phone = ? , passenger_sex = ? , passenger_age = ? , passenger_address = ? WHERE passenger_id = '"+passenger_id+"' ";
-            statement = dbconnection.prepareStatement(query_command);
-            statement.setString(1, firstname);
-            statement.setString(2, lastname);          
-            statement.setString(3, phone);
-            statement.setString(4, sex);
-            statement.setString(5, age);
-            statement.setString(6, address);
-
-            int result = statement.executeUpdate();
-            if(result == 1){
-                JOptionPane.showMessageDialog(null, "Passenger Details Edit Successful");
-                clear_fields();
-                passenger_table();
+        if(cmb_ticket_number.getSelectedIndex() == 0){
+                JOptionPane.showMessageDialog(null, "Choose ticket number");
             }else{
-                JOptionPane.showMessageDialog(null, "Unable to Edit Passenger Details");
-                clear_fields();
-                passenger_table();
-            }
-        }catch(Exception ex){
-            JOptionPane.showConfirmDialog(null, "Error" +ex);
-        }
-    }//GEN-LAST:event_btn_updateActionPerformed
-
-    private void btn_deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_deleteActionPerformed
-        // TODO add your handling code here:
-        String passenger_id = txt_passenger_id.getText();        
-        
         try{
-            open_connection();
-            String query_command = "DELETE FROM passenger WHERE passenger_id = ? ";
-            statement = dbconnection.prepareStatement(query_command);
-            statement.setString(1, passenger_id);            
+                String ticket_number = cmb_ticket_number.getSelectedItem().toString();
+                String confirm = "Confirmed";
+                open_connection();
+                String query_command = "INSERT INTO confirm(ticket_number, booking_status) VALUES(?, ?)";
+                statement = dbconnection.prepareStatement(query_command);
+                
+                statement.setString(1, ticket_number);
+                statement.setString(2, confirm);              
+                                                
+                int result = statement.executeUpdate();
+                if(result == 1){
+                    JOptionPane.showMessageDialog(null, "Ticket Booked");
+                    ticket_table();
+                }else{
+                    JOptionPane.showMessageDialog(null, "Unable to Book Ticket");
+                    ticket_table();
+                }
             
-            int result = statement.executeUpdate();
-            if(result == 1){
-                JOptionPane.showMessageDialog(null, "Passenger Deleted");
-                clear_fields();
-                passenger_table();
-            }else{
-                    JOptionPane.showMessageDialog(null, "Unable to delete Passenger");
-                    clear_fields();
-                    passenger_table();
-                }            
-        }catch(Exception ex){
-            JOptionPane.showConfirmDialog(null, "Error" +ex);
+            }catch(Exception ex){
+                JOptionPane.showMessageDialog(null, "Error" + ex );
+            }finally{
+                close_connection();
+            }    
         }
-                      
-    }//GEN-LAST:event_btn_deleteActionPerformed
+    }//GEN-LAST:event_btn_confirmActionPerformed
 
     private void btn_searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_searchActionPerformed
         // TODO add your handling code here:
@@ -1196,7 +671,7 @@ public class confirm_booking extends javax.swing.JFrame {
     public void load_passenger_id(){
         try{
             open_connection();
-            String Passenger = cmb_passenger_id.getSelectedItem().toString(); 
+            String Passenger = cmb_ticket_number.getSelectedItem().toString(); 
             String query_command = "SELECT passenger_id, firstname from passenger";
             statement = dbconnection.prepareStatement(query_command);               
             java.sql.ResultSet result = statement.executeQuery(query_command);
@@ -1209,7 +684,7 @@ public class confirm_booking extends javax.swing.JFrame {
             String passengerName = result.getString("firstname");
             passengerMap.put(passengerId, passengerName);
             
-            cmb_passenger_id.addItem(passengerId);
+            cmb_ticket_number.addItem(passengerId);
 
         }      
         }catch(Exception ex){
@@ -1223,7 +698,7 @@ public class confirm_booking extends javax.swing.JFrame {
     public void load_source_destination(){
         try{
             open_connection();
-            String Passenger = cmb_passenger_id.getSelectedItem().toString(); 
+            String Passenger = cmb_ticket_number.getSelectedItem().toString(); 
             String query_command = "SELECT bus_source, bus_destination from buses";
             statement = dbconnection.prepareStatement(query_command);               
             java.sql.ResultSet result = statement.executeQuery(query_command);
@@ -1236,7 +711,7 @@ public class confirm_booking extends javax.swing.JFrame {
             String passengerName = result.getString("firstname");
             passengerMap.put(passengerId, passengerName);
             
-            cmb_passenger_id.addItem(passengerId);
+            cmb_ticket_number.addItem(passengerId);
 
         }   
             
@@ -1246,115 +721,7 @@ public class confirm_booking extends javax.swing.JFrame {
             close_connection();
         }
     }
-    private void cmb_categoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmb_categoryActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cmb_categoryActionPerformed
-
-    private void cmb_paymentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmb_paymentActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cmb_paymentActionPerformed
-
-    private void cmb_bus_numberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmb_bus_numberActionPerformed
-        // TODO add your handling code here:
-        //get information related the user id selected into the text field
-        try {
-        open_connection();
-            String bus_number = cmb_bus_number.getSelectedItem().toString(); 
-        String query_command = "SELECT bus_source, bus_destination, price, bus_id FROM buses WHERE  bus_number= ?";
-        statement = dbconnection.prepareStatement(query_command); 
-        statement.setString(1, bus_number);      
-        java.sql.ResultSet result = statement.executeQuery();
-        
-        HashMap<String, String> bus_data = new HashMap<>();        
-        
-        if (result.next()) {
-            String bus_source_result = result.getString("bus_source");
-            String bus_destination_result = result.getString("bus_destination");
-            String bus_price_result = result.getString("price");
-            String bus_id_result = result.getString("bus_id");
-            
-            bus_data.put(bus_source_result, bus_destination_result );
-            bus_data.put(bus_price_result, bus_id_result);
-            txt_bus_source.setText(bus_source_result);
-            txt_bus_destination.setText(bus_destination_result);
-            llb_price.setText("Price :" + bus_price_result);
-            txt_bus_id.setText(bus_id_result);
-              
-        } else {
-            // Handle case where no results are found for the given user ID
-            txt_bus_source.setText("No destination found");
-            txt_bus_destination.setText("No destination found");
-        }
-    } catch (Exception ex) {
-        JOptionPane.showMessageDialog(null, "Error: " + ex.getMessage());
-    } finally {
-        close_connection();
-    }   
-    }//GEN-LAST:event_cmb_bus_numberActionPerformed
-
-    public void bus_number_result(){
-         try{
-            open_connection();
-            String Passenger = cmb_passenger_id.getSelectedItem().toString(); 
-            String query_command = "SELECT bus_number from buses";
-            statement = dbconnection.prepareStatement(query_command);               
-            java.sql.ResultSet result = statement.executeQuery(query_command);
-            
-            // get information into a hashmap 
-            HashMap<String, String> passengerMap = new HashMap<>();
-            
-        while(result.next()){            
-            String bus_number_data = result.getString("bus_number");
-            passengerMap.put(bus_number_data, "null");
-            
-            cmb_bus_number.addItem(bus_number_data);
-
-        }   
-            
-        }catch(Exception ex){
-            JOptionPane.showConfirmDialog(null, "Error" +ex);
-        }finally{
-            close_connection();
-        }
-    }                    
-
-    private void cmb_passenger_idActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmb_passenger_idActionPerformed
-        // TODO add your handling code here:
-        //get information related the user id selected into the text field
-        try {
-        open_connection();
-        String Passenger = cmb_passenger_id.getSelectedItem().toString(); 
-        String query_command = "SELECT CONCAT(firstname ,' ' , lastname) AS Name FROM `passenger` WHERE passenger_id = ?";
-        statement = dbconnection.prepareStatement(query_command); 
-        statement.setString(1, Passenger);      
-        java.sql.ResultSet result = statement.executeQuery();
-        
-        if (result.next()) {
-            txt_passenger_name.setText(result.getString("Name"));
-              
-        } else {
-            // Handle case where no results are found for the given user ID
-            txt_passenger_name.setText("No passenger found");
-        }
-    } catch (Exception ex) {
-        JOptionPane.showMessageDialog(null, "Error: " + ex.getMessage());
-    } finally {
-        close_connection();
-    }          
-    }//GEN-LAST:event_cmb_passenger_idActionPerformed
-
-    private void cmb_passenger_idMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cmb_passenger_idMouseClicked
-        // TODO add your handling code here:
-
-    }//GEN-LAST:event_cmb_passenger_idMouseClicked
-
-    private void llb_refresh_comboMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_llb_refresh_comboMouseClicked
-        // TODO add your handling code here:
-        dispose();
-        confirm_booking passenger_view = new confirm_booking();
-        passenger_view.setLocationRelativeTo(null);
-        passenger_view.setVisible(true);
-    }//GEN-LAST:event_llb_refresh_comboMouseClicked
+                 
 
     // Method to generate a new ticket number
     public static String generate_ticket_number() {
@@ -1371,96 +738,10 @@ public class confirm_booking extends javax.swing.JFrame {
         return ticketNumber;
     }
     
-    private void buy_ticketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buy_ticketActionPerformed
-        // TODO add your handling code here:
-        try{            
-        open_connection();
-        
-        java.sql.Timestamp currentDate = new java.sql.Timestamp(System.currentTimeMillis());
-        
-        String passenger_id = cmb_passenger_id.getSelectedItem().toString();
-        String bus_number = cmb_bus_number.getSelectedItem().toString();                
-        String source = txt_bus_source.getText();
-        String destination = txt_bus_destination.getText();
-        String seat_category = cmb_category.getSelectedItem().toString();        
-        String payment = cmb_payment.getSelectedItem().toString();        
-        String bus_id = txt_bus_id.getText();
-        String ticket_number = generate_ticket_number();
-        
-        
-        if(passenger_id.equals("")){
-            JOptionPane.showMessageDialog(null, "Field can't be empty");
-        }else if(bus_number.equals("")){
-            JOptionPane.showMessageDialog(null, "Field can't be empty");
-        }else if(source.equals("")){
-            JOptionPane.showMessageDialog(null, "Field can't be empty");
-        }else if(destination.equals("")){
-            JOptionPane.showMessageDialog(null, "Field can't be empty");
-        }else{
-            try{                               
-                
-                String query_command = "INSERT INTO ticket(ticket_number, seat_category, source, destination, bus_id, passenger_id, payment_method, date_booked) VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
-                statement = dbconnection.prepareStatement(query_command);
-                
-                statement.setString(1, ticket_number);
-                statement.setString(2, seat_category);
-                statement.setString(3, source);
-                statement.setString(4 ,destination);                
-                statement.setString(5,bus_id);
-                statement.setString(6, passenger_id);
-                statement.setString(7, payment);
-                statement.setTimestamp(8, currentDate);
-                                                
-                int result = statement.executeUpdate();
-                if(result == 1){                    
-                    JOptionPane.showMessageDialog(null, "Ticket Booked");
-                    clear_fields();
-                    passenger_table();
-                    ticket_table();
-                    
-                }else{
-                    JOptionPane.showMessageDialog(null, "Unable to Book Ticket ");
-                    clear_fields();
-                }
-                
-            }catch(Exception ex){
-                JOptionPane.showMessageDialog(null, "Error" + ex );
-            }finally{
-                close_connection();
-            }
-        }
-            
-        }catch(Exception ex){
-            JOptionPane.showMessageDialog(null, "Error: " + ex.getMessage());
-        }finally{
-            close_connection();
-        }
-    }//GEN-LAST:event_buy_ticketActionPerformed
-
     
-    private void btn_search_ticketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_search_ticketActionPerformed
-        // TODO add your handling code here:
-//        search_ticket_data();
-    }//GEN-LAST:event_btn_search_ticketActionPerformed
-
-    private void txt_search_ticketKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_search_ticketKeyTyped
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_search_ticketKeyTyped
-
-    private void tb_ticketsAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_tb_ticketsAncestorAdded
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tb_ticketsAncestorAdded
-
-    private void tb_ticketsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tb_ticketsMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tb_ticketsMouseClicked
-
-    private void tb_ticketsPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_tb_ticketsPropertyChange
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tb_ticketsPropertyChange
-
     private void bus_ticketMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bus_ticketMouseClicked
         // TODO add your handling code here:
+        dispose();
         passenger_view();
     }//GEN-LAST:event_bus_ticketMouseClicked
 
@@ -1479,14 +760,114 @@ public class confirm_booking extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btn_closeActionPerformed
 
-    private void txt_firstnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_firstnameActionPerformed
+    private void tb_confirm_ticketPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_tb_confirm_ticketPropertyChange
         // TODO add your handling code here:
-    }//GEN-LAST:event_txt_firstnameActionPerformed
+    }//GEN-LAST:event_tb_confirm_ticketPropertyChange
 
-    private void txt_search_ticketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_search_ticketActionPerformed
+    private void tb_confirm_ticketMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tb_confirm_ticketMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_txt_search_ticketActionPerformed
+    }//GEN-LAST:event_tb_confirm_ticketMouseClicked
 
+    private void tb_confirm_ticketAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_tb_confirm_ticketAncestorAdded
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tb_confirm_ticketAncestorAdded
+
+    private void cmb_ticket_numberMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cmb_ticket_numberMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmb_ticket_numberMouseClicked
+
+    //method to load data into table form database
+    public void ticket_table(){        
+    try{
+        open_connection();
+        
+        DefaultTableModel table_data = (DefaultTableModel) tb_confirm_ticket.getModel();        
+        table_data.setRowCount(0);
+        String query_command = "SELECT CONCAT(passenger.firstname, ' ', passenger.lastname) AS Name, confirm.ticket_number, bus_number, source, destination, seat_category, confirm.booking_status FROM ticket JOIN buses ON ticket.bus_id = buses.bus_id JOIN passenger ON ticket.passenger_id = passenger.passenger_id JOIN confirm ON ticket.ticket_number = confirm.ticket_number WHERE booking_status = 'Confirmed' " ;      
+                
+        statement = dbconnection.prepareStatement(query_command);               
+        java.sql.ResultSet result = statement.executeQuery(query_command);
+        
+        while(result.next()){
+            Vector v = new Vector();
+            v.add(result.getString(1));
+            v.add(result.getString(2));
+            v.add(result.getString(3));
+            v.add(result.getString(4));
+            v.add(result.getString(5));
+            v.add(result.getString(6));
+            v.add(result.getString(7));            
+            
+            table_data.addRow(v);
+    }
+    }catch(Exception ex){
+        JOptionPane.showMessageDialog(null, "Error"  + ex);
+    }finally{
+        close_connection();
+    }
+    }
+    
+    private void cmb_ticket_numberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmb_ticket_numberActionPerformed
+        // TODO add your handling code here:
+        //get information related the user id selected into the text field
+        try {
+        open_connection();
+        String tikcet_number = cmb_ticket_number.getSelectedItem().toString(); 
+        String query_command = "SELECT CONCAT(passenger.firstname, ' ', passenger.lastname) AS name, destination, source, bus_number, seat_category  FROM ticket JOIN passenger ON ticket.passenger_id = passenger.passenger_id JOIN buses ON ticket.bus_id = buses.bus_id WHERE ticket_number = ?";
+        statement = dbconnection.prepareStatement(query_command); 
+        statement.setString(1, tikcet_number);      
+        java.sql.ResultSet result = statement.executeQuery();
+        
+        if (result.next()) {
+            txt_bus_number.setText(result.getString("bus_number"));
+            txt_passenger_name.setText(result.getString("name"));
+            txt_category.setText(result.getString("seat_category"));
+            txt_destination.setText(result.getString("destination"));
+            txt_source.setText(result.getString("source"));
+              
+        } else {
+            // Handle case where no results are found for the given user ID            
+            txt_bus_number.setText(result.getString("No passenger found"));
+            txt_passenger_name.setText(result.getString("No passenger found"));
+            txt_category.setText(result.getString("No passenger found"));
+            txt_destination.setText(result.getString("No passenger found"));
+            txt_source.setText(result.getString("No passenger found"));
+        }
+    } catch (Exception ex) {
+        JOptionPane.showMessageDialog(null, "Error: " + ex.getMessage());
+    } finally {
+        close_connection();
+    }
+    }//GEN-LAST:event_cmb_ticket_numberActionPerformed
+
+    //get passenger_id information into combo box 
+    public void passenger_info(){
+        try{
+            open_connection();
+            String passenger = cmb_ticket_number.getSelectedItem().toString(); 
+            String query_command = "SELECT CONCAT(passenger.firstname, ' ', passenger.lastname) AS Name, ticket_number FROM ticket JOIN passenger ON ticket.passenger_id = passenger.passenger_id";
+            statement = dbconnection.prepareStatement(query_command);               
+            java.sql.ResultSet result = statement.executeQuery(query_command);
+            
+            // get information into a hashmap 
+            HashMap<String, String> passengerMap = new HashMap<>();
+            
+        while(result.next()){
+            String passenger_name = result.getString("Name");
+            String ticket_number = result.getString("ticket_number");
+            passengerMap.put(passenger_name, ticket_number);
+            
+            cmb_ticket_number.addItem(ticket_number);
+//            bus_number.addItem(ticket_number);
+
+        }      
+        }catch(Exception ex){
+            JOptionPane.showConfirmDialog(null, "Error" +ex);
+        }finally{
+            close_connection();
+        }
+    }
+         
     /**
      * @param args the command line arguments
      */
@@ -1524,61 +905,37 @@ public class confirm_booking extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_add;
     private javax.swing.JButton btn_close;
-    private javax.swing.JButton btn_delete;
+    private javax.swing.JButton btn_confirm;
     private javax.swing.JButton btn_search;
-    private javax.swing.JButton btn_search_ticket;
-    private javax.swing.JButton btn_update;
     private javax.swing.JLabel bus_ticket;
-    private javax.swing.JButton buy_ticket;
-    private javax.swing.JComboBox<String> cmb_bus_number;
-    private javax.swing.JComboBox<String> cmb_category;
-    private javax.swing.JComboBox<String> cmb_passenger_id;
-    private javax.swing.JComboBox<String> cmb_payment;
-    private javax.swing.JComboBox<String> cmb_sex;
+    private javax.swing.JComboBox<String> cmb_ticket_number;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel3jhv1;
-    private javax.swing.JLabel jLabel3jhv10;
-    private javax.swing.JLabel jLabel3jhv11;
-    private javax.swing.JLabel jLabel3jhv12;
-    private javax.swing.JLabel jLabel3jhv13;
-    private javax.swing.JLabel jLabel3jhv14;
-    private javax.swing.JLabel jLabel3jhv16;
-    private javax.swing.JLabel jLabel3jhv17;
     private javax.swing.JLabel jLabel3jhv2;
     private javax.swing.JLabel jLabel3jhv3;
     private javax.swing.JLabel jLabel3jhv4;
     private javax.swing.JLabel jLabel3jhv5;
     private javax.swing.JLabel jLabel3jhv6;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabelkk;
     private javax.swing.JLabel jLabelkk1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JLabel llb_price;
-    private javax.swing.JLabel llb_refresh_combo;
-    private javax.swing.JTable tb_all_buses;
-    private javax.swing.JTable tb_tickets;
-    private javax.swing.JTextField txt_address;
-    private javax.swing.JTextField txt_age;
-    private javax.swing.JTextField txt_bus_destination;
+    private javax.swing.JTable tb_confirm_ticket;
     private javax.swing.JTextField txt_bus_id;
-    private javax.swing.JTextField txt_bus_source;
-    private javax.swing.JTextField txt_firstname;
-    private javax.swing.JTextField txt_lastname;
+    private javax.swing.JTextField txt_bus_number;
+    private javax.swing.JTextField txt_category;
+    private javax.swing.JTextField txt_destination;
     private javax.swing.JTextField txt_passenger_id;
     private javax.swing.JTextField txt_passenger_name;
-    private javax.swing.JTextField txt_phone;
     private javax.swing.JTextField txt_search_passenger;
-    private javax.swing.JTextField txt_search_ticket;
+    private javax.swing.JTextField txt_source;
     // End of variables declaration//GEN-END:variables
 }

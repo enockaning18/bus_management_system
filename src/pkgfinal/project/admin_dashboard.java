@@ -29,15 +29,13 @@ public class admin_dashboard extends javax.swing.JFrame {
     public admin_dashboard() {
         initComponents();
         booked_lable();
+        passengers();
+        employees();
+        buses();
+        drivers();
     }
     
-    public admin_dashboard(String auser){
-        this.admin_user = auser;
-        initComponents();
-        String getValue = jLabel1.getText();
-        jLabel1.setText(getValue + " : " + auser);
-    }
-
+   
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -56,17 +54,16 @@ public class admin_dashboard extends javax.swing.JFrame {
         jMenu7 = new javax.swing.JMenu();
         jMenuItem5 = new javax.swing.JMenuItem();
         jMenuItem6 = new javax.swing.JMenuItem();
-        jLabel1 = new javax.swing.JLabel();
         show_tabs = new javax.swing.JDesktopPane();
         jLabel2 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel3jhv = new javax.swing.JLabel();
-        jLabel3jhv2 = new javax.swing.JLabel();
+        llb_employees = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         jLabel3jhv3 = new javax.swing.JLabel();
-        jLabel3jhv4 = new javax.swing.JLabel();
+        llb_passengers = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
         jLabel3jhv5 = new javax.swing.JLabel();
@@ -78,12 +75,13 @@ public class admin_dashboard extends javax.swing.JFrame {
         jPanel13 = new javax.swing.JPanel();
         jPanel14 = new javax.swing.JPanel();
         jLabel3jhv10 = new javax.swing.JLabel();
-        jLabel3jhv11 = new javax.swing.JLabel();
+        llb_buses = new javax.swing.JLabel();
         jPanel15 = new javax.swing.JPanel();
         jPanel16 = new javax.swing.JPanel();
         jLabel3jhv12 = new javax.swing.JLabel();
-        jLabel3jhv13 = new javax.swing.JLabel();
+        llb_drivers = new javax.swing.JLabel();
         btn_close = new javax.swing.JButton();
+        btn_signout = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         tab_all_busses = new javax.swing.JMenuItem();
@@ -125,8 +123,6 @@ public class admin_dashboard extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Welcome:");
-
         show_tabs.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
@@ -156,10 +152,10 @@ public class admin_dashboard extends javax.swing.JFrame {
                 .addContainerGap(22, Short.MAX_VALUE))
         );
 
-        jLabel3jhv2.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel3jhv2.setFont(new java.awt.Font("Helvetica Neue", 1, 80)); // NOI18N
-        jLabel3jhv2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3jhv2.setText("0");
+        llb_employees.setBackground(new java.awt.Color(255, 255, 255));
+        llb_employees.setFont(new java.awt.Font("Helvetica Neue", 1, 80)); // NOI18N
+        llb_employees.setForeground(new java.awt.Color(255, 255, 255));
+        llb_employees.setText("0");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -168,7 +164,7 @@ public class admin_dashboard extends javax.swing.JFrame {
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel3jhv2)
+                .addComponent(llb_employees)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -176,7 +172,7 @@ public class admin_dashboard extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(50, 50, 50)
-                .addComponent(jLabel3jhv2, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(llb_employees, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 57, Short.MAX_VALUE))
         );
 
@@ -205,10 +201,10 @@ public class admin_dashboard extends javax.swing.JFrame {
                 .addContainerGap(23, Short.MAX_VALUE))
         );
 
-        jLabel3jhv4.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel3jhv4.setFont(new java.awt.Font("Helvetica Neue", 1, 80)); // NOI18N
-        jLabel3jhv4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3jhv4.setText("0");
+        llb_passengers.setBackground(new java.awt.Color(255, 255, 255));
+        llb_passengers.setFont(new java.awt.Font("Helvetica Neue", 1, 80)); // NOI18N
+        llb_passengers.setForeground(new java.awt.Color(255, 255, 255));
+        llb_passengers.setText("0");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -217,7 +213,7 @@ public class admin_dashboard extends javax.swing.JFrame {
             .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel3jhv4)
+                .addComponent(llb_passengers)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
@@ -225,7 +221,7 @@ public class admin_dashboard extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(50, 50, 50)
-                .addComponent(jLabel3jhv4, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(llb_passengers, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 56, Short.MAX_VALUE))
         );
 
@@ -334,29 +330,29 @@ public class admin_dashboard extends javax.swing.JFrame {
         jPanel14.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel3jhv10.setFont(new java.awt.Font("Helvetica Neue", 1, 20)); // NOI18N
-        jLabel3jhv10.setText("Number of Employees ");
+        jLabel3jhv10.setText("Buses");
 
         javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
         jPanel14.setLayout(jPanel14Layout);
         jPanel14Layout.setHorizontalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel14Layout.createSequentialGroup()
-                .addContainerGap(50, Short.MAX_VALUE)
+            .addGroup(jPanel14Layout.createSequentialGroup()
+                .addGap(125, 125, 125)
                 .addComponent(jLabel3jhv10)
-                .addGap(44, 44, 44))
+                .addContainerGap(126, Short.MAX_VALUE))
         );
         jPanel14Layout.setVerticalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel14Layout.createSequentialGroup()
-                .addContainerGap(22, Short.MAX_VALUE)
+                .addGap(20, 20, 20)
                 .addComponent(jLabel3jhv10)
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
-        jLabel3jhv11.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel3jhv11.setFont(new java.awt.Font("Helvetica Neue", 1, 80)); // NOI18N
-        jLabel3jhv11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3jhv11.setText("0");
+        llb_buses.setBackground(new java.awt.Color(255, 255, 255));
+        llb_buses.setFont(new java.awt.Font("Helvetica Neue", 1, 80)); // NOI18N
+        llb_buses.setForeground(new java.awt.Color(255, 255, 255));
+        llb_buses.setText("0");
 
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
         jPanel13.setLayout(jPanel13Layout);
@@ -365,7 +361,7 @@ public class admin_dashboard extends javax.swing.JFrame {
             .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel13Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel3jhv11)
+                .addComponent(llb_buses)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel13Layout.setVerticalGroup(
@@ -373,7 +369,7 @@ public class admin_dashboard extends javax.swing.JFrame {
             .addGroup(jPanel13Layout.createSequentialGroup()
                 .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
-                .addComponent(jLabel3jhv11, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(llb_buses, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 63, Short.MAX_VALUE))
         );
 
@@ -383,16 +379,16 @@ public class admin_dashboard extends javax.swing.JFrame {
         jPanel16.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel3jhv12.setFont(new java.awt.Font("Helvetica Neue", 1, 20)); // NOI18N
-        jLabel3jhv12.setText("Number of Employees ");
+        jLabel3jhv12.setText("Drivers");
 
         javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
         jPanel16.setLayout(jPanel16Layout);
         jPanel16Layout.setHorizontalGroup(
             jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel16Layout.createSequentialGroup()
-                .addContainerGap(50, Short.MAX_VALUE)
+                .addContainerGap(123, Short.MAX_VALUE)
                 .addComponent(jLabel3jhv12)
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addContainerGap(119, Short.MAX_VALUE))
         );
         jPanel16Layout.setVerticalGroup(
             jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -402,10 +398,10 @@ public class admin_dashboard extends javax.swing.JFrame {
                 .addContainerGap(23, Short.MAX_VALUE))
         );
 
-        jLabel3jhv13.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel3jhv13.setFont(new java.awt.Font("Helvetica Neue", 1, 80)); // NOI18N
-        jLabel3jhv13.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3jhv13.setText("0");
+        llb_drivers.setBackground(new java.awt.Color(255, 255, 255));
+        llb_drivers.setFont(new java.awt.Font("Helvetica Neue", 1, 80)); // NOI18N
+        llb_drivers.setForeground(new java.awt.Color(255, 255, 255));
+        llb_drivers.setText("0");
 
         javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
         jPanel15.setLayout(jPanel15Layout);
@@ -414,7 +410,7 @@ public class admin_dashboard extends javax.swing.JFrame {
             .addComponent(jPanel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel15Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel3jhv13)
+                .addComponent(llb_drivers)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel15Layout.setVerticalGroup(
@@ -422,7 +418,7 @@ public class admin_dashboard extends javax.swing.JFrame {
             .addGroup(jPanel15Layout.createSequentialGroup()
                 .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
-                .addComponent(jLabel3jhv13, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(llb_drivers, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 61, Short.MAX_VALUE))
         );
 
@@ -478,6 +474,15 @@ public class admin_dashboard extends javax.swing.JFrame {
         btn_close.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_closeActionPerformed(evt);
+            }
+        });
+
+        btn_signout.setBackground(new java.awt.Color(255, 51, 51));
+        btn_signout.setForeground(new java.awt.Color(255, 255, 255));
+        btn_signout.setText("sign out");
+        btn_signout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_signoutActionPerformed(evt);
             }
         });
 
@@ -597,23 +602,26 @@ public class admin_dashboard extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(btn_close)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(14, 14, 14))
-                    .addComponent(show_tabs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btn_signout, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(show_tabs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_close))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btn_signout, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(btn_close, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(show_tabs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -695,6 +703,18 @@ public class admin_dashboard extends javax.swing.JFrame {
         dashboard_view();
     }//GEN-LAST:event_btn_closeActionPerformed
 
+    private void btn_signoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_signoutActionPerformed
+        // TODO add your handling code here:
+        signout();
+    }//GEN-LAST:event_btn_signoutActionPerformed
+
+    public void signout(){
+        dispose();
+        login_user user_view = new login_user();
+        user_view.setLocationRelativeTo(null);
+        user_view.setVisible(true);
+    }
+    
     public void dashboard_view(){        
         admin_dashboard admin_view = new admin_dashboard();
         admin_view.setLocationRelativeTo(null);
@@ -714,6 +734,83 @@ public class admin_dashboard extends javax.swing.JFrame {
 
                 // Set the retrieved data to the label
                 llb_booked_ticket.setText(data);
+            }
+        }catch(Exception ex){
+            JOptionPane.showMessageDialog(null, "Error" +ex);
+        }
+    }
+    
+    public void passengers(){
+        try{
+            open_connection();
+            String query_command = "SELECT COUNT(passenger_id) FROM passenger";
+            statement = dbconnection.prepareStatement(query_command);               
+            java.sql.ResultSet result = statement.executeQuery(query_command);
+                        
+          if (result.next()) {
+                // Retrieve data from the result set
+                String data = result.getString("COUNT(passenger_id)");
+
+                // Set the retrieved data to the label
+                llb_passengers.setText(data);
+            }
+        }catch(Exception ex){
+            JOptionPane.showMessageDialog(null, "Error" +ex);
+        }
+    }
+    
+    public void employees(){
+        try{
+            open_connection();
+            String query_command = "SELECT COUNT(employee_id) FROM employees";
+            statement = dbconnection.prepareStatement(query_command);               
+            java.sql.ResultSet result = statement.executeQuery(query_command);
+                        
+          if (result.next()) {
+                // Retrieve data from the result set
+                String data = result.getString("COUNT(employee_id)");
+
+                // Set the retrieved data to the label
+                llb_employees.setText(data);
+            }
+        }catch(Exception ex){
+            JOptionPane.showMessageDialog(null, "Error" +ex);
+        }
+    }
+    
+    public void buses(){
+        try{
+            open_connection();
+            String query_command = "SELECT COUNT(bus_id) FROM buses";
+            statement = dbconnection.prepareStatement(query_command);               
+            java.sql.ResultSet result = statement.executeQuery(query_command);
+                        
+          if (result.next()) {
+                // Retrieve data from the result set
+                String data = result.getString("COUNT(bus_id)");
+                
+
+                // Set the retrieved data to the label
+                llb_buses.setText(data);
+            }
+        }catch(Exception ex){
+            JOptionPane.showMessageDialog(null, "Error" +ex);
+        }
+    }
+    
+    public void drivers(){
+        try{
+            open_connection();
+            String query_command = "SELECT COUNT(employee_id) FROM employees WHERE position = 'Bus Driver'";
+            statement = dbconnection.prepareStatement(query_command);               
+            java.sql.ResultSet result = statement.executeQuery(query_command);
+                        
+          if (result.next()) {
+                // Retrieve data from the result set
+                String data = result.getString("COUNT(employee_id)");                
+
+                // Set the retrieved data to the label
+                llb_drivers.setText(data);
             }
         }catch(Exception ex){
             JOptionPane.showMessageDialog(null, "Error" +ex);
@@ -777,16 +874,12 @@ public class admin_dashboard extends javax.swing.JFrame {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_close;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton btn_signout;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3jhv;
     private javax.swing.JLabel jLabel3jhv10;
-    private javax.swing.JLabel jLabel3jhv11;
     private javax.swing.JLabel jLabel3jhv12;
-    private javax.swing.JLabel jLabel3jhv13;
-    private javax.swing.JLabel jLabel3jhv2;
     private javax.swing.JLabel jLabel3jhv3;
-    private javax.swing.JLabel jLabel3jhv4;
     private javax.swing.JLabel jLabel3jhv5;
     private javax.swing.JLabel jLabel3jhv6;
     private javax.swing.JLabel jLabel3jhv8;
@@ -823,6 +916,10 @@ public class admin_dashboard extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JLabel llb_booked_ticket;
+    private javax.swing.JLabel llb_buses;
+    private javax.swing.JLabel llb_drivers;
+    private javax.swing.JLabel llb_employees;
+    private javax.swing.JLabel llb_passengers;
     private javax.swing.JDesktopPane show_tabs;
     private javax.swing.JMenuItem tab_add_bus;
     private javax.swing.JMenuItem tab_add_employee;
