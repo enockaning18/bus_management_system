@@ -4,14 +4,20 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/Users/okyere/Documents/IPMC/Final%20Project/src/pkgfinal/project/add_bus_details.java</file>
-            <file>file:/Users/okyere/Documents/IPMC/Final%20Project/src/pkgfinal/project/bookings.java</file>
+            <file>file:/Users/okyere/Documents/IPMC/Final%20Project/src/pkgfinal/project/all_bus_details.java</file>
+            <file>file:/Users/okyere/Documents/IPMC/Final%20Project/src/pkgfinal/project/assign_employee.java</file>
             <file>file:/Users/okyere/Documents/IPMC/Final%20Project/src/pkgfinal/project/login_admin.java</file>
+            <file>file:/Users/okyere/Documents/IPMC/Final%20Project/src/pkgfinal/project/user_dashboard.java</file>
+            <file>file:/Users/okyere/Documents/IPMC/Final%20Project/src/pkgfinal/project/main_screen.java</file>
+            <file>file:/Users/okyere/Documents/IPMC/Final%20Project/src/pkgfinal/project/add_employee.java</file>
+            <file>file:/Users/okyere/Documents/IPMC/Final%20Project/src/pkgfinal/project/edit_bus.java</file>
+            <file>file:/Users/okyere/Documents/IPMC/Final%20Project/src/pkgfinal/project/delete_bus.java</file>
             <file>file:/Users/okyere/Documents/IPMC/Final%20Project/src/pkgfinal/project/admin_dashboard.java</file>
             <file>file:/Users/okyere/Documents/IPMC/Final%20Project/src/pkgfinal/project/add_passenger.java</file>
             <file>file:/Users/okyere/Documents/IPMC/Final%20Project/src/pkgfinal/project/book_ticket.java</file>
-            <file>file:/Users/okyere/Documents/IPMC/Final%20Project/src/pkgfinal/project/user_dashboard.java</file>
+            <file>file:/Users/okyere/Documents/IPMC/Final%20Project/src/pkgfinal/project/delete_employee.java</file>
+            <file>file:/Users/okyere/Documents/IPMC/Final%20Project/src/pkgfinal/project/edit_employee.java</file>
             <file>file:/Users/okyere/Documents/IPMC/Final%20Project/src/pkgfinal/project/all_employees_details.java</file>
-            <file>file:/Users/okyere/Documents/IPMC/Final%20Project/src/pkgfinal/project/main_screen.java</file>
             <file>file:/Users/okyere/Documents/IPMC/Final%20Project/src/pkgfinal/project/confirm_booking.java</file>
         </group>
     </open-files>
